@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERSONAL DATA DISCLOSURE AND CONSENT TEXT</title>
+    <style>
+        :root {
+          --dust_storm: #dec8b9;
+          --lavender: #fbfbfb;
+          --shuttle_gray: #5c666f;
+          --darkBlue: #0c356a;
+          --blue: #279eff;
+          --lightBlue: #40f8ff;
+          --white: #ffffff;
+          --green: #21d0c3;
+          --red: #ff5b62;
+          --darkGreen: #646666;
+          --lightGreen: #c9cccd;
+          --lightGreen2: #eeeff0;
+          --blackGreen: #094850;
+          --googleRed: #ea4335;
+        }
+  
+        body {
+          background-color: var(--white);
+          font-family: Tahoma, sans-serif;
+          margin: 0px;
+        }
+  
+        .container {
+          width: "%100";
+        }
+  
+        .headerForm {
+          flex-direction: row;
+          display: flex;
+          margin: 10px 0px;
+        }
+  
+        .headerForm img {
+          height: 60px;
+          width: auto;
+        }
+  
+        .header-content {
+          display: flex;
+          flex: 1;
+          justify-content: center;
+          align-items: end;
+          flex-direction: column;
+        }
+  
+        .header {
+          padding: 4px;
+          background-color: var(--green);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 18px;
+        }
+  
+        .info {
+          margin: 10px 0px;
+          font-size: 16px;
+          line-height: 20px;
+        }
+  
+        .value {
+          color: var(--darkGreen);
+        }
+  
+        .seperator {
+          border-bottom: 1px solid #ccc;
+        }
+  
+        .checkbox-grid {
+          margin: 10px 0px;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 10px;
+        }
+  
+        .custom-checkbox {
+          position: relative;
+          padding-left: 30px;
+          cursor: pointer;
+          display: inline-block;
+        }
+  
+        .custom-checkbox input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+        }
+  
+        .checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 20px;
+          width: 20px;
+          background-color: #eee;
+          border: 1px solid #ccc;
+        }
+  
+        .custom-checkbox:hover input ~ .checkmark {
+          background-color: #ddd;
+        }
+  
+        .custom-checkbox input:checked ~ .checkmark {
+          background-color: var(--green);
+          border: 1px solid var(--green);
+        }
+  
+        .checkmark:after {
+          content: "";
+          position: absolute;
+          display: none;
+        }
+  
+        .custom-checkbox input:checked ~ .checkmark:after {
+          display: block;
+        }
+  
+        .custom-checkbox .checkmark:after {
+          left: 7px;
+          top: 3px;
+          width: 5px;
+          height: 10px;
+          border: solid white;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+        }
+  
+        .form-container {
+          margin: 10px 0px;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 10px;
+          page-break-inside: avoid; /* Prevent the entire container from splitting */
+        }
+  
+        .form-confirmation {
+          padding: 10px;
+          border: 1px solid var(--blackGreen);
+          page-break-inside: avoid; /* Prevent splitting inside this block */
+          display: block;
+          break-inside: avoid; /* For additional browser support */
+        }
+  
+        .form-header {
+          margin-bottom: 10px;
+          font-size: 18px;
+          page-break-inside: avoid;
+          page-break-after: avoid; /* Prevent page break after header */
+          break-inside: avoid;
+          display: block;
+        }
+  
+        .form-body {
+          margin-top: 10px;
+          page-break-inside: avoid;
+          page-break-after: avoid; /* Avoid splitting at the end of this block */
+          break-inside: avoid;
+          display: block;
+        }
+  
+        .signature {
+          width: 150px;
+          height: 150px;
+          object-fit: contain;
+          page-break-inside: avoid; /* Ensure signature stays on the same page */
+        }
+        .form-section {
+          page-break-inside: avoid; /* Prevents page break inside this section */
+        }
+        .page {
+          page-break-after: always;
+        }
+      </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="container">
+            <div class="headerForm">
+                <img class="img" src="{{clinic_logo}}" />
+
+                <div class="header-content">
+                    <label name="">{{clinic_name}}</label>
+                    <label name="">{{form_name}} {{form_language}}</label>
+                </div>
+
+            </div>
+            <div class="header">
+                PERSONAL DATA DISCLOSURE AND CONSENT TEXT
+            </div>
+            <div class="info">
+                <div class="info-text">
+                    <span class="label">As our polyclinic, we may need to learn your personal information and health
+                        data and record and store them within the limits required by the service to be provided in order
+                        to carry out the services we will provide to you.</span>
+                </div>
+                <br>
+                <div class="info-text">
+                    <span class="label">Your health data, which we have to record in order to provide you with health
+                        services, is considered as special personal data by law. In this context, 'Private personal data
+                        is prohibited to be processed without the explicit consent of the person concerned' in the 2nd
+                        paragraph of Article 6 of the Turkish Law of Protection of Personal Data No. 6698. Since
+                        personal health data can only be recorded with the explicit written consent of the person,
+                        except for the special conditions specified in the law, it is obligatory to obtain this consent
+                        from you.</span>
+                </div>
+            </div>
+            <div class="header">
+                INFORMATION TEXT
+            </div>
+            <div class="info">
+                <div class="info-text">
+                    <span class="label">I. This consent is given by your personal data that you have given to us
+                        verbally, in writing, visually or electronically in our polyclinic, via the internet and mobile
+                        applications or electronically, or obtained in our practice (assay result, prescription, camera
+                        recording, video, photograph, etc.). includes your personal data.</span>
+                </div>
+                <br>
+                <div class="info-text">
+                    <span class="label">II. In this sense, your name, surname, TR identity number, (if you are not a
+                        Turkish citizen, your passport number or temporary Turkish identity number), place and date of
+                        birth, marital status, gender, and especially the personal health data required for the
+                        performance of the services we will provide to you and obtained for this purpose. Identity data
+                        such as your information and various identity documents, your contact data such as your address,
+                        telephone number, e-mail address, your financial data such as your bank account number, IBAN
+                        number, your medical history in your clinical file, information showing your disease history,
+                        your examination data, data regarding the transactions applied to you, Your health and sexual
+                        life data obtained during the execution of medical diagnosis, treatment and care services such
+                        as your prescription information, photographs, all kinds of images, audio/camera recordings,
+                        laboratory and imaging results, test results, your data on private health insurance and Social
+                        Security Institution data etc. is considered personal data.</span>
+                </div>
+                <br>
+                <div class="info-text">
+                    <span class="label">III. Your personal data will be recorded only to the extent required by the
+                        health service to be provided to you within the framework of the Personal Data Protection Law
+                        No. 6698 and the relevant legislation, and will be stored in our system/archive 'not exceeding
+                        the time required to fulfill the purposes of recording'. In this context, your processed data
+                        will be protected as professional secret, confidentiality will be ensured and will not be shared
+                        by third parties/institutions/organizations.</span>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+    <div class="page">
+        <div class="container">
+
+
+            <div class="info">
+                <br>
+                <div class="info-text">
+                    <span class="label">IV. However, in cases where the confidentiality of personal medical records must
+                        be restricted for the protection of public health, such as the obligation to notify the
+                        competent authorities of infectious diseases regulated in Article 58 of the General Sanitary Law
+                        No. We remind you that it may be necessary to notify the competent authorities in a way that may
+                        be shared with another physician for consultation (opinion exchange) about your health
+                        condition.",</span>
+                </div>
+                <br>
+                <div class="info-text">
+                    <span class="label">V. Requests from public institutions, judicial authorities and other official
+                        authorities for the transmission of your data to them, the purpose of the request, whether the
+                        requested data overlaps with the purpose to be achieved, whether it can be put forward in a
+                        concrete way, the only way to achieve the stated purpose is the necessity of transmitting your
+                        data without anonymisation. will be evaluated in terms of whether data transmission is necessary
+                        in a democratic society, and data transmission requests that do not meet all of these elements
+                        will not be fulfilled.</span>
+                </div>
+                <br>
+                <div class="info-text">
+                    <span class="label">VI. Regarding your data recorded by us, in accordance with the Convention on the
+                        Protection of Individuals against Automatic Processing of Personal Data (Convention of Europe
+                        No. 108), Article 8 of the European Convention on Human Rights, Article 20 of the Constitution,
+                        Law No. 6698 on the Protection of Personal Data:</span>
+                </div>
+                <br>
+                <div class="info-text">
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="margin-bottom: 5px;">
+                            <span
+                                style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: #000; margin-right: 5px;"></span>
+                            To learn whether your personal data is processed and the scope of your processed data,
+                        </li>
+                        <li style="margin-bottom: 5px;">
+                            <span
+                                style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: #000; margin-right: 5px;"></span>
+                            If your personal data has been processed, obtaining information about it, accessing these
+                            data and taking samples from them,
+                        </li>
+                        <li style="margin-bottom: 5px;">
+                            <span
+                                style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: #000; margin-right: 5px;"></span>
+                            To learn the purpose of processing your personal data and whether they are used in
+                            accordance with its purpose, whether it is transferred to a third person or institution in
+                            the country or abroad, to request that the changes in your personal data be notified to the
+                            persons or institutions with whom the location is shared,
+                        </li>
+                        <li style="margin-bottom: 5px;">
+                            <span
+                                style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: #000; margin-right: 5px;"></span>
+                            You have been informed that if your personal data has been processed incompletely or
+                            incorrectly, you can request correction by contacting our polyclinic address in person or in
+                            writing.
+                        </li>
+                        <li style="margin-bottom: 5px;">
+                            <span
+                                style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: #000; margin-right: 5px;"></span>
+                            You have the right to request that some of your data be hidden, deleted or destroyed.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header">
+                II. STATEMENT OF CONSENT
+            </div>
+            <div class="info">
+                <div class="info-text">
+                    <span class="label">I have read and understood the Personal Data Disclosure and Consent Text
+                        prepared in the clinic, and that I have been given verbal information on the subject,</span>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+    <div class="page">
+        <div class="container">
+            <div class="info">
+                <br>
+                <div class="info-text">
+                    <span class="label">I have been informed about the purposes of processing, collection methods and
+                        legal reasons for my personal data, my rights to protect my personal data, the mandatory
+                        conditions in which my data can be transferred, my data security and application rights, which
+                        are detailed in the Personal Data Disclosure and Consent text,</span>
+                </div>
+                <br>
+                <div class="info-text">
+                    <span class="label">All of my personal data, including my health data, to be recorded, stored and
+                        shared in mandatory cases by the clinic doctors and employees within the framework of the above
+                        principles,</span>
+                </div>
+                <br>
+                <label class="custom-checkbox">
+                    <input type="checkbox" {{#if (eq permission_allow_my_oral_or_facial_images true )}} checked="true"
+                        {{/if}}>
+                    I allow my oral or facial images and or videos taken during treatment to be used on social media
+                    and/or within the scope of educational and academic activities.
+                    <span class="checkmark"></span>
+                </label>
+                </br>
+                <br>
+                <label class="custom-checkbox">
+                    <input type="checkbox" {{#if (eq permission_the_clinic_will_send_you_information true )}}
+                        checked="true" {{/if}}>
+                    In addition, by the clinic, I can be contacted by the mobile tools I have mentioned below, via the
+                    internet or by mail to my address, etc. I AGREE WITH MY EXPRESS CONSENT.
+                    <span class="checkmark"></span>
+                </label>
+                </br>
+                <br>
+                <div class="info-text">
+                    <span class="label">*According to the Patient Rights Regulation: 1 copy of the form will be given to
+                        you. If the form is not given to you, please notify the person receiving the consent.</span>
+                </div>
+            </div>
+            <div class="header">
+                INTERPRETER IF AVAILABLE (If the patient has a Language/Communication Problem)
+            </div>
+            <div class="info">
+                <div class="info-text">
+                    <span class="label">In my opinion, the information I translated was understood by the
+                        patient/patient relative.</span>
+                </div>
+
+            </div>
+            <div class="header">
+                Form Approval
+            </div>
+            <div class="form-container">
+                <div class="form-confirmation">
+                    <div class="form-header">
+                        <span>Patient</span>
+                    </div>
+                    <div class="seperator"></div>
+                    <div class="form-body">
+                        <div>
+                            <span class="label">Patient Name:</span>
+                            <span class="value">{{patient_info_name}} {{patient_info_surname}}</span>
+                        </div>
+                        <div>
+                            <span class="label">Date:</span>
+                            <span class="value">{{patient_info_patient_date}}</span>
+                        </div>
+                        <div>
+                            <span class="label">Time:</span>
+                            <span class="value">{{patient_info_patient_time}}</span>
+                        </div>
+                        <div>
+                            <span class="label">Signature:</span>
+                            <img class="signature" src="{{patient_info_signature_patient}}"
+                                onerror="this.onerror=null; this.remove();" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-confirmation">
+                    <div class="form-header">
+                        <span>Patient Relative</span>
+                    </div>
+                    <div class="seperator"></div>
+                    <div class="form-body">
+                        <div>
+                            <span class="label">Patient Relative Name:</span>
+                            <span class="value">{{patient_relative_info_name_and_surname}}</span>
+                        </div>
+                        <div>
+                            <span class="label">Date:</span>
+                            <span class="value">{{patient_relative_info_patient_relative_date}}</span>
+                        </div>
+                        <div>
+                            <span class="label">Time:</span>
+                            <span class="value">{{patient_relative_info_patient_relative_time}}</span>
+                        </div>
+                        <div>
+                            <span class="label">Signature:</span>
+                            <img class="signature" src="{{patient_relative_info_signature}}"
+                                onerror="this.onerror=null; this.remove();" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-confirmation">
+                    <div class="form-header">
+                        <span>Interpreter </span>
+                    </div>
+                    <div class="seperator"></div>
+                    <div class="form-body">
+                        <div>
+                            <span class="label">Interpreter Name:</span>
+                            <span class="value">{{patient_interpreter_info_name_and_surname}}</span>
+                        </div>
+                        <div>
+                            <span class="label">Date:</span>
+                            <span class="value">{{patient_interpreter_info_patient_relative_date}}</span>
+                        </div>
+                        <div>
+                            <span class="label">Time:</span>
+                            <span class="value">{{patient_interpreter_info_patient_relative_time}}</span>
+                        </div>
+                        <div>
+                            <span class="label">Signature:</span>
+                            <img class="signature" src="{{patient_interpreter_info_signature}}"
+                                onerror="this.onerror=null; this.remove();" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

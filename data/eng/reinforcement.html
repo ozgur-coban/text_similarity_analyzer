@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Informed Consent Form for Extraction Based Fixed Orthodontic Treatment
+    </title>
+    <style>
+      :root {
+        --dust_storm: #dec8b9;
+        --lavender: #fbfbfb;
+        --shuttle_gray: #5c666f;
+        --darkBlue: #0c356a;
+        --blue: #279eff;
+        --lightBlue: #40f8ff;
+        --white: #ffffff;
+        --green: #21d0c3;
+        --red: #ff5b62;
+        --darkGreen: #646666;
+        --lightGreen: #c9cccd;
+        --lightGreen2: #eeeff0;
+        --blackGreen: #094850;
+        --googleRed: #ea4335;
+      }
+
+      body {
+        background-color: var(--white);
+        font-family: Tahoma, sans-serif;
+        margin: 0px;
+      }
+
+      .container {
+        width: "%100";
+      }
+
+      .headerForm {
+        flex-direction: row;
+        display: flex;
+        margin: 10px 0px;
+      }
+
+      .headerForm img {
+        height: 60px;
+        width: auto;
+      }
+
+      .header-content {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: end;
+        flex-direction: column;
+      }
+
+      .header {
+        padding: 4px;
+        background-color: var(--green);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .info {
+        margin: 10px 0px;
+        font-size: 12px;
+        line-height: 14.4px;
+      }
+
+      .value {
+        /* color: var(--blackGreen); */
+        font-size: 10px;
+        font-weight: 600;
+      }
+
+      .seperator {
+        border-bottom: 1px solid #ccc;
+      }
+
+      .checkbox-grid {
+        margin: 10px 0px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+
+      .custom-checkbox {
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+        display: inline-block;
+      }
+
+      .custom-checkbox input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #eee;
+        border: 1px solid #ccc;
+      }
+
+      .custom-checkbox:hover input ~ .checkmark {
+        background-color: #ddd;
+      }
+
+      .custom-checkbox input:checked ~ .checkmark {
+        background-color: var(--green);
+        border: 1px solid var(--green);
+      }
+
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      .custom-checkbox input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      .custom-checkbox .checkmark:after {
+        left: 7px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+
+      .form-container {
+        margin: 10px 0px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        page-break-inside: avoid; /* Prevent the entire container from splitting */
+      }
+
+      .form-containersingle {
+        margin: 10px 0px;
+      }
+
+      .form-confirmation {
+        padding: 10px;
+        border: 1px solid var(--blackGreen);
+        font-size: 12px;
+        page-break-inside: avoid; /* Prevent splitting inside this block */
+        display: block;
+        break-inside: avoid; /* For additional browser support */
+      }
+
+      .form-header {
+        margin-bottom: 10px;
+        font-size: 12px;
+        page-break-inside: avoid;
+        page-break-after: avoid; /* Prevent page break after header */
+        break-inside: avoid;
+        display: block;
+      }
+
+      .form-body {
+        margin-top: 10px;
+        font-size: 12px;
+        page-break-inside: avoid;
+        page-break-after: avoid; /* Avoid splitting at the end of this block */
+        break-inside: avoid;
+        display: block;
+      }
+
+      .signature {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        page-break-inside: avoid; /* Ensure signature stays on the same page */
+      }
+      .form-section {
+        page-break-inside: avoid; /* Prevents page break inside this section */
+      }
+      .page {
+        page-break-after: always;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="container">
+        <div class="headerForm">
+          <img class="img" src="{{clinic_logo}}" />
+          <div class="header-content">
+            <label name="">{{clinic_name}}</label>
+            <label name="">{{form_name}} {{form_language}}</label>
+          </div>
+        </div>
+        <div class="header">Reinforcement Consent Form</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >I,
+              <span class="value"
+                >{{patient_info_name}} {{patient_info_surname}}</span
+              >, attended Dr.
+              <span class="value">{{doctor_info_name_and_surname}}</span>'s
+              dental clinic between
+              <span class="value">{{other_keys_start_visit_date}}</span> and
+              <span class="value">{{other_keys_end_visit_date}}</span> for
+              orthodontic retention treatment following the completion of my
+              orthodontic treatment. I have been provided with detailed
+              information about the removable and fixed retention treatments
+              applied. In case of any issues arising from my side (such as not
+              using the removable appliances as instructed, not wearing them at
+              all, or consuming food that should not be eaten and causing damage
+              to my fixed retention wire, and not informing my doctors about it
+              in a timely manner, etc.), I declare and acknowledge that I take
+              full responsibility without any objection. I also commit to paying
+              the required fee in advance for any procedures that may be
+              necessary as a result of such a situation.</span
+            >
+          </div>
+        </div>
+        <div class="header">Form Approval</div>
+        <div class="form-container">
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>Patient:</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Name Surname:</span>
+                <span class="value"
+                  >{{patient_info_name}} {{patient_info_surname}}</span
+                >
+              </div>
+              <div>
+                <span class="label">ID Number:</span>
+                <span class="value">{{patient_info_patient_tc_number}}</span>
+              </div>
+              <div>
+                <span class="label">E-mail:</span>
+                <span class="value">{{patient_info_email}}</span>
+              </div>
+              <div>
+                <span class="label">Date:</span>
+                <span class="value">{{patient_info_patient_date}}</span>
+              </div>
+              <div>
+                <span class="label">Time:</span>
+                <span class="value">{{patient_info_patient_time}}</span>
+              </div>
+              <div>
+                <span class="label">Signature:</span>
+                <img
+                  class="signature"
+                  src="{{patient_info_signature_patient}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>Patient's Parent/Guardian:</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Name Surname:</span>
+                <span class="value"
+                  >{{patient_parent_info_name_and_surname}}</span
+                >
+              </div>
+              <div>
+                <span class="label">ID Number:</span>
+                <span class="value">{{patient_parent_info_tc_number}}</span>
+              </div>
+              <div>
+                <span class="label">Relationship:</span>
+                <span class="value"
+                  >{{patient_parent_info_parent_relationship}}</span
+                >
+              </div>
+              <div>
+                <span class="label">Date:</span>
+                <span class="value">
+                  {{#if patient_parent_info_name_and_surname}}
+                  {{patient_info_patient_date}} {{/if}}
+                </span>
+              </div>
+              <div>
+                <span class="label">Time:</span>
+                <span class="value">
+                  {{#if patient_parent_info_name_and_surname}}
+                  {{patient_parent_info_time}} {{/if}}
+                </span>
+              </div>
+              <div>
+                <span class="label">Signature:</span>
+                <img
+                  class="signature"
+                  src="{{patient_parent_info_signature_patient_parent}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>Doctor:</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Name Surname:</span>
+                <span class="value">{{doctor_info_name_and_surname}}</span>
+              </div>
+              <div>
+                <span class="label">Phone Number:</span>
+                <span class="value">{{doctor_info_phone_number}}</span>
+              </div>
+              <div>
+                <span class="label">Date:</span>
+                <span class="value">{{doctor_info_date}}</span>
+              </div>
+              <div>
+                <span class="label">Time:</span>
+                <span class="value">{{doctor_info_time}}</span>
+              </div>
+              <div>
+                <span class="Signature">Signature:</span>
+                <img
+                  class="signature"
+                  src="{{doctor_info_signature_doctor}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

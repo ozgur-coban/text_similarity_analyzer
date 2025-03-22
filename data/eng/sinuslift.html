@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Informed Consent Form for Extraction Based Fixed Orthodontic Treatment
+    </title>
+    <style>
+      :root {
+        --dust_storm: #dec8b9;
+        --lavender: #fbfbfb;
+        --shuttle_gray: #5c666f;
+        --darkBlue: #0c356a;
+        --blue: #279eff;
+        --lightBlue: #40f8ff;
+        --white: #ffffff;
+        --green: #21d0c3;
+        --red: #ff5b62;
+        --darkGreen: #646666;
+        --lightGreen: #c9cccd;
+        --lightGreen2: #eeeff0;
+        --blackGreen: #094850;
+        --googleRed: #ea4335;
+      }
+
+      body {
+        background-color: var(--white);
+        font-family: Tahoma, sans-serif;
+        margin: 0px;
+      }
+
+      .container {
+        width: "%100";
+      }
+
+      .headerForm {
+        flex-direction: row;
+        display: flex;
+        margin: 10px 0px;
+      }
+
+      .headerForm img {
+        height: 60px;
+        width: auto;
+      }
+
+      .header-content {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: end;
+        flex-direction: column;
+      }
+
+      .header {
+        padding: 4px;
+        background-color: var(--green);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .info {
+        margin: 10px 0px;
+        font-size: 12px;
+        line-height: 14.4px;
+      }
+      .value {
+        /* color: var(--blackGreen); */
+        font-size: 10px;
+        font-weight: 600;
+      }
+
+      .seperator {
+        border-bottom: 1px solid #ccc;
+      }
+
+      .checkbox-grid {
+        margin: 10px 0px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+
+      .custom-checkbox {
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+        display: inline-block;
+      }
+
+      .custom-checkbox input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #eee;
+        border: 1px solid #ccc;
+      }
+
+      .custom-checkbox:hover input ~ .checkmark {
+        background-color: #ddd;
+      }
+
+      .custom-checkbox input:checked ~ .checkmark {
+        background-color: var(--green);
+        border: 1px solid var(--green);
+      }
+
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      .custom-checkbox input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      .custom-checkbox .checkmark:after {
+        left: 7px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+
+      .form-container {
+        margin: 10px 0px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        page-break-inside: avoid; /* Prevent the entire container from splitting */
+      }
+
+      .form-containersingle {
+        margin: 10px 0px;
+      }
+
+      .form-confirmation {
+        padding: 10px;
+        border: 1px solid var(--blackGreen);
+        font-size: 12px;
+        page-break-inside: avoid; /* Prevent splitting inside this block */
+        display: block;
+        break-inside: avoid; /* For additional browser support */
+      }
+
+      .form-header {
+        margin-bottom: 10px;
+        font-size: 12px;
+        page-break-inside: avoid;
+        page-break-after: avoid; /* Prevent page break after header */
+        break-inside: avoid;
+        display: block;
+      }
+
+      .form-body {
+        margin-top: 10px;
+        font-size: 12px;
+        page-break-inside: avoid;
+        page-break-after: avoid; /* Avoid splitting at the end of this block */
+        break-inside: avoid;
+        display: block;
+      }
+
+      .signature {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        page-break-inside: avoid; /* Ensure signature stays on the same page */
+      }
+      .form-section {
+        page-break-inside: avoid; /* Prevents page break inside this section */
+      }
+      .page {
+        page-break-after: always;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="container">
+        <div class="headerForm">
+          <img class="img" src="{{clinic_logo}}" />
+          <div class="header-content">
+            <label name="">{{clinic_name}}</label>
+            <label name="">{{form_name}} {{form_language}}</label>
+          </div>
+        </div>
+        <div class="header">Treatment Content</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Sinus elevation operation is the approach applied in cases where
+              the height of the alveolar bone does not allow implantation and
+              sufficient height cannot be achieved with the internal sinus
+              elevation operation.</span
+            >
+          </div>
+        </div>
+        <div class="header">
+          Sinus Elevation Method (To be marked by the physician)
+        </div>
+        <div class="info">
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#if (eq other_keys_sinus_lift "crestal" )}}
+            checked="true" {{/if}}> Crestal Sinus Raise
+            <span class="checkmark"></span>
+          </label>
+          <br />
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >This method begins with an incision after anesthesia in the
+              edentulous area where the implant will be applied. The tooth
+              tissues are removed and the bone surface is exposed so that they
+              are far enough away from the roots so that they do not damage the
+              tooth roots. On the resulting bone surface, grooves are made with
+              the help of the bur attached to the physiodispenser tip in the
+              region/regions where the implant will be placed. The sinus
+              membrane is added through the created groove with the help of an
+              osteotome. During this time, up to 10 ml of blood is taken from
+              the patient. The patient's blood is made into a membrane with the
+              help of centrifuge and sent into the sinus through the groove
+              created in order to repair or prevent possible sinus rupture.
+              Artificial bone graft is filled into the area and the groove area
+              is covered with a collagen membrane. The area is closed with the
+              help of sutures. After these procedures, 8-12 months later, bone
+              formation is expected at the level where the implant can be made
+              in the area where the operation is applied.</span
+            >
+          </div>
+          <br />
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#if (eq other_keys_sinus_lift "lateral" )}}
+            checked="true" {{/if}}> Lateral Window Sinus Elevation
+            <span class="checkmark"></span>
+          </label>
+          <br />
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >This method begins with an incision after anesthesia to the
+              edentulous area where the implant will be applied. The tooth
+              tissues are removed and the bone surface is exposed so that they
+              are far enough away from the roots so that they do not damage the
+              tooth roots. An oval or rectangular window is opened with bone
+              reconnaissance tools on the surface of the exposed bone. Through
+              this window opening, the sinus membrane is gently scraped from the
+              bone with the help of special tools and released. Bone graft
+              (artificial) materials are placed in the resulting cavity. After
+              the graft materials are placed sufficiently, the area is covered
+              with the removed gingival tissue and sutured. After these
+              procedures, 8-12 months later, bone formation is expected at the
+              level where the implant can be made in the area where the
+              operation is applied.</span
+            >
+          </div>
+        </div>
+        <div class="header">Alternative Treatments to Sinus Lift Operation</div>
+        <div class="info">
+          <div class="info-text">
+            <ul style="list-style-type: none; padding-left: 0">
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >1.</span
+                >Appropriate prostheses are made according to the condition of
+                the mouth instead of implant treatment, instead of sinus lift
+                operation.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >2.</span
+                >Leaving the edentulous area as it is.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >3.</span
+                >Success and application limited angle implant applications.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >4.</span
+                >Short implant applications.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="header">Problems That May Be Encountered</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label">
+              Infection, bleeding, swelling, pain, discoloration (bruising),
+              bone fractures, necrosis in the teeth adjacent to the operation
+              area, the necessity of removing artificial bone materials as a
+              result of the failure of the operation, numbness, rupture of the
+              sinus membrane, acute sinusitis, chronic sinusitis and failure of
+              the operation such problems may be encountered.</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <div class="container">
+        <div class="header">
+          Approval for Daily Care of the Operation Site and Whole Mouth
+        </div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >I was informed about the daily oral care that should be done for
+              the proper recovery that will occur as a result of the sinus lift
+              operation and I agreed to do this care in accordance with the
+              instructions.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label">
+              I was informed about what the sinus lift application is, what it
+              is for, the treatment, the problems that may be encountered after,
+              and alternative treatments to the sinus lift operation, and as a
+              result, I allowed the sinus lift operation to be performed. After
+              the operation, I agreed to comply with all the care rules
+              described by the dentist.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >I agree to have sinusplasty done on
+              <span class="value">{{other_keys_treat_sinus}}</span> sinus.</span
+            >
+          </div>
+        </div>
+        <div class="header">Form Approval</div>
+        <div class="form-container">
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>Patient:</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Name Surname:</span>
+                <span class="value"
+                  >{{patient_info_name}} {{patient_info_surname}}</span
+                >
+              </div>
+              <div>
+                <span class="label">ID Number:</span>
+                <span class="value">{{patient_info_patient_tc_number}}</span>
+              </div>
+              <div>
+                <span class="label">E-mail:</span>
+                <span class="value">{{patient_info_email}}</span>
+              </div>
+              <div>
+                <span class="label">Date:</span>
+                <span class="value">{{patient_info_patient_date}}</span>
+              </div>
+              <div>
+                <span class="label">Time:</span>
+                <span class="value">{{patient_info_patient_time}}</span>
+              </div>
+              <div>
+                <span class="label">Signature:</span>
+                <img
+                  class="signature"
+                  src="{{patient_info_signature_patient}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>Patient's Parent/Guardian:</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Name Surname:</span>
+                <span class="value"
+                  >{{patient_parent_info_name_and_surname}}</span
+                >
+              </div>
+              <div>
+                <span class="label">ID Number:</span>
+                <span class="value">{{patient_parent_info_tc_number}}</span>
+              </div>
+              <div>
+                <span class="label">Relationship:</span>
+                <span class="value"
+                  >{{patient_parent_info_parent_relationship}}</span
+                >
+              </div>
+              <div>
+                <span class="label">Date:</span>
+                <span class="value">
+                  {{#if patient_parent_info_name_and_surname}}
+                  {{patient_info_patient_date}} {{/if}}
+                </span>
+              </div>
+              <div>
+                <span class="label">Time:</span>
+                <span class="value">
+                  {{#if patient_parent_info_name_and_surname}}
+                  {{patient_parent_info_time}} {{/if}}
+                </span>
+              </div>
+              <div>
+                <span class="label">Signature:</span>
+                <img
+                  class="signature"
+                  src="{{patient_parent_info_signature_patient_parent}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>Doctor:</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Name Surname:</span>
+                <span class="value">{{doctor_info_name_and_surname}}</span>
+              </div>
+              <div>
+                <span class="label">Phone Number:</span>
+                <span class="value">{{doctor_info_phone_number}}</span>
+              </div>
+              <div>
+                <span class="label">Date:</span>
+                <span class="value">{{doctor_info_date}}</span>
+              </div>
+              <div>
+                <span class="label">Time:</span>
+                <span class="value">{{doctor_info_time}}</span>
+              </div>
+              <div>
+                <span class="Signature">Signature:</span>
+                <img
+                  class="signature"
+                  src="{{doctor_info_signature_doctor}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

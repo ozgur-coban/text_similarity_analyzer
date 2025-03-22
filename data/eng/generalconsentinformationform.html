@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informed Consent Form for Extraction Based Fixed Orthodontic Treatment</title>
+    <style>
+        :root {
+          --dust_storm: #dec8b9;
+          --lavender: #fbfbfb;
+          --shuttle_gray: #5c666f;
+          --darkBlue: #0c356a;
+          --blue: #279eff;
+          --lightBlue: #40f8ff;
+          --white: #ffffff;
+          --green: #21d0c3;
+          --red: #ff5b62;
+          --darkGreen: #646666;
+          --lightGreen: #c9cccd;
+          --lightGreen2: #eeeff0;
+          --blackGreen: #094850;
+          --googleRed: #ea4335;
+        }
+  
+        body {
+          background-color: var(--white);
+          font-family: Tahoma, sans-serif;
+          margin: 0px;
+        }
+  
+        .container {
+          width: "%100";
+        }
+  
+        .headerForm {
+          flex-direction: row;
+          display: flex;
+          margin: 10px 0px;
+        }
+  
+        .headerForm img {
+          height: 60px;
+          width: auto;
+        }
+  
+        .header-content {
+          display: flex;
+          flex: 1;
+          justify-content: center;
+          align-items: end;
+          flex-direction: column;
+        }
+  
+        .header {
+          padding: 4px;
+          background-color: var(--green);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 14px;
+          text-align: center;
+        }
+  
+        .info {
+          margin: 10px 0px;
+          font-size: 12px;
+          line-height: 14.4px;
+        }
+  
+        .value {
+          /* color: var(--blackGreen); */
+          font-weight: 600;
+        }
+  
+        .seperator {
+          border-bottom: 1px solid #ccc;
+        }
+  
+        .checkbox-grid {
+          margin: 10px 0px;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 10px;
+        }
+  
+        .custom-checkbox {
+          position: relative;
+          padding-left: 30px;
+          cursor: pointer;
+          display: inline-block;
+        }
+  
+        .custom-checkbox input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+        }
+  
+        .checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 20px;
+          width: 20px;
+          background-color: #eee;
+          border: 1px solid #ccc;
+        }
+  
+        .custom-checkbox:hover input ~ .checkmark {
+          background-color: #ddd;
+        }
+  
+        .custom-checkbox input:checked ~ .checkmark {
+          background-color: var(--green);
+          border: 1px solid var(--green);
+        }
+  
+        .checkmark:after {
+          content: "";
+          position: absolute;
+          display: none;
+        }
+  
+        .custom-checkbox input:checked ~ .checkmark:after {
+          display: block;
+        }
+  
+        .custom-checkbox .checkmark:after {
+          left: 7px;
+          top: 3px;
+          width: 5px;
+          height: 10px;
+          border: solid white;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+        }
+  
+        .form-container {
+          margin: 10px 0px;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 10px;
+          page-break-inside: avoid; /* Prevent the entire container from splitting */
+        }
+  
+        .form-containersingle {
+          margin: 10px 0px;
+        }
+  
+        .form-confirmation {
+          padding: 10px;
+          border: 1px solid var(--blackGreen);
+          font-size: 12px;
+          page-break-inside: avoid; /* Prevent splitting inside this block */
+          display: block;
+          break-inside: avoid; /* For additional browser support */
+        }
+  
+        .form-header {
+          margin-bottom: 10px;
+          font-size: 18px;
+          page-break-inside: avoid;
+          page-break-after: avoid; /* Prevent page break after header */
+          break-inside: avoid;
+          display: block;
+        }
+  
+        .form-body {
+          margin-top: 10px;
+          font-size: 12px;
+          page-break-inside: avoid;
+          page-break-after: avoid; /* Avoid splitting at the end of this block */
+          break-inside: avoid;
+          display: block;
+        }
+  
+        .signature {
+          width: 150px;
+          height: 150px;
+          object-fit: contain;
+          page-break-inside: avoid; /* Ensure signature stays on the same page */
+        }
+        .form-section {
+          page-break-inside: avoid; /* Prevents page break inside this section */
+        }
+        .page {
+          page-break-after: always;
+        }
+      </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="container">
+            <div class="headerForm">
+                <img class="img" src="{{clinic_logo}}" />
+                <div class="header-content">
+                    <label name="">{{clinic_name}}</label>
+                    <label name="">{{form_name}} {{form_language}}</label>
+                </div>
+            </div>
+            <div class="header">
+                General Information About Orthodontic Treatments
+            </div>
+            <div class="info">
+                <div class="info-text">
+                    <span class="label">Successful orthodontic treatment is possible when the patient or the patient's guardian is informed about the treatment to be administered. However, every orthodontic treatment has its limitations and potential risks. Please read the following information. You are free to accept or decline orthodontic treatment based on this information. If there is anything you do not understand or if you have any questions, please ask your doctor.</span>
+                </div>
+                <div class="info-text">
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="margin-bottom: 5px;">
+                            <span
+                                style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: #000; margin-right: 5px;"></span>
+                                Orthodontic treatment is a long-term and discipline-requiring process. For good results, cooperation between the patient, doctor, and family is necessary.
+                        </li>
+                        <li style="margin-bottom: 5px;">
+                            <span
+                                style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: #000; margin-right: 5px;"></span>
+                                At the start of the treatment for diagnostic purposes, during the treatment, and after the treatment for control purposes, it is necessary to take dental and head X-rays to thoroughly examine the teeth and surrounding tissues. It is also necessary to take photographs from inside and outside the mouth before and during treatment to more clearly monitor the treatment process. Advanced examinations may also be inevitable in diagnosing and treating certain orthodontic anomalies.
+                        </li>
+                        <li style="margin-bottom: 5px;">
+                            <span
+                                style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: #000; margin-right: 5px;"></span>
+                                These records can be used in scientific publications and in-clinic presentations without disclosing or making your identity understandable. Apart from these purposes, these records will not be used and will not be shared with others without the request of legal authorities.
+                        </li>
+                        <li style="margin-bottom: 5px;">
+                            <span
+                                style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: #000; margin-right: 5px;"></span>
+                                The patient must fully and completely implement the treatment as prescribed by the doctor. If there are compliance issues due to lack of cooperation from the patient/family, and if these persist, the doctor has the right to terminate the treatment if he/she decides the patient will not benefit from it.
+                        </li>
+                        <li style="margin-bottom: 5px;">
+                            <span
+                                style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: #000; margin-right: 5px;"></span>
+                                The individual response of the patient's tissues to the treatment is a significant factor in the outcome of orthodontic treatment. Especially in "skeletal anomalies" that involve the bone, if necessary growth support is not obtained during the developmental stage, the targeted restructuring may not occur. In such cases, to avoid harming the individual, the doctor may terminate the treatment.
+                        </li>
+                        <li style="margin-bottom: 5px;">
+                            <span
+                                style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: #000; margin-right: 5px;"></span>
+                                The presence of any systemic diseases (blood diseases, bone diseases, hormonal disorders, allergic diseases, etc.) related to the patient's general health can affect orthodontic treatment. The patient must inform the orthodontic doctor of these and similar diseases before starting orthodontic treatment and any changes in health condition/treatment during the treatment.
+                        </li>
+                        <li style="margin-bottom: 5px;">
+                            <span
+                                style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: #000; margin-right: 5px;"></span>
+                                For correcting disorders in your teeth, jaw, and facial structures within biological limits, you need to attend control appointments at intervals determined by your doctor depending on the type of treatment applied.
+                        </li>
+                        <li style="margin-bottom: 5px;">
+                            <span
+                                style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: #000; margin-right: 5px;"></span>
+                                Orthodontic treatment is not just for the aesthetic alignment of teeth. The main goal is to provide good chewing function, as well as a healthy mouth, teeth, and jaw structure that looks good.
+                        </li>
+                        <li style="margin-bottom: 5px;">
+                            <span
+                                style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: #000; margin-right: 5px;"></span>
+                                Orthodontic treatment is applied to healthy teeth. Before starting treatment, all teeth should be examined by a dentist, any cavities treated, necessary root canals performed, and brushing training given. Treatment will not commence on patients who do not brush their teeth sufficiently. Once oral care is improved and necessary treatments are performed, orthodontic treatment can begin.
+                        </li>
+                        <li style="margin-bottom: 5px;">
+                            <span
+                                style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: #000; margin-right: 5px;"></span>
+                                Orthodontic treatment consists of two successive phases: active treatment and reinforcement treatment. Active treatment corrects disorders in the teeth and jaws. Reinforcement treatment ensures the permanence of the improvement achieved. The treatment fees mentioned cover both phases. The duration of these phases varies depending on the severity of the disorder in each individual.
+                        </li>
+                        <li style="margin-bottom: 5px;">
+                            <span
+                                style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: #000; margin-right: 5px;"></span>
+                                Even if the treatment is planned and all rules are followed, reaching all outcomes cannot be guaranteed. This is because the limits of the chosen treatment, disruptions in cooperation between patient-doctor-family, and patient-specific factors (such as genetic structure, unpredictable growth and development factors, the response of oral and dental tissues to orthodontic treatment, teeth grinding, etc.) make it impossible to guarantee the results.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header">
+                Situations to Be Aware of During Fixed Orthodontic Treatment Process and Possible Negatives
+            </div>
+            <div class="info">
+                <div class="info-text">
+                    <span class="label">During orthodontic treatment, the treatment phases and materials used are diverse. During treatment, brackets are glued onto the teeth and wires are threaded through them. When necessary, support screws placed in the jawbone; screwable devices that expand the jaw, metal springs, rubber chains, etc., can be used. Sometimes, external devices (like headgear/face masks) that the patient must put on and take off may need to be used. Instructions related to their use and your doctor's recommendations must be strictly followed.</span>
+                </div> <br>
+                <div class="info-text">
+                    <span class="label">During your treatment, teeth may become temporarily sensitive, and small ulcers may develop on the gums, lips, cheeks, or tongue. During your treatment, avoiding hard foods like plums, nuts, walnuts, sticky substances like gum, which can break and distort the appliance, is very important for the course of your treatment. Your doctor must be informed in such cases and his/her recommendations must be strictly followed. Please read the brochure we will provide you carefully. We believe this will help us and thank you for your cooperation.</span>
+                </div> <br>
+                <div class="info-text">
+                    <span class="label">If teeth are not brushed sufficiently during treatment, cavities, gum inflammation, gum recession, and supporting bone loss can occur. Also, the consumption of acidic drinks can increase the development of permanent matte white spots on the teeth. These problems can occur in people who do not undergo orthodontic treatment but are increased in teeth with brackets. Therefore, you should regularly brush your teeth after main meals and snacks. To maintain the best oral care and have healthy teeth and gums, you should regularly visit the dentist for checks. Sometimes, even with good care, if the surrounding bone tissue of the teeth is very thin, bone loss due to gum recession can be observed.</span>
+                </div> <br>
+                <div class="info-text">
+                    <span class="label">The variety in the shape, size, and positioning of teeth, small teeth, missing teeth, or abnormally positioned teeth may prevent achieving the ideal treatment result (e.g., completely closing extraction gaps). Sometimes gaps near the gums of corrected teeth may be visible. For these, aesthetic fillings, crown-bridge restorations, or periodontal treatment may be required.</span>
+                </div> <br>
+                <div class="info-text">
+                    <span class="label">During treatment, some teeth roots may shorten. Generally, the amount of shortening is minor and does not lead to significant consequences. If severe shortening is detected, the doctor may terminate the orthodontic treatment.</span>
+                </div> <br>
+                <div class="info-text">
+                    <span class="label">During treatment, some sensitive patients may experience allergic reactions to the materials used in orthodontic treatment. If you encounter such a problem, you should contact our clinic immediately. In this case, a change in the treatment plan or termination of the treatment may be necessary.</span>
+                </div> <br>
+                <div class="info-text">
+                    <span class="label">After the end of orthodontic treatment, the teeth tend to shift positions and return to their original positions at the start of treatment. Therefore, immediately after the end of active orthodontic treatment, "reinforcement treatment" should begin. In this treatment, either a wire is permanently glued to the inside of the teeth, or a removable reinforcement device is used. Fixed reinforcement appliances, unless otherwise stated by your doctor, remain indefinitely behind the teeth. The removable reinforcement device must be used according to the doctor's instructions to ensure the permanence of the treatment results. The use of removable reinforcement devices without following the doctor's advice inevitably leads to the teeth returning to their original position. Inadequate application of reinforcement treatment resulting in deteriorated teeth and relationships may require another orthodontic treatment. This situation would necessitate re-charging.</span>
+                </div> <br>
+                <div class="info-text">
+                    <span class="label">In the future, following the end of orthodontic treatment, various conditions may negatively affect the occlusion of the teeth. Examples of such conditions include genetic factors determining the size of the teeth, jaws, and tongue; growth or developmental changes, continued mouth breathing, tongue thrusting, finger sucking, and inappropriate eruption pressures of wisdom teeth. These are conditions that develop beyond the control of the orthodontist and may require additional treatments.</span>
+                </div>
+            </div>
+            <div class="header">
+                General Information and Possible Negatives About Removable Orthodontic Treatment
+            </div>
+            <div class="info">
+                <div class="info-text">
+                    <span class="label">Depending on the type of your removable appliance, it may be necessary to wear it all day, at night, or remove it during meals. Your doctor will explain the most suitable usage method to you.</span>
+                </div>
+                <br>
+                <div class="info-text"><span class="label">When elements of the removable appliance are placed on your teeth, there may be initial pain for the first week, and this can affect your daily chewing functions. Additionally, it is normal to experience sensitivity and pain in your teeth following activation of the wires at appointments. If a screwable appliance is involved, the feeling of pressure on your teeth resulting from each turn of the screw is normal and should decrease and disappear within 1-2 days. However, if there is continuous and increasing pain or any issues that cause stabbing, hitting, or pain, you should contact your doctor by phone.</span>
+                </div><br>
+                <div class="info-text"><span class="label">On the first day the appliance is fitted, your speech may be affected. This is a temporary period that lasts for a maximum of one week. During this time, reading aloud and speaking a lot will shorten this process. An increase in saliva production and the urge to spit out on the first few days of wearing the appliance is normal. Continue using your appliance.</span>
+                </div><br>
+                <div class="info-text"><span class="label">If oral cleanliness is not maintained during treatment, discolorations, marks, and cavities can occur on the teeth.</span>
+                </div><br>
+                <div class="info-text"> <span class="label">The health of your gums and soft tissues (gum, palate, lip) is important. If appropriate cleaning is not performed, soft tissue irritation and various infections can be observed. Therefore, after every meal, you should brush your appliance along with your teeth by holding the acrylic part, following the method recommended by your doctor. Additionally, ulcers may develop in the mouth while using these appliances. If you encounter such a situation and come to us, the parts causing these ulcers will be corrected.</span>
+                </div><br>
+                <div class="info-text"><span class="label">The removable appliances are made from a material called acrylic. Although very rare, an allergy to this material can develop. If this happens, you should immediately consult your doctor.</span>
+            </div><br>
+            <div class="info-text"><span class="label">During the use of removable appliances, hard foods like plums, nuts, walnuts, and sticky substances like gum can break and distort the appliance. It is very important for the course of your treatment to stay away from such foods during your treatment. Please read the brochure we will give you carefully. We believe this will help us, and we thank you for your cooperation.</span>
+            </div><br>
+            <div class="info-text"><span class="label">We will inform you about whether different treatments will be necessary after the treatment with removable appliances.</span>
+            </div>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+    <div class="page">
+        <div class="container">
+            <div class="info">
+               
+                <div class="info-text"><span class="label">If the appliance breaks or is lost, you will need to pay a specific laboratory fee for a new appliance. Additionally, your appliance may need to be renewed as deemed appropriate during the course of your treatment.</span>
+                </div><br>
+                <div class="info-text"><span class="label">If the above recommendations are not followed, the patient is responsible for the course of the treatment. Cooperating with us and doing what is asked of you will facilitate and shorten your treatment. If you do not help, it is natural for your treatment to not progress and for no improvement to be recorded. The success of your treatment depends on the appliances being used as required.</span>
+                </div><br>
+                <div class="info-text"><span class="label">After the end of orthodontic treatment, the teeth tend to shift positions and return to their original positions at the start of treatment. Therefore, immediately after the end of active orthodontic treatment, "reinforcement treatment" should begin. In this treatment, either a wire is permanently glued to the inside of the teeth, or a removable reinforcement device is used. Fixed reinforcement appliances, unless otherwise stated by your doctor, remain indefinitely behind the teeth. The removable reinforcement device must be used according to the doctor's instructions to ensure the permanence of the treatment results. Inadequate application of reinforcement treatment resulting in deteriorated teeth and relationships may require another orthodontic treatment. This situation would necessitate re-charging.</span>
+                </div><br>
+                <div class="info-text"><span class="label">Sometimes, after orthodontic treatments with removable appliances, it may be necessary to switch to fixed orthodontic treatments if deemed necessary. If such a situation arises, we will provide you with new explanations about the treatment and information about the treatment fee at the appropriate time.</span>
+                </div><br>
+                <div class="info-text"><span class="label">(For patients who are not legally competent, this form must be filled out by the patient's parent/legal guardian.)</span>
+                </div>
+            </div>
+            <div class="header">
+                Form Approval
+            </div>
+            <div class="form-container">
+                <div class="form-confirmation">
+                    <div class="form-header">
+                        <span>Patient:</span>
+                    </div>
+                    <div class="seperator"></div>
+                    <div class="form-body">
+                        <div>
+                            <span class="label">Name Surname:</span>
+                            <span class="value">{{patient_info_name}} {{patient_info_surname}}</span>
+                        </div>
+                        <div>
+                            <span class="label">ID Number:</span>
+                            <span class="value">{{patient_info_patient_tc_number}}</span>
+                        </div>
+                        <div>
+                            <span class="label">E-mail:</span>
+                            <span class="value">{{patient_info_email}}</span>
+                        </div>
+                        <div>
+                            <span class="label">Date:</span>
+                            <span class="value">{{patient_info_patient_date}}</span>
+                        </div>
+                        <div>
+                            <span class="label">Time:</span>
+                            <span class="value">{{patient_info_patient_time}}</span>
+                        </div>
+                        <div>
+                            <span class="label">Signature:</span>
+                            <img class="signature" src="{{patient_info_signature_patient}}" onerror="this.onerror=null; this.remove();" />
+                        </div>                    
+                    </div>
+                </div>
+                <div class="form-confirmation">
+                    <div class="form-header">
+                        <span>Patient\'s Parent/Guardian:</span>
+                    </div>
+                    <div class="seperator"></div>
+                    <div class="form-body">
+                        <div>
+                            <span class="label">Name and Surname of Patient\'s Parent/Guardian:</span>
+                            <span class="value">{{patient_parent_info_name_and_surname}}</span>
+                        </div>
+                        <div>
+                            <span class="label">ID Number:</span>
+                            <span class="value">{{patient_parent_info_tc_number}}</span>
+                        </div>
+                        <div>
+                            <span class="label">Relationship:</span>
+                            <span class="value">{{patient_parent_info_parent_relationship}}</span>
+                        </div>
+                        <div>
+                            <span class="label">Date:</span>
+                            <span class="value">
+                                {{#if patient_parent_info_name_and_surname}}
+                                  {{patient_info_patient_date}}
+                                {{/if}}
+                              </span>
+                        </div>
+                        <div>
+                            <span class="label">Time:</span>
+                            <span class="value">
+                                {{#if patient_parent_info_name_and_surname}}
+                                  {{patient_parent_info_time}}
+                                {{/if}}
+                              </span>
+                        </div>
+                        <div>
+                            <span class="label">Signature:</span>
+                            <img class="signature" src="{{patient_parent_info_signature_patient_parent}}" onerror="this.onerror=null; this.remove();" />
+                        </div>                    
+                    </div>
+                </div>
+                <div class="form-confirmation">
+                    <div class="form-header">
+                        <span>Doctor:</span>
+                    </div>
+                    <div class="seperator"></div>
+                    <div class="form-body">
+                        <div>
+                            <span class="label">Name Surname:</span>
+                            <span class="value">{{doctor_info_name_and_surname}}</span>
+                        </div>
+                        <div>
+                            <span class="label">Phone Number:</span>
+                            <span class="value">{{doctor_info_phone_number}}</span>
+                        </div>
+                        <div>
+                            <span class="label">Date:</span>
+                            <span class="value">{{doctor_info_date}}</span>
+                        </div>
+                        <div>
+                            <span class="label">Time:</span>
+                            <span class="value">{{doctor_info_time}}</span>
+                        </div>
+                        <div>
+                            <span class="Signature">Signature:</span>
+                            <img class="signature" src="{{doctor_info_signature_doctor}}" onerror="this.onerror=null; this.remove();" />
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Informed Consent Form for Extraction Based Fixed Orthodontic Treatment
+    </title>
+    <style>
+      :root {
+        --dust_storm: #dec8b9;
+        --lavender: #fbfbfb;
+        --shuttle_gray: #5c666f;
+        --darkBlue: #0c356a;
+        --blue: #279eff;
+        --lightBlue: #40f8ff;
+        --white: #ffffff;
+        --green: #21d0c3;
+        --red: #ff5b62;
+        --darkGreen: #646666;
+        --lightGreen: #c9cccd;
+        --lightGreen2: #eeeff0;
+        --blackGreen: #094850;
+        --googleRed: #ea4335;
+      }
+
+      body {
+        background-color: var(--white);
+        font-family: Tahoma, sans-serif;
+        margin: 0px;
+      }
+
+      .container {
+        width: "%100";
+      }
+
+      .headerForm {
+        flex-direction: row;
+        display: flex;
+        margin: 10px 0px;
+      }
+
+      .headerForm img {
+        height: 60px;
+        width: auto;
+      }
+
+      .header-content {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: end;
+        flex-direction: column;
+      }
+
+      .header {
+        padding: 4px;
+        background-color: var(--green);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .info {
+        margin: 10px 0px;
+        font-size: 12px;
+        line-height: 14.4px;
+      }
+
+      .value {
+        /* color: var(--blackGreen); */
+        font-size: 10px;
+        font-weight: 600;
+      }
+
+      .seperator {
+        border-bottom: 1px solid #ccc;
+      }
+
+      .checkbox-grid {
+        margin: 10px 0px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+
+      .custom-checkbox {
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+        display: inline-block;
+      }
+
+      .custom-checkbox input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #eee;
+        border: 1px solid #ccc;
+      }
+
+      .custom-checkbox:hover input ~ .checkmark {
+        background-color: #ddd;
+      }
+
+      .custom-checkbox input:checked ~ .checkmark {
+        background-color: var(--green);
+        border: 1px solid var(--green);
+      }
+
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      .custom-checkbox input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      .custom-checkbox .checkmark:after {
+        left: 7px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+
+      .form-container {
+        margin: 10px 0px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        page-break-inside: avoid; /* Prevent the entire container from splitting */
+      }
+
+      .form-containersingle {
+        margin: 10px 0px;
+      }
+
+      .form-confirmation {
+        padding: 10px;
+        border: 1px solid var(--blackGreen);
+        font-size: 12px;
+        page-break-inside: avoid; /* Prevent splitting inside this block */
+        display: block;
+        break-inside: avoid; /* For additional browser support */
+      }
+
+      .form-header {
+        margin-bottom: 10px;
+        font-size: 12px;
+        page-break-inside: avoid;
+        page-break-after: avoid; /* Prevent page break after header */
+        break-inside: avoid;
+        display: block;
+      }
+
+      .form-body {
+        margin-top: 10px;
+        font-size: 12px;
+        page-break-inside: avoid;
+        page-break-after: avoid; /* Avoid splitting at the end of this block */
+        break-inside: avoid;
+        display: block;
+      }
+
+      .signature {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        page-break-inside: avoid; /* Ensure signature stays on the same page */
+      }
+      .form-section {
+        page-break-inside: avoid; /* Prevents page break inside this section */
+      }
+      .page {
+        page-break-after: always;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="container">
+        <div class="headerForm">
+          <img class="img" src="{{clinic_logo}}" />
+          <div class="header-content">
+            <label name="">{{clinic_name}}</label>
+            <label name="">{{form_name}} {{form_language}}</label>
+          </div>
+        </div>
+        <div class="header">
+          GENERAL INFORMATION ABOUT ORTHODONTIC TREATMENTS
+        </div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >A successful Orthodontic treatment is possible with the
+              patient/patient\'s family being informed about the treatment to be
+              performed. However, every orthodontic treatment has its
+              limitations and potential risks. Please read the following
+              information. You are free to accept or reject orthodontic
+              treatment based on this information. If you have any questions or
+              if there is something you don\'t understand, please consult your
+              doctor.</span
+            >
+          </div>
+        </div>
+        <div class="info">
+          <div class="info-text">
+            <ul style="list-style-type: none; padding-left: 0">
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Orthodontic Treatment is a long-term and discipline-requiring
+                process. A successful outcome requires collaboration between the
+                patient, the doctor, and the family.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                X-rays of the teeth and head are necessary for diagnostic
+                purposes at the beginning of the treatment, during the
+                treatment, and for control purposes after the treatment. Taking
+                photographs inside and outside the mouth before and during the
+                treatment is also necessary for a clearer monitoring of the
+                treatment. Advanced examinations may be required for the
+                diagnosis and treatment of certain orthodontic anomalies.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                These records may be used in scientific publications and
+                presentations without revealing your identity or in a way that
+                your identity will not be understood. These records will not be
+                used for purposes other than these, and they will not be shared
+                with others except at the request of legal authorities.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                The patient must adhere to the treatment prescribed by the
+                doctor until the end and in full. In case of lack of
+                collaboration from the patient/family leading to a lack of
+                adaptation, and if this situation persists, the doctor has the
+                right to terminate the treatment when it is determined that the
+                patient will not benefit from the treatment.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                The individual response of the patient's tissues to the
+                treatment is an important factor in the outcome of Orthodontic
+                Treatment. Especially in individuals in the developmental age
+                with \"skeletal anomalies,\" if the necessary growth support
+                cannot be provided, the targeted structure may not be achieved.
+                In such cases, the doctor may end the treatment to avoid harm to
+                the individual.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                The presence of any systemic disease related to the general
+                health status of the patient (blood diseases, bone diseases,
+                hormonal disorders, allergic diseases, etc.) may affect
+                orthodontic treatment. The patient must inform the orthodontist
+                about these and similar diseases before starting orthodontic
+                treatment and report any changes in health status/treatment
+                during the treatment.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Depending on the type of treatment applied to correct dental,
+                jaw, and facial disorders within biological limits, it is
+                necessary to come to control appointments at intervals
+                determined by your doctor.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Orthodontic treatment is not just about aligning teeth for
+                aesthetic purposes. The main goal is to achieve a healthy oral,
+                dental, and jaw structure that looks good, in addition to
+                providing good chewing function.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Orthodontic treatment is applied to healthy teeth. Before
+                starting the treatment, all teeth should be examined by a
+                dentist, decayed teeth should be treated, root canal treatment
+                should be performed if necessary, and tooth brushing training
+                should be given. Treatment is not started for patients who do
+                not brush their teeth enough. Orthodontic treatment begins after
+                the patient's oral care improves, and the necessary treatments
+                are done.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Orthodontic treatment consists of two consecutive stages: active
+                treatment and retention treatment. Active treatment corrects the
+                dental and jaw disorders, while retention treatment ensures the
+                permanence of the improvement achieved. The treatment fees
+                provided to you cover both stages. The durations of these stages
+                may vary depending on the severity of the disorder in each
+                individual.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Even if the treatment is planned and carried out in accordance
+                with all rules, the guarantee of achieving all results cannot be
+                assured. This is because the limits of the selected treatment,
+                disruptions in the patient-doctor-family collaboration, and
+                patient-specific factors (such as: genetic structure, growth and
+                development factors that cannot be foreseen during treatment,
+                the response of oral and dental tissues to orthodontic
+                treatment, bad habits such as tooth clenching, teeth grinding,
+                etc.) make it impossible to guarantee results.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="header">
+          IMPORTANT CONSIDERATIONS DURING FIXED ORTHODONTIC TREATMENT
+        </div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >During orthodontic treatment, various treatment stages and
+              materials are used. Brackets are attached to the teeth and wires
+              are threaded through them. Supportive screws placed in the jawbone
+              when necessary; jaw-expanding screw devices, metal springs,
+              elastic chains, etc., can also be used. Sometimes, external
+              devices that need to be worn and removed by the patient (such as
+              headgear/face masks) or intraoral/extraoral rubber bands may be
+              necessary. Instructions and recommendations from your doctor
+              regarding their use must be followed exactly.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Temporary sensitivity in the teeth, small wounds in the gums,
+              lips, cheeks, or tongue may develop during orthodontic treatments.
+              Eating hard foods like nuts, chewing gum, and sticky substances
+              can cause damage to the appliance. Avoiding such foods is crucial
+              for the progress of your treatment. Inform your doctor immediately
+              in such situations and always follow your doctor's
+              recommendations. Please read the brochure we provide carefully, as
+              it will assist us in this matter, and we appreciate your
+              cooperation.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Failure to brush the teeth adequately during treatment can lead
+              to cavities, inflammation of the gums, gum recession, and loss of
+              supporting bone. Additionally, the consumption of acidic beverages
+              can cause permanent matte white spots, which increase with the use
+              of braces. Therefore, it is essential to brush your teeth
+              regularly after main and intermediate meals. For optimal oral care
+              and healthy teeth and gums, regular dental check-ups are
+              necessary. In some cases, even with good care, gum recession may
+              occur due to very thin supporting bone tissue around the
+              teeth.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Variations in the shape, size, and position of the teeth, small
+              or missing teeth, or abnormally positioned teeth may prevent
+              achieving the ideal treatment result (e.g., completely closing
+              extraction spaces). Sometimes, gaps may be visible between
+              corrected teeth near the gum line. Supportive treatments such as
+              aesthetic fillings, crown-bridge restorations, or periodontal
+              treatment may be required for these cases.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Shortening of the roots of some teeth may occur during
+              orthodontic treatment. Generally, the amount of shortening is
+              minimal and does not have a significant impact. If severe
+              shortening is detected, the doctor may decide to terminate
+              orthodontic treatment.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Some patients with sensitive constitutions may experience
+              allergic reactions to materials used in orthodontic treatment. In
+              such a case, you must inform our clinic as soon as possible. In
+              this situation, a change in the treatment plan or discontinuation
+              of treatment may be necessary.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Immediately after completing active orthodontic treatment, there
+              is a tendency for teeth to change their positions and return to
+              their initial positions. Therefore, 'retention treatment' should
+              be started right after active orthodontic treatment ends. In this
+              treatment, either a wire is permanently attached to the inside of
+              the teeth or a removable retention device is used. Fixed retention
+              devices remain behind the teeth indefinitely unless otherwise
+              stated by your doctor. It is crucial to use removable retention
+              devices as instructed by the doctor to ensure the permanence of
+              the treatment result. Failure to follow the doctor's advice when
+              using removable retention devices inevitably leads to the teeth
+              returning to their previous state. The disruption of teeth and
+              relationships due to incomplete retention treatment may require a
+              new orthodontic treatment. This situation requires additional
+              fees.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >In the following periods after the completion of orthodontic
+              treatment, the closure of teeth may be negatively affected in
+              various situations. Examples include genetic influences that
+              determine the size of teeth, jaws, and tongue, growth or
+              developmental changes, continued oral habits such as mouth
+              breathing, tongue thrust, finger sucking, and inappropriate
+              pressures exerted by erupted wisdom teeth. These are situations
+              that can develop beyond the control of the orthodontist and may
+              require additional treatments.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Surgical Treatment: In cases such as the extraction of wisdom
+              teeth at the age of 20, extraction of teeth for orthodontic
+              purposes, treatment of soft tissue anomalies, and exposure of
+              impacted teeth, collaboration is done with oral, dental, and
+              maxillofacial surgeons.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Orthognathic Surgery: In adults with jaw anomalies, orthodontic
+              treatment alone may not be sufficient. Plastic surgeons may need
+              to work together and plan in cases of closure problems involving
+              jaw bones. Orthognathic surgery (surgery performed on the jaws)
+              involves interventions to bring teeth, jaw bones, and other soft
+              and hard tissues into the best anatomical position. During the
+              preoperative preparation period, attempts are made to align the
+              teeth in the upper and lower jaws before jaw surgery. However,
+              this cannot be fully achieved before surgery because correct tooth
+              relationships cannot be achieved unless the jaws are in their
+              proper positions. In this case, orthodontic treatment continues
+              for some time after the operation.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >In such treatments, the physician performing the surgical
+              procedure is responsible for explaining the risks and possible
+              undesired situations related to the surgery and obtaining consent.
+              The Orthodontist is only responsible for the orthodontic treatment
+              part of this treatment. No guarantee or absolute success can be
+              assured with these treatments.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Expected Outcomes of Orthognathic Treatment: Correction of dental
+              misalignment, correction of inter-jaw disharmony, restoration of
+              healthy chewing function, achievement of dental aesthetics,
+              improvement of facial aesthetics.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >If Recommended Treatment Is Not Applied: Healthy chewing cannot
+              be performed, joint problems may arise, dental misalignment may
+              not be corrected, unwanted movements and habits may develop.
+              Patients may experience some difficulties during orthodontic
+              treatment. To avoid experiencing these difficulties and/or to
+              easily overcome them, the rules explained to you must be strictly
+              followed.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Patients may experience some difficulties during orthodontic
+              treatment. To avoid experiencing these difficulties and/or to
+              easily overcome them, the rules explained to you must be strictly
+              followed.</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <div class="container">
+        <div class="seperator"></div>
+        <div class="form-containersingle">
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>ORTHODONTIC TREATMENT</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Date:</span>
+                <span class="value">{{patient_info_patient_date}}</span>
+              </div>
+              <div>
+                <span class="label">Name Surname:</span>
+                <span class="value"
+                  >{{patient_info_name}} {{patient_info_surname}}</span
+                >
+              </div>
+              <div>
+                <span class="label">Date of birth:</span>
+                <span class="value">{{patient_info_birth_date}}</span>
+              </div>
+              <div>
+                <span class="label">Gender:</span>
+                <span class="value"
+                  >{{#if (eq patient_info_gender
+                  'male')}}Male{{else}}Female{{/if}}</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header">EXPLANATION</div>
+        <div class="seperator"></div>
+        <div class="header">ORTHODONTIC DIAGNOSIS</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Based on our clinical and radiological evaluations,
+              <span class="value">{{other_keys_orthodontic_diagnosis}}</span>
+              the orthodontic problems we detected are listed below.
+            </span>
+            <br />
+            <span class="value"
+              >{{other_keys_orthodontic_diagnosis_description}}</span
+            >
+          </div>
+        </div>
+        <div class="header">RECOMMENDED TREATMENT</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >The following procedures are required to address these
+              orthodontic problems.</span
+            >
+            <br />
+            <span class="value"
+              >{{other_keys_recommended_treatment_description}}</span
+            >
+          </div>
+        </div>
+        <div class="header">TREATMENT PROCESS</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Our patient
+              <span class="value"
+                >{{patient_info_name}} {{patient_info_surname}}</span
+              >
+              the estimated duration of active orthodontic treatment varies from
+              patient to patient, approximately
+              <span class="value">{{other_keys_treatment_duration}}</span> as
+              estimated
+            </span>
+          </div>
+        </div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >These durations are valid under the condition that undesired
+              situations mentioned above do not occur and the ideal
+              doctor-patient harmony is achieved as described above.
+            </span>
+          </div>
+        </div>
+        <div class="header">
+          POTENTIAL NEGATIVES DURING ORTHODONTIC TREATMENT
+        </div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Negative situations may arise during orthodontic treatment.</span
+            >
+            <ul style="list-style-type: none; padding-left: 0">
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >a.</span
+                >Orthodontic forces applied to teeth may cause painful tooth
+                sensitivity for about a week.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >b.</span
+                >Metal, porcelain, or acrylic brackets on teeth may temporarily
+                create difficulties in eating, speaking, and swallowing.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >c.</span
+                >Ulcers may occur on the lips, cheeks, and tongue.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >d.</span
+                >Oral hygiene may become challenging.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >e.</span
+                >Undesirable situations like bracket detachment or wire breakage
+                may occur.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >f.</span
+                >Frequent bracket detachment can cause damage to both the
+                treatment and the enamel layer of the tooth.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >g.</span
+                >Erosion (resorption) may occur at the root tips.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >h.</span
+                >Damage to the tooth nerve may result in the need for root canal
+                treatment.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >i.</span
+                >If the supporting bone tissue around the tooth is very thin,
+                gum recession due to bone loss may be observed.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Insufficient brushing of teeth during treatment may lead to
+              decay, permanent white spots, and gum inflammation. Gum
+              inflammation over time leads to red color changes, bleeding, and
+              gum enlargement. Therefore, teeth should be brushed regularly
+              after main and snack meals until it is ensured that all food
+              residues are removed.</span
+            >
+          </div>
+        </div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >To prevent damage or breakage of fixed braces attached to teeth,
+              it is necessary to adhere to the prohibition list provided by your
+              orthodontist until the end of the treatment.</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <div class="container">
+        <div class="header">PATIENT STATEMENT</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >I/ Parent/Guardian of my son/daughter
+              <span class="value"
+                >{{patient_info_name}} {{patient_info_surname}}</span
+              >
+              (for), Dr.
+              <span class="value">{{doctor_info_name_and_surname}}</span>
+              Informed me about the recommended orthodontic treatment, the
+              current problems in the mouth and teeth, the reasons for the
+              treatment, changes that may occur during and after orthodontic
+              treatment, and possible problems that may arise. I have read from
+              the form. I have been informed about other treatment options. I
+              have been informed about how to access orthodontic help if a
+              problem arises. During working hours, I can reach our doctors and
+              the clinic by calling the phones
+              <span class="value">{{other_keys_clinic_phone}}</span> I know that
+              I can call from numbered phones.
+            </span>
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >I have been given sufficient time and opportunity to ask
+              questions about everything I want to know and learn about
+              interventions to be performed and orthodontic treatment. I accept
+              that the procedures and orthodontic treatment are done to improve
+              my oral, dental health, and appearance, but I acknowledge that
+              there is a separate "best result" for each patient. I have not
+              encountered coercive behavior to undergo treatment. If I do not
+              want to undergo treatment or if I stop the treatment after
+              starting, I have been informed about the possible developments and
+              risks.
+            </span>
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >I fully understand the explanation of the orthodontic diagnosis,
+              the proposed orthodontic treatment method, the treatment fee
+              explained to me for this treatment, and the payment conditions, as
+              well as the possible risks of orthodontic treatment. I have read
+              all pages of this form and fully understand the issues to be aware
+              of. Information has been provided for my participation in the
+              decision-making process by my doctor. I accept that if I do not
+              comply with the rules I read and am told, the treatment will be
+              delayed and unsuccessful. In the event of treatment failure, I
+              will not claim material or moral compensation from my treating
+              doctors, nor will my doctor have any criminal liability. I agree
+              to allow educational photographs and videos to be taken during
+              treatment for scientific and educational purposes without
+              providing my identity information/identifying visual materials.
+            </span>
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Detailed information has also been provided about removable
+              and/or fixed retention treatments applied for post-treatment
+              reinforcement. I declare and accept without objection that all
+              kinds of responsibility in case of any malfunction on my part
+              (such as not using my removable appliances as informed, not using
+              them at all, or eating foods that should not be eaten, resulting
+              in the breakage of my fixed retention wire and not notifying my
+              doctors in time, etc.) belong to myself, and I commit to paying
+              the necessary fee for the procedures to be applied in such a
+              situation.
+            </span>
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >I am/parent of my child/guardian of
+              <span class="value"
+                >{{patient_info_name}} {{patient_info_surname}}</span
+              >
+              has chosen, wants, and approves the
+              <span class="value">{{other_keys_treatment_choice}}</span>
+              orthodontic treatment to be performed.
+            </span>
+          </div>
+          <br />
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#if (eq other_keys_read_understood_accepted
+            true )}} checked="true" {{/if}}> I HAVE READ, UNDERSTOOD, AND ACCEPT
+            <span class="checkmark"></span>
+          </label>
+          <br />
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Please write "I have read, understood, and accepted" in your own
+              handwriting in the blank line above and fill out and sign the
+              sections below.
+            </span>
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >My/our signatures below confirm that I/we have read and
+              understood all the information on these pages and that all the
+              blanks on these pages have been filled in before our signatures.
+            </span>
+          </div>
+        </div>
+        <div class="header">Form Approval</div>
+        <div class="form-container">
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>Patient:</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Name Surname:</span>
+                <span class="value"
+                  >{{patient_info_name}} {{patient_info_surname}}</span
+                >
+              </div>
+              <div>
+                <span class="label">ID Number:</span>
+                <span class="value">{{patient_info_patient_tc_number}}</span>
+              </div>
+              <div>
+                <span class="label">E-mail:</span>
+                <span class="value">{{patient_info_email}}</span>
+              </div>
+              <div>
+                <span class="label">Date:</span>
+                <span class="value">{{patient_info_patient_date}}</span>
+              </div>
+              <div>
+                <span class="label">Time:</span>
+                <span class="value">{{patient_info_patient_time}}</span>
+              </div>
+              <div>
+                <span class="label">Signature:</span>
+                <img
+                  class="signature"
+                  src="{{patient_info_signature_patient}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>Patient's Parent/Guardian:</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Name Surname:</span>
+                <span class="value"
+                  >{{patient_parent_info_name_and_surname}}</span
+                >
+              </div>
+              <div>
+                <span class="label">ID Number:</span>
+                <span class="value">{{patient_parent_info_tc_number}}</span>
+              </div>
+              <div>
+                <span class="label">Relationship:</span>
+                <span class="value"
+                  >{{patient_parent_info_parent_relationship}}</span
+                >
+              </div>
+              <div>
+                <span class="label">Date:</span>
+                <span class="value">
+                  {{#if patient_parent_info_name_and_surname}}
+                  {{patient_info_patient_date}} {{/if}}
+                </span>
+              </div>
+              <div>
+                <span class="label">Time:</span>
+                <span class="value">
+                  {{#if patient_parent_info_name_and_surname}}
+                  {{patient_parent_info_time}} {{/if}}
+                </span>
+              </div>
+              <div>
+                <span class="label">Signature:</span>
+                <img
+                  class="signature"
+                  src="{{patient_parent_info_signature_patient_parent}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>Doctor:</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Name Surname:</span>
+                <span class="value">{{doctor_info_name_and_surname}}</span>
+              </div>
+              <div>
+                <span class="label">Phone Number:</span>
+                <span class="value">{{doctor_info_phone_number}}</span>
+              </div>
+              <div>
+                <span class="label">Date:</span>
+                <span class="value">{{doctor_info_date}}</span>
+              </div>
+              <div>
+                <span class="label">Time:</span>
+                <span class="value">{{doctor_info_time}}</span>
+              </div>
+              <div>
+                <span class="Signature">Signature:</span>
+                <img
+                  class="signature"
+                  src="{{doctor_info_signature_doctor}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
