@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Informed Consent Form for Extraction Based Fixed Orthodontic Treatment
+    </title>
+    <style>
+      :root {
+        --dust_storm: #dec8b9;
+        --lavender: #fbfbfb;
+        --shuttle_gray: #5c666f;
+        --darkBlue: #0c356a;
+        --blue: #279eff;
+        --lightBlue: #40f8ff;
+        --white: #ffffff;
+        --green: #21d0c3;
+        --red: #ff5b62;
+        --darkGreen: #646666;
+        --lightGreen: #c9cccd;
+        --lightGreen2: #eeeff0;
+        --blackGreen: #094850;
+        --googleRed: #ea4335;
+      }
+
+      body {
+        background-color: var(--white);
+        font-family: Tahoma, sans-serif;
+        margin: 0px;
+      }
+
+      .container {
+        width: "%100";
+      }
+
+      .headerForm {
+        flex-direction: row;
+        display: flex;
+        margin: 10px 0px;
+      }
+
+      .headerForm img {
+        height: 60px;
+        width: auto;
+      }
+
+      .header-content {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: end;
+        flex-direction: column;
+      }
+
+      .header {
+        padding: 4px;
+        background-color: var(--green);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .info {
+        margin: 10px 0px;
+        font-size: 12px;
+        line-height: 14.4px;
+      }
+
+      .value {
+        /* color: var(--blackGreen); */
+        font-size: 10px;
+        font-weight: 600;
+      }
+
+      .seperator {
+        border-bottom: 1px solid #ccc;
+      }
+
+      .checkbox-grid {
+        margin: 10px 0px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+
+      .custom-checkbox {
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+        display: inline-block;
+      }
+
+      .custom-checkbox input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #eee;
+        border: 1px solid #ccc;
+      }
+
+      .custom-checkbox:hover input ~ .checkmark {
+        background-color: #ddd;
+      }
+
+      .custom-checkbox input:checked ~ .checkmark {
+        background-color: var(--green);
+        border: 1px solid var(--green);
+      }
+
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      .custom-checkbox input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      .custom-checkbox .checkmark:after {
+        left: 7px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+
+      .form-container {
+        margin: 10px 0px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        page-break-inside: avoid; /* Prevent the entire container from splitting */
+      }
+
+      .form-containersingle {
+        margin: 10px 0px;
+      }
+
+      .form-containerdouble {
+        margin: 10px 0px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .form-confirmation {
+        padding: 10px;
+        border: 1px solid var(--blackGreen);
+        font-size: 12px;
+        page-break-inside: avoid; /* Prevent splitting inside this block */
+        display: block;
+        break-inside: avoid; /* For additional browser support */
+      }
+
+      .form-header {
+        margin-bottom: 10px;
+        font-size: 12px;
+        page-break-inside: avoid;
+        page-break-after: avoid; /* Prevent page break after header */
+        break-inside: avoid;
+        display: block;
+      }
+
+      .form-body {
+        margin-top: 10px;
+        font-size: 12px;
+        page-break-inside: avoid;
+        page-break-after: avoid; /* Avoid splitting at the end of this block */
+        break-inside: avoid;
+        display: block;
+      }
+
+      .signature {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        page-break-inside: avoid; /* Ensure signature stays on the same page */
+      }
+      .form-section {
+        page-break-inside: avoid; /* Prevents page break inside this section */
+      }
+      .page {
+        page-break-after: always;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="container">
+        <div class="headerForm">
+          <img class="img" src="{{clinic_logo}}" />
+          <div class="header-content">
+            <label name="">{{clinic_name}}</label>
+            <label name="">{{form_name}} {{form_language}}</label>
+          </div>
+        </div>
+        <div class="header">Endodontic Treatment</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >I agree that the following treatments will be applied</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >I understand and consent that many factors contribute to the
+              success of root canal treatment and not all factors can be
+              determined in advance. Some of the factors are: my resistance to
+              infection; the bacteria causing the infection; the size, shape and
+              location of the canals. My case may be more difficult if my tooth
+              has blocked, curved, or narrow canals. I accept that antibiotics,
+              analgesics and other drugs can have allergic effects such as
+              redness, swelling of the tissue, itching, nausea and anaphylactic
+              shock (very rare).</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >During the treatment, the treatment may change or new procedures
+              may be added to the treatment due to reasons that could not be
+              determined during the examination while working on the tooth. The
+              most common procedure is root canal treatment. I give permission
+              for all/any changes and additions necessary for my tooth.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Although rare, the washing agents used during root canal
+              treatment may cause allergic reactions in some patients. I am
+              informed about this risk.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >I accept that there is no guarantee that root canal treatment
+              will save my tooth, complications may occur due to treatment, and
+              although rare, metal objects may be cemented into the root canal
+              and these may dislocate outside the root. I am aware that
+              additional surgical procedures may rarely need to be performed
+              following root canal treatment.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Patient and/or
+              <span class="value"
+                >{{patient_info_name}} {{patient_info_surname}}</span
+              >
+              As the parent and/or guardian, I request and authorize the dental
+              personnel for all dental treatments required for myself and/or my
+              child, including, but not limited to, x-rays, including all
+              anesthesia recommended and applied by the dentist.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >I accept that my treatment will be on:
+              <span class="value"
+                >{{other_keys_target_treatment_teeth}}</span
+              ></span
+            >
+          </div>
+        </div>
+        <div class="header">Form Approval</div>
+        <div class="form-containerdouble">
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>Patient:</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Name Surname:</span>
+                <span class="value"
+                  >{{patient_info_name}} {{patient_info_surname}}</span
+                >
+              </div>
+              <div>
+                <span class="label">ID Number:</span>
+                <span class="value">{{patient_info_patient_tc_number}}</span>
+              </div>
+              <div>
+                <span class="label">E-mail:</span>
+                <span class="value">{{patient_info_email}}</span>
+              </div>
+              <div>
+                <span class="label">Date:</span>
+                <span class="value">{{patient_info_patient_date}}</span>
+              </div>
+              <div>
+                <span class="label">Time:</span>
+                <span class="value">{{patient_info_patient_time}}</span>
+              </div>
+              <div>
+                <span class="label">Signature:</span>
+                <img
+                  class="signature"
+                  src="{{patient_info_signature_patient}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>Patient's Parent/Guardian:</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Name Surname:</span>
+                <span class="value"
+                  >{{patient_parent_info_name_and_surname}}</span
+                >
+              </div>
+              <div>
+                <span class="label">ID Number:</span>
+                <span class="value">{{patient_parent_info_tc_number}}</span>
+              </div>
+              <div>
+                <span class="label">Relationship:</span>
+                <span class="value"
+                  >{{patient_parent_info_parent_relationship}}</span
+                >
+              </div>
+              <div>
+                <span class="label">Date:</span>
+                <span class="value">
+                  {{#if patient_parent_info_name_and_surname}}
+                  {{patient_info_patient_date}} {{/if}}
+                </span>
+              </div>
+              <div>
+                <span class="label">Time:</span>
+                <span class="value">
+                  {{#if patient_parent_info_name_and_surname}}
+                  {{patient_parent_info_time}} {{/if}}
+                </span>
+              </div>
+              <div>
+                <span class="label">Signature:</span>
+                <img
+                  class="signature"
+                  src="{{patient_parent_info_signature_patient_parent}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
