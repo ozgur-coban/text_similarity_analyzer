@@ -1,15 +1,23 @@
 import re
 import json
 import spacy
+import os
 
 
 class PreProcessor:
-    def __init__(self, output_path):
-        self.output_path = output_path
+    def __init__(self, input_folder, output_folder):
+        self.input_folder = input_folder
+        self.output_folder = output_folder
         self.nlp = spacy.load("en_core_web_sm")
 
-    def save_text_to_file(self, text):
-        with open(self.output_path, "w", encoding="utf-8") as file:
+    def load_json_file(self, file_path):
+        with open(file_path, "r", encoding="utf-8") as file:
+            data = json.load(file)
+            return data
+
+    def save_text_to_file(self, text, output_filename):
+        output_path = os.path.join(self.output_folder, output_filename)
+        with open(output_path, "w", encoding="utf-8") as file:
             json.dump(text, file, ensure_ascii=False, indent=4)
 
     def normalize_text(self, text):
@@ -88,6 +96,23 @@ class PreProcessor:
         text = self.lemmatize_text(text=text_to_process)
         return text
 
-    def run(self, text):
-        preprocessed_text = self.preprocess(text=text)
-        self.save_text_to_file(text=preprocessed_text)
+    def process_folder(self):
+        # Process each JSON file in the provided folder
+        for filename in os.listdir(self.input_folder):
+            if filename.endswith(".json"):  # Only process .json files
+                file_path = os.path.join(self.input_folder, filename)
+                output_file_name = os.path.splitext(filename)[0] + "_preprocessed.json"
+
+                # Load raw content from JSON
+                raw_content = self.load_json_file(file_path)
+
+                # Preprocess raw content (since there's no 'key' like 'text', it's directly the content)
+                preprocessed_content = self.preprocess(raw_content)
+
+                # Save the preprocessed content into the output file
+                self.save_text_to_file(
+                    preprocessed_content, output_filename=output_file_name
+                )
+
+    def run(self):
+        self.process_folder()
