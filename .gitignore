@@ -187,5 +187,4 @@ cython_debug/
 .pypirc
 
 */.history
-
-*preprocessing
+*data
