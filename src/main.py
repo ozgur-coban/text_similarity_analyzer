@@ -8,19 +8,18 @@ def main():
     #     input_folder="../data/eng", output_folder="../data/parsed_outputs"
     # )
     # parser.run()
-    preprocessor = PreProcessor(
-        input_folder="../data/parsed_outputs",
-        output_folder="../data/preprocessing_outputs",
-    )
-    preprocessor.run()
-    # # preprocessed_text = preprocessor.preprocess(text=text)
-    # preprocessor.run(text=text)
-    # similarity_calculator = TextSimilarity(
-    #     first_file_path="../data/preprocessing_outputs/output_after_preprocessing_anamnesis.json",
-    #     second_file_path="../data/preprocessing_outputs/output_after_preprocessing_endodonticform.json",
-    #     output_file_path="../data/outputs/output_of_similarity_calculation",
+    # preprocessor = PreProcessor(
+    #     input_folder="../data/parsed_outputs",
+    #     output_folder="../data/preprocessing_outputs",
+    #     do_lema=True,
     # )
-    # similarity_calculator.display_similarity()
+    # preprocessor.run()
+    similarity_calculator = TextSimilarity(
+        input_folder="../data/preprocessing_outputs",
+        output_file_path="../data/outputs",
+        method="tfidf",
+    )
+    similarity_calculator.process_all_files()
 
 
 if __name__ == "__main__":

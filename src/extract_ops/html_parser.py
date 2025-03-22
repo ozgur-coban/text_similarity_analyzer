@@ -38,7 +38,7 @@ class HtmlParser:
                 cleaned_text = self.extract_text(file_content)
 
                 # Save the cleaned text with the same filename but as a JSON
-                output_filename = os.path.splitext(filename)[0] + "_cleaned.json"
+                output_filename = os.path.splitext(filename)[0] + ".json"
                 self.save_text_to_file(cleaned_text, output_filename)
 
     def run(self):

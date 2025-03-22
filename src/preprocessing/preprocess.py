@@ -5,9 +5,10 @@ import os
 
 
 class PreProcessor:
-    def __init__(self, input_folder, output_folder):
+    def __init__(self, input_folder, output_folder, do_lema=True):
         self.input_folder = input_folder
         self.output_folder = output_folder
+        self.lema = do_lema
         self.nlp = spacy.load("en_core_web_sm")
 
     def load_json_file(self, file_path):
@@ -91,9 +92,10 @@ class PreProcessor:
         text = self.remove_unwanted_characters(text)
         text = self.remove_extra_whitespace(text)
         text = self.handle_concatenation(text)
-        tokens = self.tokenize_text(text=text)
-        text_to_process = " ".join(tokens)  # Join the tokens into a string
-        text = self.lemmatize_text(text=text_to_process)
+        if self.lema:
+            tokens = self.tokenize_text(text=text)
+            text_to_process = " ".join(tokens)  # Join the tokens into a string
+            text = self.lemmatize_text(text=text_to_process)
         return text
 
     def process_folder(self):
@@ -101,7 +103,7 @@ class PreProcessor:
         for filename in os.listdir(self.input_folder):
             if filename.endswith(".json"):  # Only process .json files
                 file_path = os.path.join(self.input_folder, filename)
-                output_file_name = os.path.splitext(filename)[0] + "_preprocessed.json"
+                output_file_name = os.path.splitext(filename)[0] + ".json"
 
                 # Load raw content from JSON
                 raw_content = self.load_json_file(file_path)
