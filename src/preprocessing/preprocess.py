@@ -2,14 +2,23 @@ import re
 import json
 import spacy
 import os
+import stanza
 
 
 class PreProcessor:
-    def __init__(self, input_folder, output_folder, do_lema=True):
+    def __init__(self, input_folder, output_folder, language="en", do_lema=True):
         self.input_folder = input_folder
         self.output_folder = output_folder
+        self.language = language
         self.lema = do_lema
-        self.nlp = spacy.load("en_core_web_sm")
+
+        if language == "en":
+            self.nlp = spacy.load("en_core_web_sm")
+        elif language == "tr":
+            stanza.download("tr")  # Ensure the Turkish model is available
+            self.nlp = stanza.Pipeline("tr")  # Use Stanza for Turkish
+        else:
+            raise ValueError("Unsupported language! Choose 'en' or 'tr'.")
 
     def load_json_file(self, file_path):
         with open(file_path, "r", encoding="utf-8") as file:
@@ -71,18 +80,42 @@ class PreProcessor:
 
     def tokenize_text(self, text):
         """Tokenizes text and removes stop words and punctuation."""
-        doc = self.nlp(text)  # spaCy tokenization
-        tokens = [
-            token.text for token in doc if not token.is_stop and not token.is_punct
-        ]
+        if self.language == "en":
+            doc = self.nlp(text)  # spaCy processing
+            tokens = [
+                token.text for token in doc if not token.is_stop and not token.is_punct
+            ]
+
+        elif self.language == "tr":
+            doc = self.nlp(text)  # Stanza processing
+            tokens = [
+                word.text for sent in doc.sentences for word in sent.words
+            ]  # Extract words from sentences
+
         return tokens
 
     def lemmatize_text(self, text):
-        """Lemmatizes text and removes stop words and punctuation."""
-        doc = self.nlp(text)
-        lemmatized_text = " ".join(
-            [token.lemma_ for token in doc if not token.is_stop and not token.is_punct]
-        )
+        """Lemmatizes text based on the selected language."""
+        if self.language == "en":
+            doc = self.nlp(text)
+            lemmatized_text = " ".join(
+                [
+                    token.lemma_
+                    for token in doc
+                    if not token.is_stop and not token.is_punct
+                ]
+            )
+
+        elif self.language == "tr":
+            doc = self.nlp(text)
+            lemmatized_text = " ".join(
+                [
+                    word.lemma if word.lemma is not None else word.text
+                    for sent in doc.sentences
+                    for word in sent.words
+                ]
+            )
+
         return lemmatized_text
 
     def preprocess(self, text):
