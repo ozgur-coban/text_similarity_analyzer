@@ -23,13 +23,11 @@ class TextSimilarity:
                 with open(file_path, "r", encoding="utf-8") as file:
                     files_content[filename] = json.load(file)
 
-        return files_content  # { "file1.json": "text", "file2.json": "text", ... }
+        return files_content
 
     def calculate_similarity(self, text1, text2, method=None, n=1):
         """Calculate similarity using TF-IDF or BOW."""
-        method_to_use = (
-            method if method else self.method
-        )  # Use provided method or default to self.method
+        method_to_use = method if method else self.method
 
         if method_to_use == "tfidf":
             vectorizer = TfidfVectorizer(stop_words="english", ngram_range=(n, n))

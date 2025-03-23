@@ -188,3 +188,4 @@ cython_debug/
 
 */.history
 *data
+*csv_ops

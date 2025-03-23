@@ -15,8 +15,8 @@ class PreProcessor:
         if language == "en":
             self.nlp = spacy.load("en_core_web_sm")
         elif language == "tr":
-            stanza.download("tr")  # Ensure the Turkish model is available
-            self.nlp = stanza.Pipeline("tr")  # Use Stanza for Turkish
+            stanza.download("tr")
+            self.nlp = stanza.Pipeline("tr")
         else:
             raise ValueError("Unsupported language! Choose 'en' or 'tr'.")
 
@@ -68,10 +68,10 @@ class PreProcessor:
 
         def split_camel_case(match):
             word = match.group(0)
-            # Check if the word is an acronym (all uppercase)
+
             if word.isupper() and len(word) > 1:
-                return word  # Leave acronyms intact
-            # Otherwise, split camel case (e.g., LowHigh -> Low High)
+                return word
+
             return word[0] + " " + word[1:]
 
         # Split camel case but keep acronyms intact
@@ -87,7 +87,7 @@ class PreProcessor:
             ]
 
         elif self.language == "tr":
-            doc = self.nlp(text)  # Stanza processing
+            doc = self.nlp(text)
             tokens = [
                 word.text for sent in doc.sentences for word in sent.words
             ]  # Extract words from sentences
@@ -141,7 +141,6 @@ class PreProcessor:
                 # Load raw content from JSON
                 raw_content = self.load_json_file(file_path)
 
-                # Preprocess raw content (since there's no 'key' like 'text', it's directly the content)
                 preprocessed_content = self.preprocess(raw_content)
 
                 # Save the preprocessed content into the output file
