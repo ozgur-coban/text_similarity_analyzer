@@ -5,21 +5,21 @@ from similarity_calculation import TextSimilarity
 
 def main():
     # parser = HtmlParser(
-    #     file_path="../data/eng/endodonticform.html",
-    #     output_path="../data/preprocessing_outputs/output.json",
+    #     input_folder="../data/en", output_folder="../data/parsed_outputs"
     # )
-    # text = parser.extract_text()
+    # parser.run()
     # preprocessor = PreProcessor(
-    #     output_path="../data/preprocessing_outputs/output_after_preprocessing_endodonticform.json"
+    #     input_folder="../data/parsed_outputs",
+    #     output_folder="../data/preprocessing_outputs_lemmatized_en",
+    #     do_lema=True,
+    #     language="en",
     # )
-    # # preprocessed_text = preprocessor.preprocess(text=text)
-    # preprocessor.run(text=text)
+    # preprocessor.run()
     similarity_calculator = TextSimilarity(
-        first_file_path="../data/preprocessing_outputs/output_after_preprocessing_anamnesis.json",
-        second_file_path="../data/preprocessing_outputs/output_after_preprocessing_endodonticform.json",
-        output_file_path="../data/outputs/output_of_similarity_calculation",
+        input_folder="../data/preprocessing_outputs_lemmatized",
+        output_file_path="../data/outputs",
     )
-    similarity_calculator.display_similarity()
+    similarity_calculator.compute_all_similarities()
 
 
 if __name__ == "__main__":
