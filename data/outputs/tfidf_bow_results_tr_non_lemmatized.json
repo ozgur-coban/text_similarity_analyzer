@@ -2,601 +2,631 @@
     {
         "file1": "anamnesis.json",
         "file2": "dentalfillingconsent.json",
-        "similarity_percentage": 8.17
-    },
-    {
-        "file1": "anamnesis.json",
-        "file2": "embeddedtoothextraction.json",
-        "similarity_percentage": 16.75
+        "tfidf_similarity": 6.51,
+        "bow_similarity": 11.52
     },
     {
         "file1": "anamnesis.json",
         "file2": "endodonticform.json",
-        "similarity_percentage": 7.33
+        "tfidf_similarity": 7.46,
+        "bow_similarity": 13.28
     },
     {
         "file1": "anamnesis.json",
         "file2": "generalconsentinformationform.json",
-        "similarity_percentage": 9.66
+        "tfidf_similarity": 5.7,
+        "bow_similarity": 9.96
     },
     {
         "file1": "anamnesis.json",
         "file2": "implantform.json",
-        "similarity_percentage": 5.02
+        "tfidf_similarity": 8.08,
+        "bow_similarity": 13.92
     },
     {
         "file1": "anamnesis.json",
         "file2": "informedConsentFormforExtractionBasedFixedOrthodonticTreatment.json",
-        "similarity_percentage": 9.22
+        "tfidf_similarity": 6.38,
+        "bow_similarity": 10.93
     },
     {
         "file1": "anamnesis.json",
         "file2": "informedConsentFormforNonExtractionBasedFixedOrthodonticTreatment.json",
-        "similarity_percentage": 9.22
+        "tfidf_similarity": 6.37,
+        "bow_similarity": 10.96
     },
     {
         "file1": "anamnesis.json",
         "file2": "kvkk.json",
-        "similarity_percentage": 2.75
+        "tfidf_similarity": 3.67,
+        "bow_similarity": 6.82
     },
     {
         "file1": "anamnesis.json",
         "file2": "orthodontictreatmentwithremovableapplianceconsentform.json",
-        "similarity_percentage": 10.05
+        "tfidf_similarity": 5.73,
+        "bow_similarity": 10.0
     },
     {
         "file1": "anamnesis.json",
         "file2": "orthognathicform.json",
-        "similarity_percentage": 9.23
+        "tfidf_similarity": 6.08,
+        "bow_similarity": 10.5
     },
     {
         "file1": "anamnesis.json",
         "file2": "orthognathicsurgeryform.json",
-        "similarity_percentage": 12.23
+        "tfidf_similarity": 10.33,
+        "bow_similarity": 17.54
     },
     {
         "file1": "anamnesis.json",
         "file2": "reinforcement.json",
-        "similarity_percentage": 7.83
+        "tfidf_similarity": 9.48,
+        "bow_similarity": 17.02
     },
     {
         "file1": "anamnesis.json",
         "file2": "sinuslift.json",
-        "similarity_percentage": 6.46
+        "tfidf_similarity": 6.4,
+        "bow_similarity": 11.63
     },
     {
         "file1": "anamnesis.json",
         "file2": "termination.json",
-        "similarity_percentage": 9.91
+        "tfidf_similarity": 11.33,
+        "bow_similarity": 19.82
     },
     {
         "file1": "anamnesis.json",
         "file2": "terminationandwithdrawal.json",
-        "similarity_percentage": 10.84
-    },
-    {
-        "file1": "dentalfillingconsent.json",
-        "file2": "embeddedtoothextraction.json",
-        "similarity_percentage": 44.23
+        "tfidf_similarity": 11.02,
+        "bow_similarity": 19.31
     },
     {
         "file1": "dentalfillingconsent.json",
         "file2": "endodonticform.json",
-        "similarity_percentage": 57.53
+        "tfidf_similarity": 40.23,
+        "bow_similarity": 52.0
     },
     {
         "file1": "dentalfillingconsent.json",
         "file2": "generalconsentinformationform.json",
-        "similarity_percentage": 47.81
+        "tfidf_similarity": 50.76,
+        "bow_similarity": 61.75
     },
     {
         "file1": "dentalfillingconsent.json",
         "file2": "implantform.json",
-        "similarity_percentage": 23.29
+        "tfidf_similarity": 39.23,
+        "bow_similarity": 49.88
     },
     {
         "file1": "dentalfillingconsent.json",
         "file2": "informedConsentFormforExtractionBasedFixedOrthodonticTreatment.json",
-        "similarity_percentage": 56.49
+        "tfidf_similarity": 57.0,
+        "bow_similarity": 67.27
     },
     {
         "file1": "dentalfillingconsent.json",
         "file2": "informedConsentFormforNonExtractionBasedFixedOrthodonticTreatment.json",
-        "similarity_percentage": 56.72
+        "tfidf_similarity": 57.89,
+        "bow_similarity": 68.02
     },
     {
         "file1": "dentalfillingconsent.json",
         "file2": "kvkk.json",
-        "similarity_percentage": 6.94
+        "tfidf_similarity": 27.54,
+        "bow_similarity": 38.66
     },
     {
         "file1": "dentalfillingconsent.json",
         "file2": "orthodontictreatmentwithremovableapplianceconsentform.json",
-        "similarity_percentage": 55.5
+        "tfidf_similarity": 57.18,
+        "bow_similarity": 67.26
     },
     {
         "file1": "dentalfillingconsent.json",
         "file2": "orthognathicform.json",
-        "similarity_percentage": 55.7
+        "tfidf_similarity": 56.8,
+        "bow_similarity": 67.07
     },
     {
         "file1": "dentalfillingconsent.json",
         "file2": "orthognathicsurgeryform.json",
-        "similarity_percentage": 23.54
+        "tfidf_similarity": 46.76,
+        "bow_similarity": 60.26
     },
     {
         "file1": "dentalfillingconsent.json",
         "file2": "reinforcement.json",
-        "similarity_percentage": 23.98
+        "tfidf_similarity": 29.68,
+        "bow_similarity": 41.82
     },
     {
         "file1": "dentalfillingconsent.json",
         "file2": "sinuslift.json",
-        "similarity_percentage": 14.63
+        "tfidf_similarity": 19.59,
+        "bow_similarity": 29.86
     },
     {
         "file1": "dentalfillingconsent.json",
         "file2": "termination.json",
-        "similarity_percentage": 25.68
+        "tfidf_similarity": 22.33,
+        "bow_similarity": 30.25
     },
     {
         "file1": "dentalfillingconsent.json",
         "file2": "terminationandwithdrawal.json",
-        "similarity_percentage": 25.7
-    },
-    {
-        "file1": "embeddedtoothextraction.json",
-        "file2": "endodonticform.json",
-        "similarity_percentage": 28.14
-    },
-    {
-        "file1": "embeddedtoothextraction.json",
-        "file2": "generalconsentinformationform.json",
-        "similarity_percentage": 26.33
-    },
-    {
-        "file1": "embeddedtoothextraction.json",
-        "file2": "implantform.json",
-        "similarity_percentage": 25.31
-    },
-    {
-        "file1": "embeddedtoothextraction.json",
-        "file2": "informedConsentFormforExtractionBasedFixedOrthodonticTreatment.json",
-        "similarity_percentage": 28.62
-    },
-    {
-        "file1": "embeddedtoothextraction.json",
-        "file2": "informedConsentFormforNonExtractionBasedFixedOrthodonticTreatment.json",
-        "similarity_percentage": 30.72
-    },
-    {
-        "file1": "embeddedtoothextraction.json",
-        "file2": "kvkk.json",
-        "similarity_percentage": 10.29
-    },
-    {
-        "file1": "embeddedtoothextraction.json",
-        "file2": "orthodontictreatmentwithremovableapplianceconsentform.json",
-        "similarity_percentage": 30.89
-    },
-    {
-        "file1": "embeddedtoothextraction.json",
-        "file2": "orthognathicform.json",
-        "similarity_percentage": 31.19
-    },
-    {
-        "file1": "embeddedtoothextraction.json",
-        "file2": "orthognathicsurgeryform.json",
-        "similarity_percentage": 42.75
-    },
-    {
-        "file1": "embeddedtoothextraction.json",
-        "file2": "reinforcement.json",
-        "similarity_percentage": 18.62
-    },
-    {
-        "file1": "embeddedtoothextraction.json",
-        "file2": "sinuslift.json",
-        "similarity_percentage": 25.97
-    },
-    {
-        "file1": "embeddedtoothextraction.json",
-        "file2": "termination.json",
-        "similarity_percentage": 20.86
-    },
-    {
-        "file1": "embeddedtoothextraction.json",
-        "file2": "terminationandwithdrawal.json",
-        "similarity_percentage": 21.31
+        "tfidf_similarity": 19.94,
+        "bow_similarity": 28.06
     },
     {
         "file1": "endodonticform.json",
         "file2": "generalconsentinformationform.json",
-        "similarity_percentage": 41.03
+        "tfidf_similarity": 31.21,
+        "bow_similarity": 42.56
     },
     {
         "file1": "endodonticform.json",
         "file2": "implantform.json",
-        "similarity_percentage": 22.62
+        "tfidf_similarity": 25.72,
+        "bow_similarity": 36.66
     },
     {
         "file1": "endodonticform.json",
         "file2": "informedConsentFormforExtractionBasedFixedOrthodonticTreatment.json",
-        "similarity_percentage": 48.96
+        "tfidf_similarity": 38.7,
+        "bow_similarity": 48.85
     },
     {
         "file1": "endodonticform.json",
         "file2": "informedConsentFormforNonExtractionBasedFixedOrthodonticTreatment.json",
-        "similarity_percentage": 48.83
+        "tfidf_similarity": 38.71,
+        "bow_similarity": 48.61
     },
     {
         "file1": "endodonticform.json",
         "file2": "kvkk.json",
-        "similarity_percentage": 5.63
+        "tfidf_similarity": 16.81,
+        "bow_similarity": 26.15
     },
     {
         "file1": "endodonticform.json",
         "file2": "orthodontictreatmentwithremovableapplianceconsentform.json",
-        "similarity_percentage": 49.44
+        "tfidf_similarity": 38.37,
+        "bow_similarity": 47.6
     },
     {
         "file1": "endodonticform.json",
         "file2": "orthognathicform.json",
-        "similarity_percentage": 49.02
+        "tfidf_similarity": 38.92,
+        "bow_similarity": 48.74
     },
     {
         "file1": "endodonticform.json",
         "file2": "orthognathicsurgeryform.json",
-        "similarity_percentage": 19.55
+        "tfidf_similarity": 27.62,
+        "bow_similarity": 38.94
     },
     {
         "file1": "endodonticform.json",
         "file2": "reinforcement.json",
-        "similarity_percentage": 31.53
+        "tfidf_similarity": 26.38,
+        "bow_similarity": 39.04
     },
     {
         "file1": "endodonticform.json",
         "file2": "sinuslift.json",
-        "similarity_percentage": 12.28
+        "tfidf_similarity": 14.95,
+        "bow_similarity": 24.43
     },
     {
         "file1": "endodonticform.json",
         "file2": "termination.json",
-        "similarity_percentage": 33.24
+        "tfidf_similarity": 27.04,
+        "bow_similarity": 39.15
     },
     {
         "file1": "endodonticform.json",
         "file2": "terminationandwithdrawal.json",
-        "similarity_percentage": 33.45
+        "tfidf_similarity": 25.21,
+        "bow_similarity": 37.4
     },
     {
         "file1": "generalconsentinformationform.json",
         "file2": "implantform.json",
-        "similarity_percentage": 26.97
+        "tfidf_similarity": 40.96,
+        "bow_similarity": 53.57
     },
     {
         "file1": "generalconsentinformationform.json",
         "file2": "informedConsentFormforExtractionBasedFixedOrthodonticTreatment.json",
-        "similarity_percentage": 89.29
+        "tfidf_similarity": 89.17,
+        "bow_similarity": 92.41
     },
     {
         "file1": "generalconsentinformationform.json",
         "file2": "informedConsentFormforNonExtractionBasedFixedOrthodonticTreatment.json",
-        "similarity_percentage": 89.0
+        "tfidf_similarity": 88.85,
+        "bow_similarity": 92.12
     },
     {
         "file1": "generalconsentinformationform.json",
         "file2": "kvkk.json",
-        "similarity_percentage": 4.97
+        "tfidf_similarity": 28.72,
+        "bow_similarity": 40.78
     },
     {
         "file1": "generalconsentinformationform.json",
         "file2": "orthodontictreatmentwithremovableapplianceconsentform.json",
-        "similarity_percentage": 88.76
+        "tfidf_similarity": 89.54,
+        "bow_similarity": 92.75
     },
     {
         "file1": "generalconsentinformationform.json",
         "file2": "orthognathicform.json",
-        "similarity_percentage": 88.57
+        "tfidf_similarity": 89.04,
+        "bow_similarity": 92.22
     },
     {
         "file1": "generalconsentinformationform.json",
         "file2": "orthognathicsurgeryform.json",
-        "similarity_percentage": 23.33
+        "tfidf_similarity": 49.28,
+        "bow_similarity": 61.93
     },
     {
         "file1": "generalconsentinformationform.json",
         "file2": "reinforcement.json",
-        "similarity_percentage": 33.76
+        "tfidf_similarity": 33.66,
+        "bow_similarity": 43.24
     },
     {
         "file1": "generalconsentinformationform.json",
         "file2": "sinuslift.json",
-        "similarity_percentage": 12.97
+        "tfidf_similarity": 22.17,
+        "bow_similarity": 31.67
     },
     {
         "file1": "generalconsentinformationform.json",
         "file2": "termination.json",
-        "similarity_percentage": 34.0
+        "tfidf_similarity": 22.69,
+        "bow_similarity": 29.26
     },
     {
         "file1": "generalconsentinformationform.json",
         "file2": "terminationandwithdrawal.json",
-        "similarity_percentage": 31.89
+        "tfidf_similarity": 18.48,
+        "bow_similarity": 25.56
     },
     {
         "file1": "implantform.json",
         "file2": "informedConsentFormforExtractionBasedFixedOrthodonticTreatment.json",
-        "similarity_percentage": 28.66
+        "tfidf_similarity": 42.91,
+        "bow_similarity": 54.66
     },
     {
         "file1": "implantform.json",
         "file2": "informedConsentFormforNonExtractionBasedFixedOrthodonticTreatment.json",
-        "similarity_percentage": 29.47
+        "tfidf_similarity": 43.98,
+        "bow_similarity": 55.73
     },
     {
         "file1": "implantform.json",
         "file2": "kvkk.json",
-        "similarity_percentage": 3.52
+        "tfidf_similarity": 17.64,
+        "bow_similarity": 27.92
     },
     {
         "file1": "implantform.json",
         "file2": "orthodontictreatmentwithremovableapplianceconsentform.json",
-        "similarity_percentage": 28.38
+        "tfidf_similarity": 43.03,
+        "bow_similarity": 54.44
     },
     {
         "file1": "implantform.json",
         "file2": "orthognathicform.json",
-        "similarity_percentage": 31.38
+        "tfidf_similarity": 46.23,
+        "bow_similarity": 55.89
     },
     {
         "file1": "implantform.json",
         "file2": "orthognathicsurgeryform.json",
-        "similarity_percentage": 22.54
+        "tfidf_similarity": 47.22,
+        "bow_similarity": 59.14
     },
     {
         "file1": "implantform.json",
         "file2": "reinforcement.json",
-        "similarity_percentage": 16.55
+        "tfidf_similarity": 21.95,
+        "bow_similarity": 31.92
     },
     {
         "file1": "implantform.json",
         "file2": "sinuslift.json",
-        "similarity_percentage": 27.23
+        "tfidf_similarity": 27.69,
+        "bow_similarity": 37.13
     },
     {
         "file1": "implantform.json",
         "file2": "termination.json",
-        "similarity_percentage": 16.67
+        "tfidf_similarity": 14.62,
+        "bow_similarity": 22.08
     },
     {
         "file1": "implantform.json",
         "file2": "terminationandwithdrawal.json",
-        "similarity_percentage": 14.92
+        "tfidf_similarity": 13.44,
+        "bow_similarity": 20.29
     },
     {
         "file1": "informedConsentFormforExtractionBasedFixedOrthodonticTreatment.json",
         "file2": "informedConsentFormforNonExtractionBasedFixedOrthodonticTreatment.json",
-        "similarity_percentage": 99.11
+        "tfidf_similarity": 99.29,
+        "bow_similarity": 99.55
     },
     {
         "file1": "informedConsentFormforExtractionBasedFixedOrthodonticTreatment.json",
         "file2": "kvkk.json",
-        "similarity_percentage": 5.68
+        "tfidf_similarity": 30.66,
+        "bow_similarity": 42.46
     },
     {
         "file1": "informedConsentFormforExtractionBasedFixedOrthodonticTreatment.json",
         "file2": "orthodontictreatmentwithremovableapplianceconsentform.json",
-        "similarity_percentage": 95.41
+        "tfidf_similarity": 95.9,
+        "bow_similarity": 96.99
     },
     {
         "file1": "informedConsentFormforExtractionBasedFixedOrthodonticTreatment.json",
         "file2": "orthognathicform.json",
-        "similarity_percentage": 98.57
+        "tfidf_similarity": 98.57,
+        "bow_similarity": 99.06
     },
     {
         "file1": "informedConsentFormforExtractionBasedFixedOrthodonticTreatment.json",
         "file2": "orthognathicsurgeryform.json",
-        "similarity_percentage": 26.3
+        "tfidf_similarity": 53.51,
+        "bow_similarity": 65.36
     },
     {
         "file1": "informedConsentFormforExtractionBasedFixedOrthodonticTreatment.json",
         "file2": "reinforcement.json",
-        "similarity_percentage": 40.84
+        "tfidf_similarity": 39.75,
+        "bow_similarity": 46.17
     },
     {
         "file1": "informedConsentFormforExtractionBasedFixedOrthodonticTreatment.json",
         "file2": "sinuslift.json",
-        "similarity_percentage": 14.79
+        "tfidf_similarity": 25.29,
+        "bow_similarity": 35.08
     },
     {
         "file1": "informedConsentFormforExtractionBasedFixedOrthodonticTreatment.json",
         "file2": "termination.json",
-        "similarity_percentage": 37.62
+        "tfidf_similarity": 26.38,
+        "bow_similarity": 32.62
     },
     {
         "file1": "informedConsentFormforExtractionBasedFixedOrthodonticTreatment.json",
         "file2": "terminationandwithdrawal.json",
-        "similarity_percentage": 33.94
+        "tfidf_similarity": 20.5,
+        "bow_similarity": 28.09
     },
     {
         "file1": "informedConsentFormforNonExtractionBasedFixedOrthodonticTreatment.json",
         "file2": "kvkk.json",
-        "similarity_percentage": 5.8
+        "tfidf_similarity": 31.2,
+        "bow_similarity": 43.18
     },
     {
         "file1": "informedConsentFormforNonExtractionBasedFixedOrthodonticTreatment.json",
         "file2": "orthodontictreatmentwithremovableapplianceconsentform.json",
-        "similarity_percentage": 94.78
+        "tfidf_similarity": 95.56,
+        "bow_similarity": 96.81
     },
     {
         "file1": "informedConsentFormforNonExtractionBasedFixedOrthodonticTreatment.json",
         "file2": "orthognathicform.json",
-        "similarity_percentage": 98.04
+        "tfidf_similarity": 98.11,
+        "bow_similarity": 98.74
     },
     {
         "file1": "informedConsentFormforNonExtractionBasedFixedOrthodonticTreatment.json",
         "file2": "orthognathicsurgeryform.json",
-        "similarity_percentage": 26.54
+        "tfidf_similarity": 54.56,
+        "bow_similarity": 66.51
     },
     {
         "file1": "informedConsentFormforNonExtractionBasedFixedOrthodonticTreatment.json",
         "file2": "reinforcement.json",
-        "similarity_percentage": 39.99
+        "tfidf_similarity": 40.89,
+        "bow_similarity": 46.65
     },
     {
         "file1": "informedConsentFormforNonExtractionBasedFixedOrthodonticTreatment.json",
         "file2": "sinuslift.json",
-        "similarity_percentage": 14.95
+        "tfidf_similarity": 25.73,
+        "bow_similarity": 35.48
     },
     {
         "file1": "informedConsentFormforNonExtractionBasedFixedOrthodonticTreatment.json",
         "file2": "termination.json",
-        "similarity_percentage": 36.91
+        "tfidf_similarity": 27.39,
+        "bow_similarity": 32.81
     },
     {
         "file1": "informedConsentFormforNonExtractionBasedFixedOrthodonticTreatment.json",
         "file2": "terminationandwithdrawal.json",
-        "similarity_percentage": 33.19
+        "tfidf_similarity": 21.74,
+        "bow_similarity": 28.53
     },
     {
         "file1": "kvkk.json",
         "file2": "orthodontictreatmentwithremovableapplianceconsentform.json",
-        "similarity_percentage": 6.62
+        "tfidf_similarity": 32.99,
+        "bow_similarity": 45.15
     },
     {
         "file1": "kvkk.json",
         "file2": "orthognathicform.json",
-        "similarity_percentage": 5.67
+        "tfidf_similarity": 30.41,
+        "bow_similarity": 42.28
     },
     {
         "file1": "kvkk.json",
         "file2": "orthognathicsurgeryform.json",
-        "similarity_percentage": 7.06
+        "tfidf_similarity": 31.96,
+        "bow_similarity": 44.93
     },
     {
         "file1": "kvkk.json",
         "file2": "reinforcement.json",
-        "similarity_percentage": 9.26
+        "tfidf_similarity": 19.31,
+        "bow_similarity": 30.35
     },
     {
         "file1": "kvkk.json",
         "file2": "sinuslift.json",
-        "similarity_percentage": 3.02
+        "tfidf_similarity": 12.91,
+        "bow_similarity": 21.95
     },
     {
         "file1": "kvkk.json",
         "file2": "termination.json",
-        "similarity_percentage": 9.33
+        "tfidf_similarity": 14.95,
+        "bow_similarity": 22.92
     },
     {
         "file1": "kvkk.json",
         "file2": "terminationandwithdrawal.json",
-        "similarity_percentage": 9.51
+        "tfidf_similarity": 17.36,
+        "bow_similarity": 26.0
     },
     {
         "file1": "orthodontictreatmentwithremovableapplianceconsentform.json",
         "file2": "orthognathicform.json",
-        "similarity_percentage": 94.65
+        "tfidf_similarity": 95.2,
+        "bow_similarity": 96.49
     },
     {
         "file1": "orthodontictreatmentwithremovableapplianceconsentform.json",
         "file2": "orthognathicsurgeryform.json",
-        "similarity_percentage": 27.58
+        "tfidf_similarity": 56.5,
+        "bow_similarity": 68.27
     },
     {
         "file1": "orthodontictreatmentwithremovableapplianceconsentform.json",
         "file2": "reinforcement.json",
-        "similarity_percentage": 43.05
+        "tfidf_similarity": 43.96,
+        "bow_similarity": 49.67
     },
     {
         "file1": "orthodontictreatmentwithremovableapplianceconsentform.json",
         "file2": "sinuslift.json",
-        "similarity_percentage": 14.99
+        "tfidf_similarity": 25.34,
+        "bow_similarity": 34.66
     },
     {
         "file1": "orthodontictreatmentwithremovableapplianceconsentform.json",
         "file2": "termination.json",
-        "similarity_percentage": 38.88
+        "tfidf_similarity": 27.56,
+        "bow_similarity": 32.94
     },
     {
         "file1": "orthodontictreatmentwithremovableapplianceconsentform.json",
         "file2": "terminationandwithdrawal.json",
-        "similarity_percentage": 35.65
+        "tfidf_similarity": 23.46,
+        "bow_similarity": 30.15
     },
     {
         "file1": "orthognathicform.json",
         "file2": "orthognathicsurgeryform.json",
-        "similarity_percentage": 31.8
+        "tfidf_similarity": 55.58,
+        "bow_similarity": 66.54
     },
     {
         "file1": "orthognathicform.json",
         "file2": "reinforcement.json",
-        "similarity_percentage": 40.46
+        "tfidf_similarity": 39.8,
+        "bow_similarity": 45.46
     },
     {
         "file1": "orthognathicform.json",
         "file2": "sinuslift.json",
-        "similarity_percentage": 15.47
+        "tfidf_similarity": 24.98,
+        "bow_similarity": 34.63
     },
     {
         "file1": "orthognathicform.json",
         "file2": "termination.json",
-        "similarity_percentage": 38.11
+        "tfidf_similarity": 27.8,
+        "bow_similarity": 32.88
     },
     {
         "file1": "orthognathicform.json",
         "file2": "terminationandwithdrawal.json",
-        "similarity_percentage": 33.83
+        "tfidf_similarity": 21.34,
+        "bow_similarity": 28.14
     },
     {
         "file1": "orthognathicsurgeryform.json",
         "file2": "reinforcement.json",
-        "similarity_percentage": 21.15
+        "tfidf_similarity": 33.44,
+        "bow_similarity": 45.96
     },
     {
         "file1": "orthognathicsurgeryform.json",
         "file2": "sinuslift.json",
-        "similarity_percentage": 15.16
+        "tfidf_similarity": 23.91,
+        "bow_similarity": 34.15
     },
     {
         "file1": "orthognathicsurgeryform.json",
         "file2": "termination.json",
-        "similarity_percentage": 25.69
+        "tfidf_similarity": 24.04,
+        "bow_similarity": 32.25
     },
     {
         "file1": "orthognathicsurgeryform.json",
         "file2": "terminationandwithdrawal.json",
-        "similarity_percentage": 25.0
+        "tfidf_similarity": 27.56,
+        "bow_similarity": 36.57
     },
     {
         "file1": "reinforcement.json",
         "file2": "sinuslift.json",
-        "similarity_percentage": 14.64
+        "tfidf_similarity": 18.21,
+        "bow_similarity": 28.45
     },
     {
         "file1": "reinforcement.json",
         "file2": "termination.json",
-        "similarity_percentage": 60.05
+        "tfidf_similarity": 41.79,
+        "bow_similarity": 56.87
     },
     {
         "file1": "reinforcement.json",
         "file2": "terminationandwithdrawal.json",
-        "similarity_percentage": 57.76
+        "tfidf_similarity": 42.85,
+        "bow_similarity": 58.31
     },
     {
         "file1": "sinuslift.json",
         "file2": "termination.json",
-        "similarity_percentage": 15.82
+        "tfidf_similarity": 22.35,
+        "bow_similarity": 32.4
     },
     {
         "file1": "sinuslift.json",
         "file2": "terminationandwithdrawal.json",
-        "similarity_percentage": 15.84
+        "tfidf_similarity": 22.63,
+        "bow_similarity": 32.66
     },
     {
         "file1": "termination.json",
         "file2": "terminationandwithdrawal.json",
-        "similarity_percentage": 86.16
+        "tfidf_similarity": 84.57,
+        "bow_similarity": 90.6
     }
 ]

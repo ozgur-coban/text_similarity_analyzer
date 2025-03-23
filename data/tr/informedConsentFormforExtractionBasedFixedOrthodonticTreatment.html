@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Informed Consent Form for Extraction Based Fixed Orthodontic Treatment
+    </title>
+    <style>
+      :root {
+        --dust_storm: #dec8b9;
+        --lavender: #fbfbfb;
+        --shuttle_gray: #5c666f;
+        --darkBlue: #0c356a;
+        --blue: #279eff;
+        --lightBlue: #40f8ff;
+        --white: #ffffff;
+        --green: #21d0c3;
+        --red: #ff5b62;
+        --darkGreen: #646666;
+        --lightGreen: #c9cccd;
+        --lightGreen2: #eeeff0;
+        --blackGreen: #094850;
+        --googleRed: #ea4335;
+      }
+
+      body {
+        background-color: var(--white);
+        font-family: Tahoma, sans-serif;
+        margin: 0px;
+      }
+
+      .container {
+        width: "%100";
+      }
+
+      .headerForm {
+        flex-direction: row;
+        display: flex;
+        margin: 10px 0px;
+      }
+
+      .headerForm img {
+        height: 60px;
+        width: auto;
+      }
+
+      .header-content {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: end;
+        flex-direction: column;
+      }
+
+      .header {
+        padding: 4px;
+        background-color: var(--green);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .info {
+        margin: 10px 0px;
+        font-size: 12px;
+        line-height: 14.4px;
+      }
+
+      .value {
+        /* color: var(--blackGreen); */
+        font-size: 10px;
+        font-weight: 600;
+      }
+
+      .seperator {
+        border-bottom: 1px solid #ccc;
+      }
+
+      .checkbox-grid {
+        margin: 10px 0px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+
+      .custom-checkbox {
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+        display: inline-block;
+      }
+
+      .custom-checkbox input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #eee;
+        border: 1px solid #ccc;
+      }
+
+      .custom-checkbox:hover input ~ .checkmark {
+        background-color: #ddd;
+      }
+
+      .custom-checkbox input:checked ~ .checkmark {
+        background-color: var(--green);
+        border: 1px solid var(--green);
+      }
+
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      .custom-checkbox input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      .custom-checkbox .checkmark:after {
+        left: 7px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+
+      .form-container {
+        margin: 10px 0px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        page-break-inside: avoid; /* Prevent the entire container from splitting */
+      }
+
+      .form-containersingle {
+        margin: 10px 0px;
+      }
+
+      .form-confirmation {
+        padding: 10px;
+        border: 1px solid var(--blackGreen);
+        font-size: 12px;
+        page-break-inside: avoid; /* Prevent splitting inside this block */
+        display: block;
+        break-inside: avoid; /* For additional browser support */
+      }
+
+      .form-header {
+        margin-bottom: 10px;
+        font-size: 12px;
+        page-break-inside: avoid;
+        page-break-after: avoid; /* Prevent page break after header */
+        break-inside: avoid;
+        display: block;
+      }
+
+      .form-body {
+        margin-top: 10px;
+        font-size: 12px;
+        page-break-inside: avoid;
+        page-break-after: avoid; /* Avoid splitting at the end of this block */
+        break-inside: avoid;
+        display: block;
+      }
+
+      .signature {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        page-break-inside: avoid; /* Ensure signature stays on the same page */
+      }
+      .form-section {
+        page-break-inside: avoid; /* Prevents page break inside this section */
+      }
+      .page {
+        page-break-after: always;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="container">
+        <div class="headerForm">
+          <img class="img" src="{{clinic_logo}}" />
+          <div class="header-content">
+            <label name="">{{clinic_name}}</label>
+            <label name="">{{form_name}} {{form_language}}</label>
+          </div>
+        </div>
+        <div class="header">ORTODONTİK TEDAVİLER HAKKINDA GENEL BİLGİLER</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Başarılı bir Ortodontik tedavi, hastanın/hasta yakınının
+              kendisine yapılacak tedavi hakkında bilgi sahibi olması ile
+              mümkündür. Ancak her ortodontik tedavinin sınırları ve olası
+              riskleri vardır. Lütfen aşağıdaki bilgileri okuyunuz. Bu bilgiler
+              doğrultusunda ortodontik tedaviyi kabul etmekte veya etmemekte
+              serbestsiniz. Anlamadığınız veya sormak istediğiniz bir konu varsa
+              lütfen doktorunuzdan bilgi alınız.</span
+            >
+          </div>
+        </div>
+        <div class="info">
+          <div class="info-text">
+            <ul style="list-style-type: none; padding-left: 0">
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Ortodontik Tedavi uzun süreli ve disiplin gerektiren bir
+                tedavidir. İyi bir sonuç için hasta- hekim-aile iş birliği
+                gereklidir
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Tedavi başlangıcında teşhis amaçlı, tedavi süresince ve tedavi
+                sonrasında- kontrol amaçlı olarak- diş ve çevre dokuların
+                ayrıntılı olarak incelenebilmesi için diş ve baş röntgenlerinin
+                çekilmesi gereklidir.Tedavi sürecini daha net izleyebilmek için
+                tedavi öncesi ve tedavi sırasında ağız içinden ve ağız dışından
+                fotoğraf çekilmesi de gerekmektedir. Bazı ortodontik
+                anomalilerin teşhis ve tedavisinde ileri tetkiklerin de
+                istenmesi kaçınılmazdır
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Bu kayıtlar kimliğiniz belirtilmeden ve/veya kimliğiniz
+                anlaşılmayacak şekilde bilimsel nitelikteki yayınlarda ve
+                muayene içi sunumlarda kullanılabilir. Bu amaçların dışında bu
+                kayıtlar kullanılmayacak ve yasal makamların isteği dışında
+                başkalarıyla paylaşılmayacaktır
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Hasta hekimin öngördüğü tedaviyi sonuna kadar ve eksiksiz
+                uygulamak zorundadır. Hastanın/ailesinin iş birliği
+                eksikliğinden ortaya çıkan uyum eksikliği durumunda ve bunun
+                süregen olması durumunda hekim hastanın tedaviden fayda
+                sağlayamayacağına karar verdiğinde tedaviye son verme hakkına
+                sahiptir.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Ortodontik Tedavinin sonuçlanmasında hastanın dokularının
+                yapılan tedaviye bireysel cevabı önemli bir faktördür.Özellikle
+                kemiği de içine alan “iskeletsel anomalilerde” gelişim çağındaki
+                bireylerde gerekli büyüme desteği alınamaması halinde hedeflenen
+                yapılanma gerçekleşemeyebilir. Bu durumda bireye zarar vermemek
+                için hekim tedaviyi sonlandırabilir.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Hastanın genel sağlık durumu ile ilgili olmak üzere herhangi bir
+                sistemik hastalığın mevcudiyeti (kan hastalıkları, kemik
+                hastalıkları, hormonal bozukluklar, allerjik hastalıklar vb)
+                ortodontik tedaviyi etkileyebilir. Hastanın bu ve benzeri
+                hastalıklarını ortodontik tedaviye başlamadan önce ve tedavi
+                sırasında hastada oluşan sağlık durumu/tedavi ile ilgili
+                değişiklikleri ortodonti hekimine bildirmesi gerekmektedir.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Diş, çene ve yüz yapılarınızdaki bozuklukları biyolojik sınırlar
+                içerisinde düzeltebilmek için uygulanan tedavinin şekline göre
+                doktorunuzun belirlediği aralıklarla kontrol randevularına
+                gelmeniz gerekmektedir.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Ortodontik tedavi sadece estetik amaçlı dişlerin dizilmesi
+                değildir.Ana hedef, iyi bir çiğneme fonksiyonu kazandırmak
+                yanında,iyi görünen sağlıklı bir ağız,diş ve çene yapısına
+                ulaşmaktır.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Ortodontik tedavi sağlıklı dişlere uygulanır. Tedaviye
+                başlamadan önce diş hekimine giderek tüm dişler muayene
+                ettirilmeli, varsa çürük dişler tedavi edilmeli, gereken dişlere
+                kanal tedavisi yapılmalı, diş fırçalama eğitimi verilmelidir.
+                Dişlerini yeterince fırçalamayan hastaların tedavilerine
+                başlanmaz. Hastanın ağız bakımı düzelince ve gerekli olan
+                tedaviler yapıldıktan sonra ortodontik tedaviye başlanır.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Ortodontik tedavi aktif tedavi ve pekiştirme tedavisi olmak
+                üzere birbirini takip eden iki aşamadan oluşur. Aktif tedavi ile
+                dişlerdeki ve çenelerdeki bozukluklar düzeltilir. Pekiştirme
+                tedavisi ile de sağlanan iyileşmenin kalıcı olması sağlanır.
+                Size söylenen tedavi ücretleri her iki aşamayı da kapsar. Bu
+                aşamaların süreleri her kişide bozukluğun şiddetine göre
+                değişebilir.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Tedavi planlı ve tüm kurallara uygun olarak yapılsa bile,
+                uygulamaların tüm sonuçlara ulaşması garanti edilemez. Çünkü,
+                seçilen tedavinin sınırları, hasta –hekim-aile iş birliğinde
+                yaşanan aksaklıklar ve hastaya özgü kimi faktörler (örneğin:
+                genetik yapı, tedavi sırasında öngörülmesi mümkün olmayan
+                büyüme-gelişme faktörleri, ağız ve diş dokularının ortodontik
+                tedaviye verdiği yanıt, diş sıkma- diş gıcırdatma- v.b kötü
+                alışkanlıklar) sonuçların garanti edilmesini mümkün
+                kılmamaktadır.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="header">
+          SABİT ORTODONTİK TEDAVİ SÜRECİNDE DİKKAT EDİLMESİ GEREKEN DURUMLAR
+        </div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Ortodontik tedavi sırasında yapılan tedavi safhaları ve
+              kullanılan malzemeler çeşitlidir.Tedavi sırasında dişlerin üzerine
+              tutucu parçalar (braket) yapıştırılıp bunların içinden teller
+              geçirilmektedir. Gerekli olduğunda çene kemiğine yerleştirilen
+              destek amaçlı vidalar; çeneyi genişleten vidalı aparatlar, metal
+              yaylar, lastik zincirler vb. kullanılabilmektedir. Bazen hasta
+              tarafından takıp çıkarılması gereken ağız dışı aygıtların
+              (enselik/yüz maskesi gibi aygıtlar) veya ağız içi/dışı lastik
+              halkaların kullanılması gerekebilir. Bunların kullanımları ile
+              ilgili talimatlara ve hekiminizin önerilerine aynen
+              uyulmalıdır.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Ortodontik tedaviler sırasında dişlerde geçici bir hassasiyet
+              gelişebilir, dişetinde, dudakta, yanakta veya dilde küçük yaralar
+              oluşabilir. Tedaviniz sırasında erik, fındık, ceviz gibi sert
+              yiyecekler, sakız gibi yapışkan maddeler, apareyin kırılmasına ve
+              yapısının bozulmasına neden olmaktadır. Tedaviniz boyunca bu gibi
+              gıdalardan uzak durmanız tedavinizin seyri bakımından çok
+              önemlidir. Bu gibi durumlarda hekiminiz mutlaka bilgilendirilmeli
+              ve hekimin önerilerine mutlaka uyulmalıdır. Size vereceğimiz
+              broşürü dikkatle okuyunuz. Bu konuda bize yardımcı olacağınızı
+              düşünüyor ve teşekkür ediyoruz.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Tedavi sırasında yeterli fırçalanmayan dişlerde çürük,
+              dişetlerinde iltihap, dişeti çekilmesi ve destek kemik kaybı
+              oluşabilir. Ayrıca dişlerde asitli içeceklerin tüketimi ile artan,
+              kalıcı mat beyaz lekeler gelişebilir. Bu problemler ortodontik
+              tedavi görmeyen kişilerde de oluşabilir ama braket takılmış
+              dişlerde daha da artar. Bu nedenle dişlerinizi ana ve ara
+              öğünlerden sonra düzenli olarak fırçalamalısınız. Ağız bakımını en
+              iyi şekilde yapabilmek, sağlıklı dişlere ve dişetlerine sahip
+              olabilmek için düzenli olarak diş hekimine kontrola gitmelisiniz.
+              Kimi zaman iyi bakımlarda bile diş çevresindeki destek kemik
+              dokusu çok ince ise kemik kaybına bağlı diş eti çekilmesi
+              görülebilir.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Dişlerin biçim-boyut-konumlarındaki çeşitlilik, küçük dişler,
+              eksik dişler veya anormal konumlanmış dişler nedeniyle ideal
+              tedavi sonucuna (ör. çekim boşluklarının tamamen kapatılması)
+              ulaşılamayabilir. Bazen düzeltilen dişlerin dişetine yakın
+              aralarında boşluklar görülebilmektedir. Bunlar için estetik
+              dolgular, kron-köprü restorasyonları veya periodontal tedavi gibi
+              destek tedaviler gerekebilir.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Ortodontik tedavi sırasında bazı dişlerin köklerinde kısalma
+              meydana gelebilir. Genellikle kısalma miktarı azdır ve önemli bir
+              sonuç doğurmaz. Şiddetli bir kısalma saptanırsa hekim ortodontik
+              tedaviyi sonlandırabilir.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Tedavi sırasında bazı hassas bünyeli hastalarda, ortodontik
+              tedavide kullanılan materyallere karşı alerjik reaksiyonlar
+              görülebilir. Böyle bir sorunla karşılaştığınızda en kısa sürede
+              kliniğimize haber vermeniz gerekir. Bu durumda tedavi planında
+              değişiklik yapılması veya tedavinin durdurulması
+              gerekebilir.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Dişlerde, ortodontik tedavinin bitiminden hemen sonra dişlerde
+              pozisyonlarını değiştirme ve tedavinin başındaki ilk konumlarına
+              geri dönme eğilimi söz konusudur. Bu nedenle aktif ortodontik
+              tedavi biter bitmez “pekiştirme tedavisi”ne başlanmalıdır. Bu
+              tedavide ya dişlerin iç tarafında sabit olarak bir tel
+              yapıştırılır ya da hastanın takıp çıkarabileceği bir pekiştirme
+              aygıtı kullanılır. Sabit pekiştirme apareyleri, hekiminizce aksi
+              söylenmedikçe , dişlerin arkasında süresiz olarak kalmaktadır.
+              Takıp çıkarılabilen pekiştirme aygıtının ise hekimin talimatlarına
+              uygun olarak kullanılması tedavi sonucunun kalıcılığı açısından
+              çok önemlidir. Takıp çıkartılan pekiştirme apareylerinin hekim
+              tavsiyesine uyulmadan kullanılması sonucu dişlerin eski durumuna
+              gelmesi kaçınılmazdır. Pekiştirme tedavisinin eksik uygulanması
+              sonucu bozulan dişler ve ilişkiler yeniden bir ortodontik tedavi
+              gerektirebilir. Bu durum tekrar ücretlendirilmeyi gerektirir
+              .</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Ortodontik tedavinin bitimini takiben ilerleyen dönemlerde de,
+              çeşitli durumlarda dişlerin kapanışı olumsuz olarak etkilenebilir.
+              Bu durumlara örnek olarak dişlerin, çenelerin ve dilin boyutunu
+              belirleyen genetik etkiler, büyüme veya gelişimsel değişimler,
+              ağız solunumu yapılması, dil itimi, parmak emme gibi ağız
+              alışkanlıklarının devam etmesi, 20 yaş dişlerinin uygun olmayan
+              çıkış baskıları verilebilir. Bunlar ortodontistin kontrolü dışında
+              gelişebilen durumlardır ve ilave tedaviler gerektirebilir</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Hastanın üst/alt çenesinde dişlerinin düzgünce sıralanabilmesi
+              için yeterli yer bulunmaması durumunda başvurulan bir yöntemdir.
+              Ağızdaki mevcut problemin giderilmesi için ÇEKİMLİ ORTODONTİK
+              TEDAVİ yapılması gerekmektedir. Çekimli ortodontik tedavi
+              hekiminizin tıbbi açıdan uygun gördüğü dişlerin çekilmesi ile
+              yapılan bir tedavidir. Bu nedenle
+              <span class="value">{{other_keys_jaw_region}}</span> bölgesinden
+              olmak üzere toplam
+              <span class="value">{{other_keys_tooth_count}}</span> adet
+              <span class="value">{{other_keys_extracted_teet}}</span> çekimi
+              planlanmaktadır.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Diş çekimi ile elde edilen boşluklardan yer darlığının
+              giderilmesi ve/veya dişlerin kapanışının düzeltilmesi için
+              faydalanılacak ve bu boşluklar yukarda bahsedilen istenmeyen
+              durumlar ortaya çıkmadığı takdirde, tedavi sonunda diş dizisinin
+              dışında duran dişlerin yerlerine alınması ile
+              doldurulacaktır</span
+            >
+          </div>
+        </div>
+        <div class="form-containersingle">
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>ORTODONTİK TEDAVİ</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Tarih:</span>
+                <span class="value">{{patient_info_patient_date}}</span>
+              </div>
+              <div>
+                <span class="label">Adı Soyadı:</span>
+                <span class="value"
+                  >{{patient_info_name}} {{patient_info_surname}}</span
+                >
+              </div>
+              <div>
+                <span class="label">Doğum Tarihi:</span>
+                <span class="value">{{patient_info_birth_date}}</span>
+              </div>
+              <div>
+                <span class="label">Cinsiyeti:</span>
+                <span class="value"
+                  >{{#if (eq patient_info_gender
+                  'male')}}Erkek{{else}}Kadın{{/if}}</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <div class="container">
+        <div class="header">AÇIKLAMA</div>
+        <div class="seperator"></div>
+        <div class="header">ORTODONTİK TANI</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Klinik ve radyolojik değerlendirmelerimiz sonucunda
+              <span class="value">{{other_keys_orthodontic_diagnosis}}</span>
+              de/da saptadığımız ortodontik sorunlar aşağıda yer almaktadır
+            </span>
+            <br />
+            <span class="value"
+              >{{other_keys_orthodontic_diagnosis_description}}</span
+            >
+          </div>
+        </div>
+        <div class="header">ÖNERİLEN TEDAVİ</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Bu ortodontik sorunların giderilmesi için aşağıda belirtilen
+              işlemlerin yapılması gerekmektedir.</span
+            >
+            <br />
+            <span class="value"
+              >{{other_keys_recommended_treatment_description}}</span
+            >
+          </div>
+        </div>
+        <div class="header">TEDAVİ SÜRECİ</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Hastamız
+              <span class="value"
+                >{{patient_info_name}} {{patient_info_surname}}</span
+              >
+              aktif ortodontik tedavisinin süresi yukarda ayrıntılı bir şekilde
+              açıklandığı gibi, hastadan hastaya değişmekle birlikte, yaklaşık
+              <span class="value">{{other_keys_treatment_duration}}</span>
+              olarak tahmin edilmektedir.
+            </span>
+          </div>
+        </div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Bu süreler yukarda bahsedilen istenmeyen durumlar ortaya
+              çıkmadığı ve hekim-hasta uyumu yukarda bahsedildiği ideal şekilde
+              gerçekleştiği durumlarda geçerlidir.
+            </span>
+          </div>
+        </div>
+        <div class="header">
+          ORTODONTİK TEDAVİ SIRASINDA YAŞANABİLEN OLUMSUZLUKLAR
+        </div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Ortodontik tedavi sırasında bazı olumsuzluklar oluşabilir.</span
+            >
+            <ul style="list-style-type: none; padding-left: 0">
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >a.</span
+                >Dişlere uygulanan ortodontik kuvvet, bir hafta süreyle ağrılı
+                diş hassasiyetine neden olabilir
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >b.</span
+                >Dişlerdeki metal, porselen veya akrilik ayıtlar geçici olarak
+                yemek yeme, konuşma ve yutkuma güçlüğü yaratabilir.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >c.</span
+                >Dudak, yanak ve dilde yaralar oluşabilir.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >d.</span
+                >Ağız bakımı zoralaşabilir
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >e.</span
+                >Braket kopması, tel kırılması gibi istenmeyen durumlar
+                oluşabilir
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >f.</span
+                >Braketin sıkça kopması, hem tedaviye hem de dişin mine
+                tabakasına zarar verebilir.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >g.</span
+                >Kök uçlarında erime (rezorpsiyon) oluşabilir.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >h.</span
+                >Diş sinirinde zedelenme sonucu kanal tedavisi gerekebilir.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >i.</span
+                >Diş çevresindeki destek kemik dokusu çok ince ise kemik kaybına
+                bağlı diş eti çekilmesi görülebilir.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Tedavi sırasında yeterli fırçalanmayan dişlerde; çürük, kalıcı
+              beyaz lekeler ve diş etlerinde iltahap oluşabilir.Diş eti iltahabı
+              zamanla kırmızı renk değişikliğine, kanamaya ve diş eti büyümesine
+              yol açar. Bu nedenle dişler ana ve ara öğünlerden sonra düzenli
+              olarak, tüm gıda artıklarının uzaklaştırıldığından emin olana
+              kadar fırçalanmalıdır.</span
+            >
+          </div>
+        </div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Dişlere yapıştırılan sabit tellerin zarar görmemesi ve
+              kırılmaması için hekiminizin vereceği yasak listesine tedavi
+              bitene kadar uymanız gerekmektedir.</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <div class="container">
+        <div class="header">HASTANIN BEYANI</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Ben/ Velisi/Ebeveyni/Vasisi olduğum oğlum/kızım
+              <span class="value"
+                >{{patient_info_name}} {{patient_info_surname}}</span
+              >
+              (için), Dr.
+              <span class="value">{{doctor_info_name_and_surname}}</span>
+              muayenehanesinde önerilen ortodontik tedavi ile ilgili ağız
+              içerisinde ve dişlerdeki mevcut problemlerin neler olduğu,
+              tedavisinin neden gerektiği, ortodontik tedavi sırasında ve
+              sonrasında olabilecek değişiklikler ve karşılaşabilecek olası
+              problemler bana aktarıldığı gibi, ben de formdan okudum. Diğer
+              tedavi seçenekleri hakkında bilgilendirildim. Ortodotik tedavi ile
+              ilgili bir sorun ile karşılaştığım/ızda, ortodontik yardıma nasıl
+              ulaşılacağı bilgisi verildi. Çalışma saatleri içerisinde
+              doktorlarımızı ve muayenehaneyi
+              <span class="value">{{other_keys_clinic_phone}}</span> numaralı
+              telefonlardan arayabileceğimi biliyorum.
+            </span>
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Yapılacak girişimler ve ortodontik tedavi ile ilgili bilmek ve
+              öğrenmek istediğim her şeyle ilgili olarak formu okuduktan sonra
+              soru sormam/ız için yeterli zaman ve fırsat verildi ve bu konuda
+              tatmin edici yanıtlar aldım. Uygulanacak işlemlerin ve ortodontik
+              tedavinin ağız,diş sağlığı ve görünümümün daha iyiye götürmek
+              amacıyla yapıldığını ancak her hasta için ayrı bir “en iyi sonuç”
+              olduğunu kabul ediyorum. Tedavi olmam konusunda zorlayıcı bir
+              davranışla karşılaşmış değilim. Eğer tedavi olmayı istemezsem veya
+              tedaviye başladıktan sonra tedaviyi yarım bırakmam durumunda olası
+              gelişmeler ve riskler bana anlatıldı.
+            </span>
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Bana anlatılan ortodontik tanının anlatımını, önerilen ortodontik
+              tedavi şeklini, bu tedavi için bana açıklanan tedavi ücretini ve
+              ödeme koşullarını ve ortodontik tedavinin olası risklerini tamamen
+              anladım. Bu formun tüm sayfalarını okudum ve dikkat etmem gereken
+              konuları tamamen anladım. Hekimim tarafından karar verme sürecine
+              katılmam için bilgiler sunuldu Okuduğum ve bana anlatılan
+              kurallara uymadığım zaman uygulanacak olan tedavinin gecikeceğini
+              ve başarısız olacağını kabul ediyorum. Tedavinin başarısız olması
+              halinde tedaviyi yapan doktorlarımdan maddi ve manevi tazminat
+              talebinde bulunmayacağım gibi doktorumun herhangi bir cezai
+              sorumluluğu olmayacağını da kabul ediyorum. Tedavi sırasında
+              eğitim amaçlı fotoğraf ve video çekilmesini kabul ediyor ve
+              -kimlik bilgilerim/tanıtıcı görsel materyallerin verilmeden-
+              tedavi kayıtlarımın eğitim ve bilimsel yayın için kullanılmasına
+              izin veriyorum.
+            </span>
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Ayrıca tedavi sonrası pekiştirme tedavisi amacıyla uygulanan
+              hareketli ve/veya sabit pekiştirme tedavileri hakkında bana
+              ayrıntılı olarak bilgi verilmiştir. Tarafımdan oluşabilecek her
+              türlü aksaklık (hareketli apareylerimin bilgilendirildiğim şekilde
+              kullanılmaması veya hiç takılmaması veya yenmemesi gereken
+              yiyeceklerin yenilmesi sonucu sabit pekiştirme telimin kopması ve
+              bunun doktorlarıma zamanında bildirilmemesi vb.) durumunda
+              itirazsız olarak her türlü sorumluluğun kendime ait olduğunu beyan
+              ve kabul ediyor ve böyle bir durum sonucunda uygulanacak işlemler
+              için gerekli olan ücreti ödeyeceğimi taahhüt ediyorum.
+            </span>
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Ben / velisi olduğum çocuğum / vasisi olduğum
+              <span class="value"
+                >{{patient_info_name}} {{patient_info_surname}}</span
+              >
+              hekimim tarafından uygun görülen ve önceki sayfalarda bana yapılan
+              tüm açıklamalar doğrultusunda
+              <span class="value">{{other_keys_treatment_choice}}</span>
+              (çekimli) ortodontik tedavimin yapılmasını seçiyor, istiyorum ve
+              onaylıyorum.
+            </span>
+          </div>
+          <br />
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#if (eq other_keys_read_understood_accepted
+            true )}} checked="true" {{/if}}> OKUDUM ANLADIM ONAYLIYORUM.
+            <span class="checkmark"></span>
+          </label>
+          <br />
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Yukardaki boş satıra 'okudum, anladım, kabul ediyorum' diye kendi
+              el yazınız ile yazmanızı ve alttaki bölümleri doldurmanızı ve
+              imzalamanızı rica ediyoruz.
+            </span>
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Aşağıda ve önceki sayfalarda bulunan imzalarım/ız bu sayfalarda
+              bulunan tüm bilgileri okuduğum/uzu ve anladığımı/ızı
+              onaylamaktadır ve bu sayfalarda bulunan bütün boşluklar
+              imzalarım/ızdan önce doldurulmuştur
+            </span>
+          </div>
+        </div>
+        <div class="header">Form Onay</div>
+        <div class="form-container">
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>Hastanın:</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Adı Soyadı:</span>
+                <span class="value"
+                  >{{patient_info_name}} {{patient_info_surname}}</span
+                >
+              </div>
+              <div>
+                <span class="label">T.C Numarası:</span>
+                <span class="value">{{patient_info_patient_tc_number}}</span>
+              </div>
+              <div>
+                <span class="label">E-posta:</span>
+                <span class="value">{{patient_info_email}}</span>
+              </div>
+              <div>
+                <span class="label">Tarih:</span>
+                <span class="value">{{patient_info_patient_date}}</span>
+              </div>
+              <div>
+                <span class="label">İmza:</span>
+                <img
+                  class="signature"
+                  src="{{patient_info_signature_patient}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>Hastanın Ebeveyn/Velisinin:</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Adı Soyadı:</span>
+                <span class="value"
+                  >{{patient_parent_info_name_and_surname}}</span
+                >
+              </div>
+              <div>
+                <span class="label">T.C Numarası::</span>
+                <span class="value">{{patient_parent_info_tc_number}}</span>
+              </div>
+              <div>
+                <span class="label">Yakınlığı:</span>
+                <span class="value"
+                  >{{patient_parent_info_parent_relationship}}</span
+                >
+              </div>
+              <div>
+                <span class="label">Tarih:</span>
+                <span class="value">{{patient_parent_info_date}}</span>
+              </div>
+              <div>
+                <span class="label">İmza:</span>
+                <img
+                  class="signature"
+                  src="{{patient_parent_info_signature_patient_parent}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>Katılımcı ile Görüşen Doktorun:</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Adı Soyadı:</span>
+                <span class="value">{{doctor_info_name_and_surname}}</span>
+              </div>
+              <div>
+                <span class="label">Adresi/Tel:</span>
+                <span class="value">{{doctor_info_phone_number}}</span>
+              </div>
+              <div>
+                <span class="label">Tarih:</span>
+                <span class="value">{{doctor_info_date}}</span>
+              </div>
+              <div>
+                <span class="label">İmza:</span>
+                <img
+                  class="signature"
+                  src="{{doctor_info_signature_doctor}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ANAMNEZ</title>
+    <style>
+      :root {
+        --dust_storm: #dec8b9;
+        --lavender: #fbfbfb;
+        --shuttle_gray: #5c666f;
+        --darkBlue: #0c356a;
+        --blue: #279eff;
+        --lightBlue: #40f8ff;
+        --white: #ffffff;
+        --green: #21d0c3;
+        --red: #ff5b62;
+        --darkGreen: #646666;
+        --lightGreen: #c9cccd;
+        --lightGreen2: #eeeff0;
+        --blackGreen: #094850;
+        --googleRed: #ea4335;
+      }
+
+      body {
+        background-color: var(--white);
+        font-family: Tahoma, sans-serif;
+        margin: 0px;
+      }
+
+      .container {
+        width: "%100";
+      }
+      .headerForm {
+        flex-direction: row;
+        display: flex;
+        margin: 10px 0px;
+      }
+      .headerForm img {
+        height: 60px;
+        width: auto;
+      }
+
+      .header-content {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: end;
+        flex-direction: column;
+      }
+      .header {
+        padding: 4px;
+        background-color: var(--green);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+      }
+
+      .info {
+        margin: 10px 0px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      .value {
+        color: var(--darkGreen);
+      }
+
+      .seperator {
+        border-bottom: 1px solid #ccc;
+      }
+
+      .checkbox-grid {
+        margin: 10px 0px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+
+      .custom-checkbox {
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+        display: inline-block;
+      }
+
+      .custom-checkbox input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #eee;
+        border: 1px solid #ccc;
+      }
+
+      .custom-checkbox:hover input ~ .checkmark {
+        background-color: #ddd;
+      }
+
+      .custom-checkbox input:checked ~ .checkmark {
+        background-color: var(--green);
+        border: 1px solid var(--green);
+      }
+
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      .custom-checkbox input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      .custom-checkbox .checkmark:after {
+        left: 7px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+
+      .form-container {
+        margin: 10px 0px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        page-break-inside: avoid; /* Prevent the entire container from splitting */
+      }
+      .form-confirmation {
+        padding: 10px;
+        border: 1px solid var(--blackGreen);
+        page-break-inside: avoid; /* Prevent splitting inside this block */
+        display: block;
+        break-inside: avoid; /* For additional browser support */
+      }
+      .form-header {
+        margin-bottom: 10px;
+        font-size: 18px;
+        page-break-inside: avoid;
+        page-break-after: avoid; /* Prevent page break after header */
+        break-inside: avoid;
+        display: block;
+      }
+      .form-body {
+        margin-top: 10px;
+        page-break-inside: avoid;
+        page-break-after: avoid; /* Avoid splitting at the end of this block */
+        break-inside: avoid;
+        display: block;
+      }
+
+      .signature {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        page-break-inside: avoid; /* Ensure signature stays on the same page */
+      }
+      .form-section {
+        page-break-inside: avoid; /* Prevents page break inside this section */
+      }
+      .page {
+        page-break-after: always;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="container">
+        <div class="headerForm">
+          <img class="img" src="{{clinic_logo}}" />
+
+          <div class="header-content">
+            <label name="">{{clinic_name}}</label>
+            <label name="">{{form_name}} {{form_language}}</label>
+          </div>
+        </div>
+        <div class="header">Hasta Bilgileri</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label">Adı Soyadı:</span>
+            <span class="value"
+              >{{patient_info_name}} {{patient_info_surname}}</span
+            >
+          </div>
+          <div class="info-text">
+            <span class="label">Doğum Tarihi:</span>
+            <span class="value">{{patient_info_birth_date}}</span>
+          </div>
+        </div>
+        <div class="header">Hastanın Medikal Hikayesi</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label">Son Zamanlarda Tıbbi Tedavi Gördünüz mü?</span>
+            <span class="value"
+              >{{#if (eq patient_info_received_medical_treatment_answer
+              'yes')}}Evet{{else}}Hayır{{/if}}</span
+            >
+          </div>
+          <div class="info-text">
+            <span class="label">Açıklama:</span>
+            <span class="value"
+              >{{patient_info_received_medical_treatment_description}}</span
+            >
+          </div>
+        </div>
+        <div class="seperator"></div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label">Ameliyat oldunuz mu?</span>
+            <span class="value"
+              >{{#if (eq patient_info_had_medical_operation_answer
+              'yes')}}Evet{{else}}Hayır{{/if}}</span
+            >
+          </div>
+          <div class="info-text">
+            <span class="label">Açıklama:</span>
+            <span class="value"
+              >{{patient_info_had_medical_operation_description}}</span
+            >
+          </div>
+        </div>
+        <div class="seperator"></div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label">Düzenli kullandığınız ilaç var mı?</span>
+            <span class="value"
+              >{{#if (eq patient_info_use_frequnt_drugs_answer
+              'yes')}}Evet{{else}}Hayır{{/if}}</span
+            >
+          </div>
+          <div class="info-text">
+            <span class="label">Açıklama:</span>
+            <span class="value"
+              >{{patient_info_use_frequnt_drugs_description}}</span
+            >
+          </div>
+        </div>
+        <div class="checkbox-grid">
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'blood_Thinner'
+            patient_info_use_frequnt_drugs_drugs}} checked="true"
+            {{/ifInArray}}> Kan Sulandırıcı
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'blood_pressure_medicine'
+            patient_info_use_frequnt_drugs_drugs}} checked="true"
+            {{/ifInArray}}> Tansiyon İlacı
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'heart_medicine'
+            patient_info_use_frequnt_drugs_drugs}} checked="true"
+            {{/ifInArray}}> Kalp İlacı
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'cortisone'
+            patient_info_use_frequnt_drugs_drugs}} checked="true"
+            {{/ifInArray}}> Kortizon
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'cholesterol_medicine'
+            patient_info_use_frequnt_drugs_drugs}} checked="true"
+            {{/ifInArray}}> Kolesterol İlacı
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'diabetes_medicine'
+            patient_info_use_frequnt_drugs_drugs}} checked="true"
+            {{/ifInArray}}> Şeker İlacı
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'asthma_medicine'
+            patient_info_use_frequnt_drugs_drugs}} checked="true"
+            {{/ifInArray}}> Astım İlacı
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'thyroid_medicine'
+            patient_info_use_frequnt_drugs_drugs}} checked="true"
+            {{/ifInArray}}> Tiroid İlacı
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'osteoporosis_medicine'
+            patient_info_use_frequnt_drugs_drugs}} checked="true"
+            {{/ifInArray}}> Osteoporoz ilacı
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="seperator"></div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Daha önce kemik erimesi için veya kanser tedavisi için kemik
+              dokuyu koruma amaçlı ‘bifosfanat içerikli ilaç kullandınız
+              mı?</span
+            >
+            <span class="value"
+              >{{#if (eq patient_info_had_bifosfanat_medicine_answer
+              'yes')}}Evet{{else}}Hayır{{/if}}</span
+            >
+          </div>
+          <div class="info-text">
+            <span class="label">Açıklama:</span>
+            <span class="value"
+              >{{patient_info_had_bifosfanat_medicine_description}}</span
+            >
+          </div>
+        </div>
+        <div class="seperator"></div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Herhangi bir maddeye veya ilaca karşı allerjiniz var mı?</span
+            >
+            <span class="value"
+              >{{#if (eq patient_info_has_allergy_to_medicine_answer
+              'yes')}}Evet{{else}}Hayır{{/if}}</span
+            >
+          </div>
+        </div>
+        <div class="checkbox-grid">
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'penicillin'
+            patient_info_has_allergy_to_medicine_medicine}} checked="true"
+            {{/ifInArray}}> Penisilin
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'painkiller'
+            patient_info_has_allergy_to_medicine_medicine}} checked="true"
+            {{/ifInArray}}> Ağrı Kesici
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'local_anesthesia_substance'
+            patient_info_has_allergy_to_medicine_medicine}} checked="true"
+            {{/ifInArray}}> Lokal Anestezi Madde
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'other'
+            patient_info_has_allergy_to_medicine_medicine}} checked="true"
+            {{/ifInArray}}> Diğer
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label">Diğer:</span>
+            <span class="value"
+              >{{patient_info_has_allergy_to_medicine_other}}</span
+            >
+          </div>
+        </div>
+        <div class="seperator"></div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label">Sigara kullanıyor musunuz?</span>
+            <span class="value"
+              >{{#if (eq patient_info_smoking_answer
+              'yes')}}Evet{{else}}Hayır{{/if}}</span
+            >
+          </div>
+        </div>
+        <div class="checkbox-grid">
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#if (eq patient_info_smoking_smoke
+            '0_10_pieces_per_day')}} checked="checked" {{/if}}> Günde 0-10 adet
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#if (eq patient_info_smoking_smoke
+            '10_20_pieces_per_day')}} checked="checked" {{/if}}> Günde 0-10 adet
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#if (eq patient_info_smoking_smoke
+            'more_than_20_per_day')}} checked="checked" {{/if}}> Günde 0-10 adet
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <div class="container">
+        <div class="header">Hastanın Medikal Durumu</div>
+        <div class="checkbox-grid">
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'heart_attack'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Kalp Krizi
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'heart_Palpitations'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Kalp Çarpıntısı
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'congenital_heart_disease'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Doğumsal Kalp Hastalığı
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'heart_surgery'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Kalp Cerrahisi
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'chest_Pain'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Göğüs Ağrısı
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'low_high_blood_pressure'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Düşük/Yüksek Tansiyon
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'rheumatic_fever'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Romatizmal Ateş
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'rheumatism'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Romatizma
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'osteoporosis'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Osteoporoz
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'paralysis'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Felç
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'thyroid'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Tiroid
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'ulcer'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Ülser
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'asthma'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Astım
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'copd'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> KOAH
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'sinusitis'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Sinüzit
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'tuberculosis'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Tüberküloz
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'epilepsy'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Epilepsi
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'hepatitis'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Hepatit
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'kidney_disease'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Böbrek Hastalığı
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'urticaria'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Ürtiker
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'blood_disease'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Kan Hastalığı
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'anemia'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Anemi
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'long_bleeding_time'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Uzun Kanama Zamanı
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'glaucoma'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Glokom
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'diabetes'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Diyabet
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'hiv'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> HIV
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'cancer'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Kanser
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'radiotherapy'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Radyoterapi
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'chemotherapy'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Kemoterapi
+            <span class="checkmark"></span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#ifInArray 'other'
+            patient_info_other_medical_status_status}} checked="true"
+            {{/ifInArray}}> Diğer
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label">Diğer:</span>
+            <span class="value"
+              >{{patient_info_other_medical_status_other}}</span
+            >
+          </div>
+        </div>
+        <div class="header">Kadınlar için Sorular</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label">Hamile misiniz?</span>
+            <span class="value"
+              >{{#if (eq patient_info_pregnant_answer
+              'yes')}}Evet{{else}}Hayır{{/if}}</span
+            >
+          </div>
+          <div class="info-text">
+            <span class="label">Emziriyor musunuz?</span>
+            <span class="value"
+              >{{#if (eq patient_info_breastfeeding_answer
+              'yes')}}Evet{{else}}Hayır{{/if}}</span
+            >
+          </div>
+        </div>
+        <div class="header">Form Onay</div>
+        <div class="form-container">
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>Hasta</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Adı Soyadı:</span>
+                <span class="value"
+                  >{{patient_info_name}} {{patient_info_surname}}</span
+                >
+              </div>
+              <div>
+                <span class="label">İmza:</span>
+                <img
+                  class="signature"
+                  src="{{patient_info_signature_patient}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>Hastanın Velisi/Vasisi</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Adı Soyadı:</span>
+                <span class="value"
+                  >{{patient_parent_info_name_and_surname}}</span
+                >
+              </div>
+              <div>
+                <span class="label">İmza:</span>
+                <img
+                  class="signature"
+                  src="{{patient_parent_info_signature_patient_parent}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>Hekim</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Adı Soyadı:</span>
+                <span class="value">{{doctor_info_name_and_surname}}</span>
+              </div>
+              <div>
+                <span class="label">İmza:</span>
+                <img
+                  class="signature"
+                  src="{{doctor_info_signature_doctor}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

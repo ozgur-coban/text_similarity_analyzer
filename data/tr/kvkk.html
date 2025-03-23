@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KİŞİSEL VERİLER AYDİNLATMA VE ONAM METNİ</title>
+    <style>
+      :root {
+        --dust_storm: #dec8b9;
+        --lavender: #fbfbfb;
+        --shuttle_gray: #5c666f;
+        --darkBlue: #0c356a;
+        --blue: #279eff;
+        --lightBlue: #40f8ff;
+        --white: #ffffff;
+        --green: #21d0c3;
+        --red: #ff5b62;
+        --darkGreen: #646666;
+        --lightGreen: #c9cccd;
+        --lightGreen2: #eeeff0;
+        --blackGreen: #094850;
+        --googleRed: #ea4335;
+      }
+
+      body {
+        background-color: var(--white);
+        font-family: Tahoma, sans-serif;
+        margin: 0px;
+      }
+
+      .container {
+        width: "%100";
+      }
+
+      .headerForm {
+        flex-direction: row;
+        display: flex;
+        margin: 10px 0px;
+      }
+
+      .headerForm img {
+        height: 60px;
+        width: auto;
+      }
+
+      .header-content {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: end;
+        flex-direction: column;
+      }
+
+      .header {
+        padding: 4px;
+        background-color: var(--green);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+      }
+
+      .info {
+        margin: 10px 0px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      .value {
+        color: var(--darkGreen);
+      }
+
+      .seperator {
+        border-bottom: 1px solid #ccc;
+      }
+
+      .checkbox-grid {
+        margin: 10px 0px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+
+      .custom-checkbox {
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+        display: inline-block;
+      }
+
+      .custom-checkbox input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #eee;
+        border: 1px solid #ccc;
+      }
+
+      .custom-checkbox:hover input ~ .checkmark {
+        background-color: #ddd;
+      }
+
+      .custom-checkbox input:checked ~ .checkmark {
+        background-color: var(--green);
+        border: 1px solid var(--green);
+      }
+
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      .custom-checkbox input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      .custom-checkbox .checkmark:after {
+        left: 7px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+
+      .form-container {
+        margin: 10px 0px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        page-break-inside: avoid; /* Prevent the entire container from splitting */
+      }
+
+      .form-confirmation {
+        padding: 10px;
+        border: 1px solid var(--blackGreen);
+        page-break-inside: avoid; /* Prevent splitting inside this block */
+        display: block;
+        break-inside: avoid; /* For additional browser support */
+      }
+
+      .form-header {
+        margin-bottom: 10px;
+        font-size: 18px;
+        page-break-inside: avoid;
+        page-break-after: avoid; /* Prevent page break after header */
+        break-inside: avoid;
+        display: block;
+      }
+
+      .form-body {
+        margin-top: 10px;
+        page-break-inside: avoid;
+        page-break-after: avoid; /* Avoid splitting at the end of this block */
+        break-inside: avoid;
+        display: block;
+      }
+
+      .signature {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        page-break-inside: avoid; /* Ensure signature stays on the same page */
+      }
+      .form-section {
+        page-break-inside: avoid; /* Prevents page break inside this section */
+      }
+      .page {
+        page-break-after: always;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="container">
+        <div class="headerForm">
+          <img class="img" src="{{clinic_logo}}" />
+
+          <div class="header-content">
+            <label name="">{{clinic_name}}</label>
+            <label name="">{{form_name}} {{form_language}}</label>
+          </div>
+        </div>
+        <div class="header">KİŞİSEL VERİLER AYDİNLATMA VE ONAM METNİ</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Kliniğimiz olarak tarafınıza sunacağımız hizmetlerin
+              yürütülebilmesi için kişisel bilgilerinizi ve sağlık verilerinizi
+              öğrenmemiz ve sunulacak hizmetin gerektirdiği sınırlar içinde
+              kalmak kaydıyla kaydetmemiz ve saklamamız gerekebilmektedir.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Tarafınıza sağlık hizmeti sunabilmek için kaydetmek durumunda
+              olduğumuz sağlık verileriniz, Kanunen özel nitelikli kişisel veri
+              olarak kabul edilmektedir. Bu kapsamda 6698 sayılı Kişisel
+              Verilerin Korunması Kanunu'nun 6. Maddesinin 2. Fıkrasında yer
+              alan 'Özel nitelikli kişisel verilerin, ilgilinin açık rızası
+              olmaksızın işlenmesi yasaktır.' hükmü uyarınca kişisel sağlık
+              verileri, kanunda belirtilen özel koşullar dışında ancak kişinin
+              açık yazılı rızası ile kaydedilebildiğinden, tarafınızdan bu
+              onamın alınması zorunluluğu doğmuştur.</span
+            >
+          </div>
+        </div>
+        <div class="header">BİLGİLENDİRME METNİ</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >I. Bu onam, polikliniğimizde sözlü, yazılı, görsel, ya da
+              elektronik olarak tarafımıza verdiğiniz kişisel verileriniz ile
+              internet ve mobil uygulamalar ile ya da elektronik olarak
+              tarafımıza ilettiğiniz ya da muayenehanemizde elde edilen (tahlil
+              sonucu, reçete, kamera kaydı, video, fotoğraf vb.) kişisel
+              verilerinizi kapsamaktadır.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >II. Bu anlamda tarafınıza sunacağımız hizmetlerin yürütülmesi
+              için gerekli olan ve bu amaçla elde edilen kişisel sağlık verileri
+              başta olmak üzere, adınız, soyadınız, TC kimlik numaranız, (Türk
+              vatandaşı değilseniz pasaport numaranız veya geçici TC kimlik
+              numaranız) doğum yeri ve tarihiniz, medeni haliniz, cinsiyet
+              bilginiz gibi kimlik verileri ile çeşitli kimlik belgeleriniz,
+              adresiniz, telefon numaranız, elektronik posta adresiniz gibi
+              iletişim verileriniz, Banka hesap numaranız, IBAN numaranız gibi
+              finansal verileriniz, klinik dosyanızdaki tıbbi öykünüz, hastalık
+              geçmişinizi gösterir bilgiler, muayene verileriniz, tarafınıza
+              uygulanan işlemlere ilişkin veriler, reçete bilgileriniz,
+              fotoğraflarınız, her türlü görüntünüz, ses/kamera kaydınız,
+              laboratuvar ve görüntüleme sonuçlarınız, test sonuçlarınız gibi
+              tıbbi teşhis, tedavi ve bakım hizmetlerinin yürütülmesi sırasında
+              elde edilen sağlık ve cinsel hayata ilişkin verileriniz, özel
+              sağlık sigortasına ilişkin verileriniz ile Sosyal Güvenlik Kurumu
+              verileriniz vb. kişisel veri sayılmaktadır.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >III. Bu kişisel verileriniz 6698 sayılı Kişisel Verilerin
+              Korunması Kanunu ve ilgili mevzuat çerçevesinde sadece tarafınıza
+              sunulacak sağlık hizmetinin gerektirdiği ölçüde kaydedilecek ve
+              '...kaydedilme amaçlarını gerçekleştirmek için gerekli olan süreyi
+              aşmayacak şekilde' sistemimizde/arşivimizde saklanacaktır. Bu
+              kapsamda işlenen verileriniz mesleki sır olarak korunup, gizliliği
+              sağlanacak ve üçüncü kişilerce/kurumlarca/kuruluşlarca
+              paylaşılmayacaktır.</span
+            >
+          </div>
+          <br />
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <div class="container">
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >IV. Ancak kişisel verilerinizin 1593 sayılı Umumi Hıfzıssıhha
+              Kanunu'nun 58. maddesinde düzenlenen bulaşıcı hastalıkları yetkili
+              makamlara bildirme yükümlülüğü örneğinde olduğu gibi toplum
+              sağlığının korunması için kişisel tıbbi kayıtların mahremiyetinin
+              sınırlanması gereken durumlarda ya da suçu bildirim yükümlülüğü
+              gibi Kanuni zorunluluk hallerinde, sadece amaçla sınırlı olarak ve
+              ölçülü biçimde yetkili makamlara bildirimde bulunulması
+              gerekebileceğini ya da sağlık durumunuzla ilgili konsültasyon
+              (görüş alış verişi) amacıyla başka bir hekimle paylaşılabileceğini
+              önemle hatırlatırız.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >V. Kamu kurumlarından, adli mercilerden ve diğer resmi
+              makamlardan gelen tarafınıza ait verilerin kendilerine iletilmesi
+              yönündeki talepler, talebin amacı, talep edilen veriler ile
+              ulaşılmak istenen amacın örtüşüp örtüşmediği, somut biçimde ortaya
+              konup konamadığı, belirtilen amaca ulaşmanın tek yolunun
+              tarafınıza ait verilerin anonimleştirilmeden iletilme gerekliliği,
+              veri iletiminin demokratik bir toplumda gerekli olup olmadığı
+              unsurları yönünden değerlendirilecek, bu unsurların tamamını
+              sağlamayan veri iletme talepleri yerine getirilmeyecektir.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >VI. Tarafımızca kaydedilen verilerinize ilişkin, başta Kişisel
+              Verilerin Otomatik işleme Tabi Tutulması Karşısında Bireylerin
+              Korunması Sözleşmesi (108 Sayılı Avrupa Konseyi Sözleşmesi),
+              Avrupa İnsan Hakları Sözleşmesinin 8. Maddesi, Anayasa'nın 20.
+              Maddesi, 6698 sayılı Kişisel Verilerin Korunması Kanunu
+              uyarınca:</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <ul style="list-style-type: none; padding-left: 0">
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Kişisel verilerinizin işlenip işlenmediğini, işlenen
+                verilerinizin kapsamını öğrenme,
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Kişisel verileriniz işlenmişse buna ilişkin bilgi alma, bu
+                verilere erişme ve bunlardan örnek alma,
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Kişisel verilerinizin işlenme amacını ve bunların amacına uygun
+                kullanılıp kullanılmadığını, Yurt içinde veya yurt dışında 3.
+                bir kişiye ya da kuruma aktarılıp aktarılmadığını öğrenme,
+                kişisel verilerinizde meydana gelen değişikliklerin yerlerin
+                paylaşıldığı kişi ya da kurumlara bildirilmesini isteme,
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Kişisel verilerinizin eksik veya yanlış işlenmiş olması halinde
+                bunların düzeltilmesini isteme poliklinik adresimize bizzat ya
+                da yazılı şekilde başvurmak suretiyle kullanılabileceği
+                konusunda bilgi verildi.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Bazı verilerinizin gizlenmesini, silinmesini ya da yok
+                edilmesini isteme haklarınız bulunmaktadır.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <div class="container">
+        <div class="header">II. ONAM BEYANI</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Kişisel Veriler Aydınlatma Ve Onam Metnini okuduğumu ve
+              anladığımı, ayrıca konuya ilişkin tarafıma sözlü bilgi
+              verildiğini,</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Kişisel Veriler Aydınlatma Ve Onam metninde detaylı olarak yer
+              alan kişisel verilerimin işlenme amaçları, toplanma yöntemleri ve
+              hukuki sebepleri, kişisel verilerimin korunmasına yönelik
+              haklarım, verilerimin aktarılabileceği zorunlu haller, veri
+              güvenliği ve başvuru haklarıma dair bilgilendirildiğimi,</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Sağlık verilerim de dahil olmak üzere tüm kişisel verilerimin
+              yukarıdaki esaslar çerçevesinde klinik doktorları ve çalışanları
+              tarafından kaydedilmesini, saklanmasını, sayılan zorunlu hallerde
+              paylaşılmasını,</span
+            >
+          </div>
+          <br />
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#if (eq
+            permission_allow_my_oral_or_facial_images true )}} checked="true"
+            {{/if}}> Tedavi sırasında çekilen ağız içi ya da yüz görsellerimin
+            ve/veya videolarımın sosyal medyada ya da eğitim ve akademik
+            faaliyetler kapsamında kullanılmasına izin veriyorum.
+            <span class="checkmark"></span>
+          </label>
+          <br />
+          <br />
+          <label class="custom-checkbox">
+            <input type="checkbox" {{#if (eq
+            permission_the_clinic_will_send_you_information true )}}
+            checked="true" {{/if}}> Ayrıca klinik tarafından, tarafıma aşağıda
+            belirttiğim mobil araçlarla, internet üzerinden ya da adresime posta
+            yoluyla vb. ulaşabilmesini AÇIK RIZAM İLE KABUL EDERIM.
+            <span class="checkmark"></span>
+          </label>
+          <br />
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >*Hasta Hakları Yönetmeliği gereği: formun 1 sureti size
+              verilecektir. Form tarafınıza verilmediğinde lütfen onamı alan
+              kişiye bildiriniz.</span
+            >
+          </div>
+        </div>
+        <div class="header">
+          TERCÜMAN (Hastanın Dil /İletişim Problemi var ise)
+        </div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Hastaya hekim tarafından yapılan açıklamaları tercüme ettim.
+              Görüşüme göre tercüme ettiğim bilgiler hasta tarafından
+              anlaşılmıştır.</span
+            >
+          </div>
+        </div>
+        <div class="header">Form Onay</div>
+        <div class="form-container">
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>Hasta</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Adı Soyadı:</span>
+                <span class="value"
+                  >{{patient_info_name}} {{patient_info_surname}}</span
+                >
+              </div>
+              <div>
+                <span class="label">Tarih:</span>
+                <span class="value">{{patient_info_patient_date}}</span>
+              </div>
+              <div>
+                <span class="label">Saat:</span>
+                <span class="value">{{patient_info_patient_time}}</span>
+              </div>
+              <div>
+                <span class="label">İmza:</span>
+                <img
+                  class="signature"
+                  src="{{patient_info_signature_patient}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>Hasta Yakını</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Adı Soyadı:</span>
+                <span class="value"
+                  >{{patient_relative_info_name_and_surname}}</span
+                >
+              </div>
+              <div>
+                <span class="label">Tarih:</span>
+                <span class="value"
+                  >{{patient_relative_info_patient_relative_date}}</span
+                >
+              </div>
+              <div>
+                <span class="label">Saat:</span>
+                <span class="value"
+                  >{{patient_relative_info_patient_relative_time}}</span
+                >
+              </div>
+              <div>
+                <span class="label">İmza:</span>
+                <img
+                  class="signature"
+                  src="{{patient_relative_info_signature}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>Tercüman</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Tercüme Yapanın Adı Soyadı:</span>
+                <span class="value"
+                  >{{patient_interpreter_info_name_and_surname}}</span
+                >
+              </div>
+              <div>
+                <span class="label">Tarih:</span>
+                <span class="value"
+                  >{{patient_interpreter_info_patient_relative_date}}</span
+                >
+              </div>
+              <div>
+                <span class="label">Saat:</span>
+                <span class="value"
+                  >{{patient_interpreter_info_patient_relative_time}}</span
+                >
+              </div>
+              <div>
+                <span class="label">İmza:</span>
+                <img
+                  class="signature"
+                  src="{{patient_interpreter_info_signature}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

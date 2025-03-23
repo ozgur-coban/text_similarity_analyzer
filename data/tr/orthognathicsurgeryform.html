@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Informed Consent Form for Extraction Based Fixed Orthodontic Treatment
+    </title>
+    <style>
+      :root {
+        --dust_storm: #dec8b9;
+        --lavender: #fbfbfb;
+        --shuttle_gray: #5c666f;
+        --darkBlue: #0c356a;
+        --blue: #279eff;
+        --lightBlue: #40f8ff;
+        --white: #ffffff;
+        --green: #21d0c3;
+        --red: #ff5b62;
+        --darkGreen: #646666;
+        --lightGreen: #c9cccd;
+        --lightGreen2: #eeeff0;
+        --blackGreen: #094850;
+        --googleRed: #ea4335;
+      }
+
+      body {
+        background-color: var(--white);
+        font-family: Tahoma, sans-serif;
+        margin: 0px;
+      }
+
+      .container {
+        width: "%100";
+      }
+
+      .headerForm {
+        flex-direction: row;
+        display: flex;
+        margin: 10px 0px;
+      }
+
+      .headerForm img {
+        height: 60px;
+        width: auto;
+      }
+
+      .header-content {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: end;
+        flex-direction: column;
+      }
+
+      .header {
+        padding: 4px;
+        background-color: var(--green);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .info {
+        margin: 10px 0px;
+        font-size: 12px;
+        line-height: 14.4px;
+      }
+
+      .value {
+        /* color: var(--blackGreen); */
+        font-size: 10px;
+        font-weight: 600;
+      }
+
+      .seperator {
+        border-bottom: 1px solid #ccc;
+      }
+
+      .checkbox-grid {
+        margin: 10px 0px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+
+      .custom-checkbox {
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+        display: inline-block;
+      }
+
+      .custom-checkbox input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #eee;
+        border: 1px solid #ccc;
+      }
+
+      .custom-checkbox:hover input ~ .checkmark {
+        background-color: #ddd;
+      }
+
+      .custom-checkbox input:checked ~ .checkmark {
+        background-color: var(--green);
+        border: 1px solid var(--green);
+      }
+
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      .custom-checkbox input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      .custom-checkbox .checkmark:after {
+        left: 7px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+
+      .form-container {
+        margin: 10px 0px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        page-break-inside: avoid; /* Prevent the entire container from splitting */
+      }
+
+      .form-containersingle {
+        margin: 10px 0px;
+      }
+      .form-containerdouble {
+        margin: 10px 0px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+      .form-confirmation {
+        padding: 10px;
+        border: 1px solid var(--blackGreen);
+        font-size: 12px;
+        page-break-inside: avoid; /* Prevent splitting inside this block */
+        display: block;
+        break-inside: avoid; /* For additional browser support */
+      }
+
+      .form-header {
+        margin-bottom: 10px;
+        font-size: 12px;
+        page-break-inside: avoid;
+        page-break-after: avoid; /* Prevent page break after header */
+        break-inside: avoid;
+        display: block;
+      }
+
+      .form-body {
+        margin-top: 10px;
+        font-size: 12px;
+        page-break-inside: avoid;
+        page-break-after: avoid; /* Avoid splitting at the end of this block */
+        break-inside: avoid;
+        display: block;
+      }
+
+      .signature {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        page-break-inside: avoid; /* Ensure signature stays on the same page */
+      }
+      .form-section {
+        page-break-inside: avoid; /* Prevents page break inside this section */
+      }
+      .page {
+        page-break-after: always;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="container">
+        <div class="headerForm">
+          <img class="img" src="{{clinic_logo}}" />
+          <div class="header-content">
+            <label name="">{{clinic_name}}</label>
+            <label name="">{{form_name}} {{form_language}}</label>
+          </div>
+        </div>
+        <div class="header">Ortognatik cerrahinin olası riskleri</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Diğer ameliyatlarda olduğu gibi çene ameliyatları da belli
+              riskleri taşır. Bunlar basit riskler olabildiği gibi ölümcül de
+              olabilir. Çene ucu cerrahisi sonrası gelişmesi olası bazı
+              risklerin sizin tarafınızdan iyi anlaşılması çok önemlidir.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Cerrahi ve uygulanacak diğer işlemler: Alt çene ucu kemiğine
+              ulaşmak için ağız içinden veya cilt üzerinden bir kesi
+              yapılacaktir. Ayrıca vücudunuzun başka bir yerinden kemik veya
+              doku almak gerekir ise başka bir yerinizden de kesi yapmak
+              gerekebilir. Alt çene ucu kemiği uygun yerden kesilerek
+              (osteotomi) düzeltilecek ve aşağıdakilerin biri veya birkaçı
+              kullanılarak tespit edilecektir:</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >- Titanyum plaklar ve / veya vidalar, eriyebilir plak ve / veya
+              vidalar, tel dikişler, dişlere uygulanan metal arklar ve teller,
+              vücudunuzdan alınan kemik, kıkırdak ve dokular, başka insandan
+              veya hayvandan alınmış kemik, kıkırdak, kemik macunu, kemik tozu,
+              silikon, poroz hidroksiapatit, metil metakrilat, titanyum meş gibi
+              alloplastik malzemeler</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Bir problem olmadıkça bu malzemeler ömür boyu yerlerinde
+              kalabilir. Problem çıkması halinde bunları yerinden çıkartmak için
+              ikinci bir ameliyat gerekebilir.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Ameliyatın bitiminde veya daha sonra alt çene ile üst çene 7-10
+              gün kilitlenebilir (İntermaksiller tespit). Bu dönemde sadece sulu
+              gıdalar ile beslenmek gerekir. Nefes almada zorluk veya bulantı
+              olursa tespit için uygulanan lastikler kesilebilir.</span
+            >
+          </div>
+        </div>
+        <div class="info">
+          <div class="info-text">
+            <ul style="list-style-type: none; padding-left: 0">
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >1.</span
+                >Herhangi bir cerrahi müdahaleye bağlı gelişebilecek yan
+                etkiler:
+                <br />
+                <ul style="list-style-type: none; padding-left: 10">
+                  <li style="margin-bottom: 5px">
+                    <span
+                      style="
+                        display: inline-block;
+                        width: 10px;
+                        height: 10px;
+                        margin-right: 5px;
+                      "
+                      >a.</span
+                    >Cerrahinin kendisinden kaynaklanan rahatsızlık / ameliyat
+                    sonrası ağrı
+                  </li>
+                  <li style="margin-bottom: 5px">
+                    <span
+                      style="
+                        display: inline-block;
+                        width: 10px;
+                        height: 10px;
+                        margin-right: 5px;
+                      "
+                      >b.</span
+                    >Ödem (Şişlik)
+                  </li>
+                  <li style="margin-bottom: 5px">
+                    <span
+                      style="
+                        display: inline-block;
+                        width: 10px;
+                        height: 10px;
+                        margin-right: 5px;
+                      "
+                      >c.</span
+                    >Kanama
+                  </li>
+                  <li style="margin-bottom: 5px">
+                    <span
+                      style="
+                        display: inline-block;
+                        width: 10px;
+                        height: 10px;
+                        margin-right: 5px;
+                      "
+                      >d.</span
+                    >Hissizlik
+                  </li>
+                </ul>
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >2.</span
+                >Fasiyal sinirin (Yüz siniri) dalının yaralanması
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >3.</span
+                >Kan verilmesi: Otolog verici veya kan transfüzyonu gerektiren
+                kanama (ameliyatta veya ameliyattan sonra) meydana gelebilir
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >4.</span
+                >Nüks veya ek işlemlere gereksinim
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >5.</span
+                >Enfeksiyon: Yara tekrar oluşabilir fakat genellikle antibiyotik
+                ve bölgesel tedaviyle (Yıkama ile) geçer.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >6.</span
+                >Kan akımının azalmasına bağlı olarak iskemik nekroz (Doku
+                ölümü) görülebilir.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >7.</span
+                >İnstabilite: Kemik kesisi (osteotomi) hattında olmaması gereken
+                hareket
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >8.</span
+                >Ameliyat sonrası çeneyi sabitlemek için kullanılan titanyum
+                plak ve vidalar ağrıya ve / veya enfeksiyona neden olabilir bu
+                da bazı evrelerde cerrahi olarak çıkartılmayı gerektirir
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >9.</span
+                >Ağız açıklığının azalması
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >10.</span
+                >
+                Çok nadiren kafa tabanında kanama olabilir. Bu körlüğe yol
+                açabilir. Bu durum kalıcıdır.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >11.</span
+                >
+                Şişman insanlarda yara enfeksiyonu, göğüs enfeksiyonu, kalp ve
+                akciğer komplikasyonları (olumsuz durum) ve tromboz riski
+                yükselir.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >12.</span
+                >
+                Şeker hastalarında, sigara içenlerde, beslenme bozukluğu
+                olanlarda, şişman hastalarda ve bazı kişiye özel durumlarda yara
+                iyileşmesi kötüdür. Dışardan yapılan kesilerde belirgin iz
+                kalabilir.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >13.</span
+                >
+                Yara izi
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >14.</span
+                >
+                Kilo kaybı
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >15.</span
+                >
+                Ameliyattan önce çene eklemi sorunu var ise, bu tamamen
+                geçebilir, azalabilir veya bazen artabilir.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >16.</span
+                >
+                Relaps
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >17.</span
+                >
+                Herhangi bir komplikasyon çıkması durumunda ek cerrahi işlemler
+                gerekebilir.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <div class="container">
+        <div class="header">ORTOGNATİK CERRAHİ ONAM FORMU</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Doktorum çocuğumun tıbbi durumunu ve önerilen cerrahi işlemi
+              anlattı. Ameliyatın risklerini, çocuğuma özel riskleri ve olası
+              olumlu ve olumsuz durumları (komplikasyonları) anladım.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Doktorum diğer tedavi yöntemlerini, ilişkili riskleri, olası
+              tıbbi seyri (prognozu) ve tedavi görmeme durumunda olabilecek
+              riskleri anlattı.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Bana bir adet anestezi bilgi formu ve bir adet hasta
+              bilgilendirme formu verildi.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Çocuğumun tıbbi durumu, tedavi ve riskleri ile alternatif
+              tedaviler hakkındaki sorularımı tartışma fırsatım oldu. Sorularım
+              ve düşüncelerim tatmin olacağım biçimde tartışıldı</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Ameliyat esnasında gerektiğinde çocuğuma kan verilmesini kabul
+              ediyorum.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Ameliyat sırasında organ veya dokuların çıkarılabileceğini ve
+              bunların belli bir süre test amaçlı saklanma sonrasında hastane
+              tarafından atılacağını biliyorum.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Doktorum, ameliyat sırasında hayatı tehdit edici olaylar
+              olabileceğini anlattı ve bu riskleri tam olarak anladım.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Ameliyat öncesinde alınan radyografiler ve fotoğrafların,
+              ameliyat sırasında alınabilecek fotoğraf ve video görüntülerinin
+              ve ameliyat sonrasında alınabilecek radyografiler ve fotoğrafların
+              daha sonra sağlık çalışanlarının eğitimi ve bilimsel çalışmalar
+              için kullanılabileceğini kabul ediyorum.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Ameliyatın çocuğumun durumunu daha iyiye veya daha kötüye
+              götürebileceğine dair hiçbir garantinin olmadığını anladım</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Ameliyat sırasında veya sonrasında ya da anestezi sırasında
+              önceden bilinemeyen durumların ortaya çıkması halinde yukarıda
+              anlatılanların dışında işlemlerin gerekebileceğini anladım. Bu
+              durumda yukarıda adı geçen doktor ve asistanlarının gerekebilecek
+              uygulamalara karar vermeleri ve yapmalarını ve ayrıca onların
+              uygun göreceği ilgili dallardaki uzmanların cerrahi girişime
+              katılmalarını onaylıyorum.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              ><span class="value">{{other_keys_target_treatment_teeth}}</span>
+              üzerinde tedavi yapılmasını kabul ediyorum.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Yukarıdaki bilgilerin hepsini okudum ve bana bu bilgilerden başka
+              birçok sözlü bilgi verildi. TARAFIMA YAPILAN SÖZLÜ VE YAZILI
+              AÇIKLAMALARDAN TATMİN OLDUĞUMU BELİRTİRİM. YAPILACAK OLAN TEDAVİ
+              VEYA AMELİYATA, DAHA SONRA ÇIKABİLECEK DURUMLARDA YAPILACAK TÜM
+              TEDAVİLERE, YUKARIDA LİSTENENEN VE BUNLARLA SINIRLI OLMAYAN SÖZLÜ
+              VE YAZILI AÇIKLAMALARA KENDİMDE OLARAK VE İRADEMLE ONAY VERİYORUM
+              VE BEN BU TEDAVİYİ İSTİYORUM.</span
+            >
+          </div>
+        </div>
+        <div class="form-containerdouble">
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>Hastanın:</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Adı Soyadı:</span>
+                <span class="value"
+                  >{{patient_info_name}} {{patient_info_surname}}</span
+                >
+              </div>
+              <div>
+                <span class="label">T.C Numarası:</span>
+                <span class="value">{{patient_info_patient_tc_number}}</span>
+              </div>
+              <div>
+                <span class="label">E-posta:</span>
+                <span class="value">{{patient_info_email}}</span>
+              </div>
+              <div>
+                <span class="label">Tarih:</span>
+                <span class="value">{{patient_info_patient_date}}</span>
+              </div>
+              <div>
+                <span class="label">Saat:</span>
+                <span class="value">{{patient_info_patient_time}}</span>
+              </div>
+              <div>
+                <span class="label">İmza:</span>
+                <img
+                  class="signature"
+                  src="{{patient_info_signature_patient}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>Hastanın Vekili:</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Adı Soyadı:</span>
+                <span class="value"
+                  >{{patient_supervisior_info_name_and_surname}}</span
+                >
+              </div>
+              <div>
+                <span class="label">T.C Numarası::</span>
+                <span class="value"
+                  >{{patient_supervisior_info_tc_number}}</span
+                >
+              </div>
+              <div>
+                <span class="label">Tarih:</span>
+                <span class="value">
+                  {{#if patient_supervisior_info_name_and_surname}}
+                  {{patient_supervisior_info_date}} {{/if}}
+                </span>
+              </div>
+              <div>
+                <span class="label">Saat:</span>
+                <span class="value">
+                  {{#if patient_supervisior_info_name_and_surname}}
+                  {{patient_supervisior_info_date_time}} {{/if}}
+                </span>
+              </div>
+              <div>
+                <span class="label">İmza:</span>
+                <img
+                  class="signature"
+                  src="{{patient_supervisior_info_signature_supervisior}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <div class="container">
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Dr.
+              <span class="value">{{doctor_info_name_and_surname}}</span>
+              olarak</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <ul style="list-style-type: none; padding-left: 0">
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >-</span
+                >Hastanın durumunu
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >-</span
+                >Tedaviye ihtiyacı olduğunu
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >-</span
+                >Tedavi yöntemi ve riskleri
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >-</span
+                >Tedaviyle ilgili seçenekler ve riskleri
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >-</span
+                >Bu riskler gerçekleştiğinde olası sonuçları
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                  "
+                  >-</span
+                >Hastaya özel risk ve problemleri
+              </li>
+            </ul>
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Hastanın Annesine / babasına / sorumluya / vekile anlattım.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Dr.
+              <span class="value">{{doctor_info2_name_and_surname}}</span>
+              olarak hastanın annesine / babasına / sorumlusuna / vekiline,
+              yukarıda bahsedilen noktalarla ilgili sorular sorma, diğer
+              düşüncelerini tartışma, fırsatı verdim ve mümkün olduğunca hepsini
+              cevapladım. Hastanın Annesinin / babasının / sorumlunun / vekilin
+              yukarıdaki bilgileri anladığını düşünüyorum.</span
+            >
+          </div>
+        </div>
+        <div class="form-containerdouble">
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>1. Doktor:</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Adı Soyadı:</span>
+                <span class="value">{{doctor_info_name_and_surname}}</span>
+              </div>
+              <div>
+                <span class="label">Adresi/Tel:</span>
+                <span class="value">{{doctor_info_phone_number}}</span>
+              </div>
+              <div>
+                <span class="label">Tarih:</span>
+                <span class="value">{{doctor_info_date}}</span>
+              </div>
+              <div>
+                <span class="label">Saat:</span>
+                <span class="value">{{doctor_info_time}}</span>
+              </div>
+              <div>
+                <span class="label">İmza:</span>
+                <img
+                  class="signature"
+                  src="{{doctor_info_signature_doctor}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-confirmation">
+            <div class="form-header">
+              <span>2. Doktor:</span>
+            </div>
+            <div class="seperator"></div>
+            <div class="form-body">
+              <div>
+                <span class="label">Adı Soyadı:</span>
+                <span class="value">{{doctor_info2_name_and_surname}}</span>
+              </div>
+              <div>
+                <span class="label">Adresi/Tel:</span>
+                <span class="value">{{doctor_info2_phone_number}}</span>
+              </div>
+              <div>
+                <span class="label">Tarih:</span>
+                <span class="value">
+                  {{#if doctor_info2_name_and_surname}} {{doctor_info2_date}}
+                  {{/if}}
+                </span>
+              </div>
+              <div>
+                <span class="label">Saat:</span>
+                <span class="value">
+                  {{#if doctor_info2_name_and_surname}} {{doctor_info2_time}}
+                  {{/if}}
+                </span>
+              </div>
+              <div>
+                <span class="label">İmza:</span>
+                <img
+                  class="signature"
+                  src="{{doctor_info2_signature_doctor}}"
+                  onerror="this.onerror=null; this.remove();"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

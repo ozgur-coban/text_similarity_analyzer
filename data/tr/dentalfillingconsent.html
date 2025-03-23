@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Informed Consent Form for Extraction Based Fixed Orthodontic Treatment
+    </title>
+    <style>
+      :root {
+        --dust_storm: #dec8b9;
+        --lavender: #fbfbfb;
+        --shuttle_gray: #5c666f;
+        --darkBlue: #0c356a;
+        --blue: #279eff;
+        --lightBlue: #40f8ff;
+        --white: #ffffff;
+        --green: #21d0c3;
+        --red: #ff5b62;
+        --darkGreen: #646666;
+        --lightGreen: #c9cccd;
+        --lightGreen2: #eeeff0;
+        --blackGreen: #094850;
+        --googleRed: #ea4335;
+      }
+
+      body {
+        background-color: var(--white);
+        font-family: Tahoma, sans-serif;
+        margin: 0px;
+      }
+
+      .container {
+        width: "%100";
+      }
+
+      .headerForm {
+        flex-direction: row;
+        display: flex;
+        margin: 10px 0px;
+      }
+
+      .headerForm img {
+        height: 60px;
+        width: auto;
+      }
+
+      .header-content {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: end;
+        flex-direction: column;
+      }
+
+      .header {
+        padding: 4px;
+        background-color: var(--green);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .info {
+        margin: 10px 0px;
+        font-size: 12px;
+        line-height: 14.4px;
+      }
+
+      .value {
+        /* color: var(--blackGreen); */
+        font-size: 10px;
+        font-weight: 600;
+      }
+
+      .seperator {
+        border-bottom: 1px solid #ccc;
+      }
+
+      .checkbox-grid {
+        margin: 10px 0px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+
+      .custom-checkbox {
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+        display: inline-block;
+      }
+
+      .custom-checkbox input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #eee;
+        border: 1px solid #ccc;
+      }
+
+      .custom-checkbox:hover input ~ .checkmark {
+        background-color: #ddd;
+      }
+
+      .custom-checkbox input:checked ~ .checkmark {
+        background-color: var(--green);
+        border: 1px solid var(--green);
+      }
+
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      .custom-checkbox input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      .custom-checkbox .checkmark:after {
+        left: 7px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+
+      .form-container {
+        margin: 10px 0px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        page-break-inside: avoid; /* Prevent the entire container from splitting */
+      }
+
+      .form-containersingle {
+        margin: 10px 0px;
+      }
+
+      .form-confirmation {
+        padding: 10px;
+        border: 1px solid var(--blackGreen);
+        font-size: 12px;
+        page-break-inside: avoid; /* Prevent splitting inside this block */
+        display: block;
+        break-inside: avoid; /* For additional browser support */
+      }
+
+      .form-header {
+        margin-bottom: 10px;
+        font-size: 12px;
+        page-break-inside: avoid;
+        page-break-after: avoid; /* Prevent page break after header */
+        break-inside: avoid;
+        display: block;
+      }
+
+      .form-body {
+        margin-top: 10px;
+        font-size: 12px;
+        page-break-inside: avoid;
+        page-break-after: avoid; /* Avoid splitting at the end of this block */
+        break-inside: avoid;
+        display: block;
+      }
+
+      .signature {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        page-break-inside: avoid; /* Ensure signature stays on the same page */
+      }
+
+      .page {
+        page-break-after: always;
+      }
+
+      .form-section {
+        page-break-inside: avoid; /* Prevents page break inside this section */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="container">
+        <div class="headerForm">
+          <img class="img" src="{{clinic_logo}}" />
+          <div class="header-content">
+            <label name="">{{clinic_name}}</label>
+            <label name="">{{form_name}} {{form_language}}</label>
+          </div>
+        </div>
+        <div class="header">Diş Dolgu Onam</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Bu formun amacı, sağlığınız ile ilgili konularda sizi
+              bilinçlendirerek alınacak kararlara katılımınızı sağlamaktır.
+              Yasal ve tıbbi zorunluluk taşıyan durumlar dışında bilgilendirmeyi
+              reddedebilirsiniz.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Bu form, çoğu hastanın pek çok koşulda ihtiyaçlarını karşılayacak
+              şekilde tanımlanmış olmakla birlikte bütün tedavi şekillerinin
+              risklerini içeren bir belge olarak düşünülmemelidir. Kişisel
+              sağlık durumunuza bağlı olarak, hekiminiz size farklı ya da ek
+              bilgi verebilir.</span
+            >
+          </div>
+          <br />
+          <div class="info-text">
+            <span class="label"
+              >Tanı, tıbbi tedavi ve cerrahi girişimlerin yararlarını ve olası
+              risklerini öğrendikten sonra yapılacak uygulamaları kabul etmek ya
+              da etmemek kendi kararınıza bağlıdır.</span
+            >
+          </div>
+        </div>
+        <div class="header">Bilmeniz Gerekenler</div>
+        <div class="info">
+          <div class="info-text">
+            <ul style="list-style-type: none; padding-left: 0">
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Bireyler arasında iyileşme potansiyelleri açısından fark
+                olduğundan, işlemlerden önce kişinin iyileşme potansiyeli
+                öngörülememektedir. Size uygulanacak tedavi bazı durumlarda
+                başarısız olabileceğinden, tekrarlanması gerekebilmekte ve
+                tedavinin sonucu garanti edilememektedir.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Sigara, alkol ve şeker tüketiminiz, diş fırçalama sıklığınız
+                yapılan işlemlerin başarısını kısıtlayabilmektedir.
+              </li>
+              <li style="margin-bottom: 5px">
+                <span
+                  style="
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #000;
+                    margin-right: 5px;
+                  "
+                ></span>
+                Bilginiz dâhilindeki fiziksel ve ruhsal sağlığınız hakkında
+                hekiminize detaylı bilgi vermelisiniz. Ayrıca ilaca, gıdaya,
+                anestezik maddelere, polene ya da toza karşı önceden oluşmuş
+                alerjik reaksiyonlar; sistemik hastalıklar; deri ve dişeti
+                reaksiyonları; anormal kanama eğilimi ve genel sağlığınızla
+                ilgili diğer durumlar hakkında da hekiminize bilgi vermelisiniz.
+              </li>
+            </ul>
+            <span class="label"
+              >Yapılacak işlem:
+              <span class="value">{{other_keys_targeted_process}}</span></span
+            >
+          </div>
+        </div>
+        <div class="header">
+          Girişimin Yapılmaması Durumunda Neler Olabilir?
+        </div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Önerilen tedavi ve girişimleri kabul etmemeniz durumunda çürük
+              lezyon ilerleyerek , geri dönüşü olmayacak derecede aşırı madde
+              kaybına, ağrı ve hassasiyete , enfeksiyona, ağız kokusuna, renk ve
+              estetik bozukluklara hatta diş kayıpları na ve bunlara bağlı
+              çiğneme ve çene eklem fonksiyonlarında sorunlara neden
+              olabilir.</span
+            >
+          </div>
+        </div>
+        <div class="header">
+          Uygulanacak Tedavi Sırasında Girişime Bağlı Riskler
+        </div>
+        <div class="info">
+          <ul style="list-style-type: none; padding-left: 0">
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Anestezi gerekmeyen tedavilerde çok kısmi bir ağrı olabilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Bazı anestezi türlerinde yeterli uyuşukluk sağlanamayıp ilave
+              anestezi gerekebilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Anesteziye bağlı olarak nadiren yanakta geçici şişlik, kızarma,
+              morarma ve uyuşuk kalma gibi durumlar gözlenebilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Kullanılan ilaçlar ağızda hoş olmayan bir tat bırakabilir, mide
+              bulantısına sebep olabilir
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Dolgu yapımı esnasında kullanılan metal bantlar, tahta kamalar diş
+              etini travmatize ederek hassasiyete neden olabilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Tedavi sırasında kullanılan malzemelerden küçük olanlar hekim
+              kontrolü dışında yutulabilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Tedavi esnasında hastanın istemsiz hareketlerine bağlı olarak
+              yumuşak dokularda yaralanma olabilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Dolgu tedavisine başlanan dişte çürüğün ilerlemesi durumunda kanal
+              tedavisi de gerekebilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Kanal tedavisi sırasında kanal aleti kırılarak diş içerisinde
+              kalabilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Kanal dolgusu sırasında elde olmayan nedenlerle kanal dolgu
+              malzemesi eksik kalabilir veya kök ucundan çıkabilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Kanal tedavisine başlanan dişlerde; tıkalı kanallar, aşırı madde
+              kaybı, kök çatlak ve kırıkları, vb. nedenlerle dişin çekimi
+              gerekebilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Tedavi sırasında protetik işlemlere ihtiyaç duyulabilir hatta
+              aşırı harabiyet durumlarında dişin çekimi gerekebilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Diş dokusundaki aşırı harabiyet durumunda tedavi
+              alternatiflerinden biri olan post uygulaması sırasında eski kanal
+              tedavisi tam sökülemeyebilir ve buna bağlı olarak post için uygun
+              boşluk hazırlanamayabilir, post yerleştirilmesi sırasında
+              uygulanan kuvvet neticesinde diş kökünde çatlaklar oluşabilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Kaplama altındaki dişe tedavi yapılması için mevcut kaplama
+              söküldüğünde, alttaki dişte aşırı çürük veya madde kaybı nedeniyle
+              ilgili dişin çekimi gerekebilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Kron veya köprü sökümü gerektiğinde söküm sırasında kaplama veya
+              diş kırılabilir. Bu nedenle ilgili dişin çekimi veya kaplamanın
+              yeniden yapımı gerekebilir.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <div class="container">
+        <div class="header">
+          Uygulanacak Tedavi Sonrasında Girişime Bağlı Riskler
+        </div>
+        <div class="info">
+          <ul style="list-style-type: none; padding-left: 0">
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Dolgu sonrasında ağrı ve hassasiyet gibi komplikasyonlar
+              oluşabilir. Devamlı ağrılarda kanal tedavisi gerekebilir. Geçici
+              ağrıların 2 - 3 gün, soğuk hassasiyetinin ise 3-4 hafta devam
+              edebileceği unutulmamalıdır.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Kanal tedavisi sonrasında 7 - 10 kadar çiğneme sırasında ağrı
+              olabilir, inatçı enfeksiyon durumlarında daha uzun sürebilir,
+              hatta kanal tedavisi tekrarı gerektirebilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Kanal tedavisi sonrası nadiren yüzde şişme meydana gelebilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Daha önceden yapılmış bir kanal tedavisinin yenilenmesi gereken
+              durumlarda, bazen eski kanal dolgusu tamamen sökülemeyebilir, kök
+              ucuna kadar ideal bir dolgu yapılamayabilir ve bunların sonucunda
+              kanal tedavisi başarısız olabilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Tedavi sonrasında çene eklemlerinde, anestezi yapılan kısımda ve
+              dişetlerinde birkaç gün ağrı olabilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Dişetlerinde veya ağız içerisindeki diğer dokularda geçici yaralar
+              oluşabilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Yeterince bağlanacak diş doku kaybının fazla olduğu durumlarda
+              yapılan dolgu düşebilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Diş dokusundaki aşırı harabiyet durumunda tedavi
+              alternatiflerinden biri olan post uygulaması sonrasında yeterince
+              yapıştırılamazsa yerinden çıkabilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Kaplama ve porselen dolgu yapılan dişlerde kanal tedavisi yoksa
+              bir süre hassasiyet oluşabilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Kaplama ve porselen dolgu yapılan dişlerin kaplaması ve dolgusu
+              düşebilir, kırılabilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Beyazlatma yapılan hastalarda tedavi sonrası hassasiyet olabilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Beyazlatma ajanının kazara çevre dokulara temas etmesi durumunda
+              dokunduğu kısımda geçici bir beyazlık görülebilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Her hastanın diş rengi farklı olduğundan ve kullandığımız estetik
+              dolgular birebir diş dokusuyla aynı özellik taşımadığından, bazen
+              istenilen diş rengi tam sağlanamayabilir, biraz da olsa ton farkı
+              olabilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Estetik dolgulardan hemen sonra memnun edici olan diş rengi
+              zamanla değişebilir. Birkaç sene sonra dolgunun yenilenmesi
+              gerekebilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              Ön dişlere yapılan estetik dolgular ve arka grup dişlere yapılan
+              dolgular sonrası ısırma ve koparma fonksiyonuyla ön dişlere gelen
+              kuvvetler sonucu dolgu düşebilir veya kırılabilir.
+            </li>
+            <li style="margin-bottom: 5px">
+              <span
+                style="
+                  display: inline-block;
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 50%;
+                  background-color: #000;
+                  margin-right: 5px;
+                "
+              ></span>
+              İleri derece eklem problemi mevcut olan hastalarda tedavi sonrası
+              uzun süreli ağız açıklığına bağlı olarak çene eklemi çıkabilir.
+            </li>
+          </ul>
+        </div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              ><span class="value">{{other_keys_target_treatment_teeth}}</span>
+              üzerinde tedavi yapılmasını kabul ediyorum.</span
+            >
+          </div>
+        </div>
+
+        <div class="header">Diş Dolgu Onam</div>
+        <div class="info">
+          <div class="info-text">
+            <span class="label"
+              >Ben
+              <span class="value"
+                >{{patient_info_name}} {{patient_info_surname}}</span
+              >
+              Klinik Restoratif Diş Tedavisi Anabilim Dalı doktor/diş hekimi
+              çalışma ekibinin uygulayacağı tedaviyi, aklım başımda olarak kabul
+              ediyorum. Rahatsızlığımın tedavisi için uygulanabilecek tedavi
+              seçenekleri tarafıma sunulmuştur. Benim rahatsızlığımın tedavisi
+              için tercih etmiş olduğum tedavi seçeneğinin yerine getirilmesi
+              sırasında gerekli olan ilaçların ve girişimlerin tümünün
+              uygulanmasına izin veriyorum. Genel sağlık durumum ile ilgili
+              olarak bütün bilgileri verdim ve bu duruma bağlı olarak
+              oluşabilecek sorunlar konusunda bilgilendirildim. Doktorların
+              önerilerine tamamen uymayı kabul ediyorum ve aksi durumda
+              tedavimin başarısızlıkla sonuçlanabileceğini biliyorum. Muayenem
+              ve tedavim sırasında elde e dilecek bilgilerin bilimin gelişmesine
+              yönelik araştırmalar amacıyla başka bilimsel kurumlarla veya
+              eğitim için kullanılmasına (hasta hakları ve etik ilkelere uygun
+              olmak koşuluyla) izin veriyorum.
+            </span>
+            <br /><br />
+            <span class="label"
+              >BU FORMU OKUDUM VE İÇERİĞİNDEKİ TÜM TERİMLERİ VE KELİMELERİ
+              ANLADIM
+            </span>
+          </div>
+        </div>
+        <div class="form-section">
+          <div class="header">Form Onay</div>
+          <div class="form-container">
+            <div class="form-confirmation">
+              <div class="form-header">
+                <span>Hastanın:</span>
+              </div>
+              <div class="seperator"></div>
+              <div class="form-body">
+                <div>
+                  <span class="label">Adı Soyadı:</span>
+                  <span class="value"
+                    >{{patient_info_name}} {{patient_info_surname}}</span
+                  >
+                </div>
+                <div>
+                  <span class="label">T.C Numarası:</span>
+                  <span class="value">{{patient_info_patient_tc_number}}</span>
+                </div>
+                <div>
+                  <span class="label">E-posta:</span>
+                  <span class="value">{{patient_info_email}}</span>
+                </div>
+                <div>
+                  <span class="label">Tarih:</span>
+                  <span class="value">{{patient_info_patient_date}}</span>
+                </div>
+                <div>
+                  <span class="label">Saat:</span>
+                  <span class="value">{{patient_info_patient_time}}</span>
+                </div>
+                <div>
+                  <span class="label">İmza:</span>
+                  <img
+                    class="signature"
+                    src="{{patient_info_signature_patient}}"
+                    onerror="this.onerror=null; this.remove();"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-confirmation">
+              <div class="form-header">
+                <span>Hastanın Ebeveyn/Velisinin:</span>
+              </div>
+              <div class="seperator"></div>
+              <div class="form-body">
+                <div>
+                  <span class="label">Adı Soyadı:</span>
+                  <span class="value"
+                    >{{patient_parent_info_name_and_surname}}</span
+                  >
+                </div>
+                <div>
+                  <span class="label">T.C Numarası:</span>
+                  <span class="value">{{patient_parent_info_tc_number}}</span>
+                </div>
+                <div>
+                  <span class="label">Yakınlığı:</span>
+                  <span class="value"
+                    >{{patient_parent_info_parent_relationship}}</span
+                  >
+                </div>
+                <div>
+                  <span class="label">Tarih:</span>
+                  <span class="value">
+                    {{#if patient_parent_info_name_and_surname}}
+                    {{patient_info_patient_date}} {{/if}}
+                  </span>
+                </div>
+                <div>
+                  <span class="label">Saat:</span>
+                  <span class="value">
+                    {{#if patient_parent_info_name_and_surname}}
+                    {{patient_parent_info_time}} {{/if}}
+                  </span>
+                </div>
+                <div>
+                  <span class="label">İmza:</span>
+                  <img
+                    class="signature"
+                    src="{{patient_parent_info_signature_patient_parent}}"
+                    onerror="this.onerror=null; this.remove();"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-confirmation">
+              <div class="form-header">
+                <span>Katılımcı ile Görüşen Doktorun:</span>
+              </div>
+              <div class="seperator"></div>
+              <div class="form-body">
+                <div>
+                  <span class="label">Adı Soyadı:</span>
+                  <span class="value">{{doctor_info_name_and_surname}}</span>
+                </div>
+                <div>
+                  <span class="label">Adresi/Tel:</span>
+                  <span class="value">{{doctor_info_phone_number}}</span>
+                </div>
+                <div>
+                  <span class="label">Tarih:</span>
+                  <span class="value">{{doctor_info_date}}</span>
+                </div>
+                <div>
+                  <span class="label">Saat:</span>
+                  <span class="value">{{doctor_info_time}}</span>
+                </div>
+                <div>
+                  <span class="label">İmza:</span>
+                  <img
+                    class="signature"
+                    src="{{doctor_info_signature_doctor}}"
+                    onerror="this.onerror=null; this.remove();"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
